@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Please | Less Chasing. More Playing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="flex flex-col min-h-screen antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <img src="assets/hero.jpg" alt="A group of cricketers collecting match fees on a pitch" class="absolute inset-0 w-full h-full object-cover">
+            
+            <div class="video-overlay absolute inset-0 bg-black/60"></div>
+            
+            <div class="relative z-10 text-center px-6 mt-16">
+                <h1 class="text-5xl md:text-8xl font-black italic tracking-tighter mb-6 text-white">
+                    FEES <span class="text-[#00bc7d]">PLEASE.</span>
+                </h1>
+                <p class="text-lg md:text-2xl text-zinc-300 font-normal mb-10 max-w-2xl mx-auto leading-relaxed">
+                    The payment and game-day engine for local sports clubs. Track subs, manage the ledger, and automate the banter.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#features" class="bg-[#00bc7d] hover:bg-[#009767] px-8 py-4 rounded-full font-bold text-white transition-all shadow-lg shadow-[#00bc7d]/20 w-full sm:w-auto">See How It Works</a>
+                    <a href="mailto:hello@feesplease.app" class="glass px-8 py-4 rounded-full font-bold text-white hover:bg-white/5 transition-all w-full sm:w-auto">Get Early Access</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-white">Built for the Boundary Line</h2>
+                <p class="text-zinc-400 text-lg">Everything you need to run the weekend, from the first ball to the clubhouse fridge.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-zinc-800 opacity-20 text-9xl font-black italic">01</div>
+                    <div class="relative z-10">
+                        <div class="text-[#00bc7d] text-2xl mb-4 font-black">GAMEDAY</div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Match Day Collections</h3>
+                        <p class="text-zinc-400 leading-relaxed mb-4">Track payments as they happen. Whether a player taps their card, transfers digitally, or hands you a crumpled twenty, record it instantly.</p>
+                        <p class="text-zinc-300 text-sm font-medium border-l-2 border-[#00bc7d] pl-3">
+                            <span class="italic">Bonus:</span> Manage players by their actual club nicknames. Nobody knows who David is, but everyone knows "Davo".
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="glass p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-zinc-800 opacity-20 text-9xl font-black italic">02</div>
+                    <div class="relative z-10">
+                        <div class="text-[#00bc7d] text-2xl mb-4 font-black">THE LEDGER</div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Live Net Position</h3>
+                        <p class="text-zinc-400 leading-relaxed">Throw away the spreadsheets. See exactly who is paid up, who is in arrears, and the total cash position of the club in real-time.</p>
+                    </div>
+                </div>
+
+                <div class="glass p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-zinc-800 opacity-20 text-9xl font-black italic">03</div>
+                    <div class="relative z-10">
+                        <div class="text-[#00bc7d] text-2xl mb-4 font-black">INTEGRATIONS</div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Powered by Square</h3>
+                        <p class="text-zinc-400 leading-relaxed">Direct-to-club settlement via Square's PCI-compliant infrastructure. Generate payment links, share them via WhatsApp, and let Square handle the heavy lifting securely.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="py-24 bg-zinc-950 border-t border-zinc-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 md:order-1 glass p-8 flex flex-col items-center">
+                        <div class="w-full space-y-4">
+                            <div class="bg-[#00bc7d]/20 border border-[#00bc7d] rounded-xl p-4 text-center">
+                                <span class="text-[#00bc7d] font-bold">Club Master Tenant</span>
+                                <p class="text-xs text-emerald-100/70 mt-1">Treasurer / Committee Access</p>
+                            </div>
+                            <div class="flex gap-4 justify-center">
+                                <div class="w-1/2 bg-zinc-900 border border-zinc-700 rounded-xl p-4 text-center shadow-lg">
+                                    <span class="text-white font-medium text-sm">First Grade</span>
+                                    <p class="text-xs text-zinc-400 mt-1">Captain Access</p>
+                                </div>
+                                <div class="w-1/2 bg-zinc-900 border border-zinc-700 rounded-xl p-4 text-center shadow-lg">
+                                    <span class="text-white font-medium text-sm">Reserves</span>
+                                    <p class="text-xs text-zinc-400 mt-1">Captain Access</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <h2 class="text-4xl font-bold mb-6 text-gradient">Delegated Authority</h2>
+                        <p class="text-zinc-300 text-lg mb-6 leading-relaxed">
+                            Built on an enterprise-grade multi-tenant architecture, scaled perfectly for local sports. 
+                        </p>
+                        <ul class="space-y-4 text-zinc-400">
+                            <li class="flex items-start gap-3">
+                                <span class="text-[#00bc7d] mt-1">✔</span>
+                                <span><strong>Strict Data Isolation:</strong> Your club's data is securely isolated in its own logical vault.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-[#00bc7d] mt-1">✔</span>
+                                <span><strong>Captain Access:</strong> Give captains the power to record cash and check subs for their specific team on game day, without exposing the entire club ledger.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-[#00bc7d] mt-1">✔</span>
+                                <span><strong>Committee View:</strong> Treasurers maintain the master oversight across all grades and teams seamlessly.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-[#18181b] border-t border-zinc-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-white">Meet Your New Media Managers</h2>
+                    <p class="text-zinc-400 text-lg max-w-2xl mx-auto">Automate your match reports and social media posts. Just feed in the weekend's stats, and let our native AI agents handle the club banter.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 hover:border-[#00bc7d]/50 transition-colors">
+                        <div class="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-[#00bc7d]/20 flex items-center justify-center text-xl">🐊</div>
+                            <h4 class="text-white font-bold text-lg">Rusty</h4>
+                        </div>
+                        <div class="bg-zinc-950 rounded-xl p-4 relative">
+                            <div class="absolute -left-2 top-4 w-4 h-4 bg-zinc-950 rotate-45"></div>
+                            <p class="text-zinc-300 italic text-sm">"The top batter was striking 'em sweeter than a camp oven roast today! I’d give you the full match run-down, but I'm pretty sure I've got a busted radiator... Time to hit the road! Let's get out there!"</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 hover:border-[#00bc7d]/50 transition-colors">
+                        <div class="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-xl">🌭</div>
+                            <h4 class="text-white font-bold text-lg">Gaz</h4>
+                        </div>
+                        <div class="bg-zinc-950 rounded-xl p-4 relative">
+                            <div class="absolute -left-2 top-4 w-4 h-4 bg-zinc-950 rotate-45"></div>
+                            <p class="text-zinc-300 italic text-sm">"Back in my day we didn't have these fancy stats, but I'll admit the boys played alright. Best on ground fired up. Now, if someone could fetch me a snag from the sausage sizzle... me hammies are absolutely gone."</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 hover:border-[#00bc7d]/50 transition-colors">
+                        <div class="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-xl">🍷</div>
+                            <h4 class="text-white font-bold text-lg">Shazza</h4>
+                        </div>
+                        <div class="bg-zinc-950 rounded-xl p-4 relative">
+                            <div class="absolute -left-2 top-4 w-4 h-4 bg-zinc-950 rotate-45"></div>
+                            <p class="text-zinc-300 italic text-sm">"Well, wasn't that a noice, different, and unusual game? The boys looked very effluent out there in the new activewear today. I'm parched, time to crack open the plonk with a nice glass of Cardonnay! Look at moy!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>
