@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDCC × FEES PLEASE — Sponsorship &amp; Technology Proposal</title>
+    <meta name="description" content="Sponsorship and technology proposal for the Ferny Districts Cricket Club Committee.">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            /* Ferny Districts CC Colors */
+            --fdcc-green: #0a5c36;
+            --fdcc-green-light: #107c4b;
+            --fdcc-gold: #f2b705;
+            --fdcc-gold-dark: #d49a00;
+            --fdcc-red: #9e1b1b;
+            --bg: #0b1a13; /* Deep dark green tint */
+            --surface: #12261c;
+            --surface-card: #183326;
+            --border: rgba(242, 183, 5, 0.15); /* Gold tinted border */
+            --text: #f4fbf7;
+            --muted: #a3c2b2;
+            --muted-dark: #3a5c4b;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fff 30%, var(--fdcc-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-green {
+            background: linear-gradient(135deg, #a3f7bf, #00bc7d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── Slide System ── */
+        .slide-container {
+            display: flex;
+            width: 800vw; /* 8 slides */
+            height: 100vh;
+            transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 6rem;
+            position: relative;
+            box-sizing: border-box;
+            background: radial-gradient(circle at 50% 50%, rgba(18, 38, 28, 0.4) 0%, rgba(11, 26, 19, 1) 100%);
+        }
+
+        /* Background grass-grid effect */
+        .slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(242, 183, 5, 0.015) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(242, 183, 5, 0.015) 1px, transparent 1px);
+            background-size: 65px 65px;
+            background-position: center;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+        }
+
+        .slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Glassmorphism elements ── */
+        .glass-panel {
+            background: rgba(18, 38, 28, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+        }
+
+        /* ── Controls & Indicators ── */
+        .controls-bar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(11, 26, 19, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .nav-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .nav-btn:hover {
+            background: var(--fdcc-gold);
+            border-color: var(--fdcc-gold);
+            color: #000;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(242, 183, 5, 0.4);
+        }
+
+        .slide-indicator {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--muted-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .indicator-dot.active {
+            background: var(--fdcc-gold);
+            width: 24px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(242, 183, 5, 0.5);
+        }
+
+        /* Keyboard Help Tip */
+        .keyboard-tip {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: rgba(18, 38, 28, 0.85);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: fadeOut 6s forwards 3s;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateY(-10px); }
+        }
+
+        /* Phone frame mockup */
+        .phone-frame {
+            width: 220px;
+            background: #000;
+            border-radius: 28px;
+            border: 5px solid #243f30;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            aspect-ratio: 9 / 19;
+            flex-shrink: 0;
+        }
+        .phone-notch {
+            width: 70px;
+            height: 6px;
+            background: #243f30;
+            border-radius: 0 0 6px 6px;
+            margin: 0 auto;
+        }
+        .phone-content {
+            flex: 1;
+            padding: 0.5rem;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        /* Flow loops */
+        .flow-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .flow-card:hover {
+            border-color: var(--fdcc-gold);
+            background: rgba(242, 183, 5, 0.03);
+        }
+        
+        /* Highlight badge */
+        .badge-gold {
+            background: rgba(242, 183, 5, 0.15);
+            border: 1px solid rgba(242, 183, 5, 0.3);
+            color: var(--fdcc-gold);
+        }
+
+        .badge-green {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Keyboard Help Navigation -->
+    <div class="keyboard-tip">
+        <span>Use</span>
+        <kbd class="px-2 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-xs">←</kbd>
+        <kbd class="px-2 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-xs">→</kbd>
+        <span>or</span>
+        <kbd class="px-3 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-xs">Space</kbd>
+        <span>to navigate</span>
+    </div>
+
+    <!-- Presentation Slide Track -->
+    <div class="slide-container" id="slide-track">
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 1: Title / Hook
+        ────────────────────────────────────────── -->
+        <div class="slide active" id="slide-1">
+            <!-- Glowing gradient background orb -->
+            <div class="absolute w-[45vw] h-[45vh] top-1/4 left-1/4 rounded-full bg-[rgba(242,183,5,0.06)] filter blur-[120px] pointer-events-none z-0"></div>
+            
+            <div class="slide-content text-center">
+                <div class="inline-block px-4 py-1.5 mb-6 badge-gold rounded-full text-xs font-bold tracking-widest uppercase">
+                    FDCC Partnership &amp; Sponsorship Proposal
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tight leading-none">
+                    FEES PLEASE <span class="text-gradient-gold">× FDCC</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-light text-zinc-300 max-w-3xl mx-auto mb-10 leading-relaxed font-display">
+                    Sponsoring Ferny Districts Cricket Club &amp; Automating Senior Team Fee Collection.
+                </p>
+                <div class="h-1.5 w-24 bg-[#f2b705] mx-auto rounded-full mb-10"></div>
+                <p class="text-zinc-500 text-xs tracking-widest uppercase">A win-win proposal for FDCC player retention &amp; treasury operations</p>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 2: The Sponsorship Offer
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-xs font-bold text-[#f2b705] uppercase tracking-widest mb-2">Proposal Part 1</div>
+                        <h2 class="text-4xl font-extrabold text-white mb-6 leading-tight">Minor Sponsorship</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            FEES PLEASE proposes to join Ferny Districts Cricket Club as a **Minor Sponsor** for the upcoming 2-year cycle, aligning directly with the club's growth and senior rise.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="glass-panel p-5 flex gap-4 items-start">
+                                <span class="text-[#f2b705] text-2xl mt-1"><i class="fa-solid fa-shirt"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Shoulder Logo Branding</h4>
+                                    <p class="text-xs text-zinc-400">FEES PLEASE branding placed on the shoulder of the senior Ferny Cricket Shirt.</p>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-5 flex gap-4 items-start border-emerald-950 bg-emerald-950/5">
+                                <span class="text-emerald-400 text-2xl mt-1"><i class="fa-solid fa-laptop-code"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Bonus: Free Club-wide Tech Package</h4>
+                                    <p class="text-xs text-zinc-400">Complimentary deployment of FEES PLEASE Pro to the entire senior club, giving every team manager, treasurer, and organizer a premium tool for free.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sponsorship cost breakdown visual -->
+                    <div class="glass-panel p-8 flex flex-col justify-between h-[380px]">
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider text-center border-b border-zinc-800 pb-3">2-Year Cycle Financial Commitment</h3>
+                        <div class="flex-grow flex flex-col justify-center items-center gap-2">
+                            <div class="text-xs text-[#f2b705] uppercase font-bold tracking-widest">Minor Sponsor Package</div>
+                            <div class="text-6xl font-black text-white">$3,000</div>
+                            <div class="text-xs text-zinc-500">Billed as $1,000 p.a. over the sponsorship cycle</div>
+                        </div>
+                        <div class="p-4 bg-emerald-950/20 border border-emerald-900/30 rounded-xl text-center">
+                            <div class="text-[10px] text-emerald-400 uppercase font-bold tracking-widest mb-1">Club Motto Alignment</div>
+                            <p class="text-[11px] text-zinc-300 italic">"100% of your sponsorship will go towards cheaper registration fees for our members."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 3: The Problem at FDCC
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-xs font-bold text-red-500 uppercase tracking-widest mb-2">The Challenge</div>
+                        <h2 class="text-4xl font-extrabold text-white mb-6 leading-tight">The Senior Admin Headache</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            Amateur senior teams run on volunteer hours. Chasing fees, tracking cash, and aligning bank details causes massive friction between players, team organizers, and club committees.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <span class="text-red-400 text-xl mt-1"><i class="fa-solid fa-hourglass-half"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Treasurer Reconciliations</h4>
+                                    <p class="text-xs text-zinc-400">The volunteer treasurer spends hours sorting bank statements matching deposits labeled "Davo cricket fees" with actual player records.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-red-400 text-xl mt-1"><i class="fa-solid fa-wallet"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Organizers Fronting Cash</h4>
+                                    <p class="text-xs text-zinc-400">Match day umpires need cash. Organizers front it out of their own wallet, then spend weeks chasing players to break even.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-red-400 text-xl mt-1"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Bad Debt Drag-out</h4>
+                                    <p class="text-xs text-zinc-400">Fee collection drags out into January/February. Some players drop out without settling their season dues.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual representative of the spreadsheet headache -->
+                    <div class="glass-panel p-6 flex flex-col justify-between h-[380px] font-mono text-xs">
+                        <div class="flex justify-between border-b border-zinc-800 pb-2">
+                            <span class="text-zinc-500">FDCC Senior Excel Ledger</span>
+                            <span class="text-red-500 font-bold">Reconcile Pending</span>
+                        </div>
+                        <div class="space-y-2 flex-grow mt-4">
+                            <div class="bg-zinc-900 p-2 rounded flex justify-between">
+                                <span>1st XI Match Fees</span>
+                                <span class="text-yellow-500">Short $45 (Cash Umpire float)</span>
+                            </div>
+                            <div class="bg-zinc-900 p-2 rounded flex justify-between">
+                                <span>Bank Dep: "Thommo"</span>
+                                <span class="text-red-400">Which Thommo? (3 in club)</span>
+                            </div>
+                            <div class="bg-zinc-900 p-2 rounded flex justify-between">
+                                <span>2nd XI Player Dues</span>
+                                <span class="text-red-400">5 players unpaid since Round 2</span>
+                            </div>
+                            <div class="bg-zinc-900 p-2 rounded flex justify-between">
+                                <span>Bank Dep: "Crkt Dues"</span>
+                                <span class="text-red-400">No name attached, $150</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-red-950/20 border border-red-900/30 rounded text-center text-[10px] text-red-400 font-sans">
+                            Result: Volunteer fatigue, lost club income, and awkward money chases.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 4: The Technology Solution
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="text-xs font-bold text-[#f2b705] uppercase tracking-widest mb-2">Proposal Part 2</div>
+                        <h2 class="text-4xl font-extrabold text-white mb-6 leading-tight">Enter FEES PLEASE</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            FEES PLEASE automates the collection workflow. We connect directly to the club's bank account, streamline team records, and let players scan-to-pay via mobile browser.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="glass-panel p-5">
+                                <div class="text-[#f2b705] text-2xl mb-3"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">No Player Downloads</h3>
+                                <p class="text-xs text-zinc-400">Players receive a WhatsApp/SMS link. In 15 seconds, they mark availability and pay. No accounts or logins required.</p>
+                            </div>
+                            <div class="glass-panel p-5">
+                                <div class="text-[#f2b705] text-2xl mb-3"><i class="fa-solid fa-credit-card"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">Apple Pay &amp; Google Pay</h3>
+                                <p class="text-xs text-zinc-400">Integrates with Square. Card payments settle directly to the FDCC bank account within 1-2 days.</p>
+                            </div>
+                            <div class="glass-panel p-5">
+                                <div class="text-[#f2b705] text-2xl mb-3"><i class="fa-solid fa-bell"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">Availability Invites</h3>
+                                <p class="text-xs text-zinc-400">Organizers don't chase players. Send availability invites &amp; selected lineup prepay links instantly.</p>
+                            </div>
+                            <div class="glass-panel p-5">
+                                <div class="text-[#f2b705] text-2xl mb-3"><i class="fa-solid fa-shield-halved"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">0% Platform Clip</h3>
+                                <p class="text-xs text-zinc-400">With the Club Pack, the club pays 0% Fees Please platform fees. Only standard Square transaction fees apply.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone mock representing Player Portal for FDCC -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="phone-frame ring-4 ring-[#f2b705]/20">
+                            <div class="phone-notch"></div>
+                            <!-- Mock portal with FDCC header -->
+                            <div class="phone-content bg-white text-zinc-800" style="font-size:7px;">
+                                <!-- Header -->
+                                <div style="background:#0a5c36; padding:0.75rem; text-align:center;">
+                                    <div style="font-size:11px; font-weight:900; color:#fff; letter-spacing:0.04em;">Ferny Districts CC</div>
+                                    <div style="font-size:7px; color:#f2b705; text-transform:uppercase; letter-spacing:0.1em; margin-top:2px;">Senior Cricket Portal</div>
+                                </div>
+                                <!-- Match -->
+                                <div style="background:#f4f4f5; border-bottom:1px solid #e4e4e7; padding:0.625rem; text-align:center;">
+                                    <div style="font-size:7px; color:#71717a; text-transform:uppercase; letter-spacing:0.08em;">Round 3 · Sat 21 Jun</div>
+                                    <div style="font-size:10px; font-weight:800; color:#18181b;">1st XI vs Northside Warriors</div>
+                                </div>
+                                <!-- Avail -->
+                                <div style="padding:0.75rem 0.75rem 0.5rem;">
+                                    <div style="font-size:7px; font-weight:700; text-transform:uppercase; color:#71717a; margin-bottom:0.3rem;">Mark Availability</div>
+                                    <div style="display:flex; gap:0.25rem;">
+                                        <button style="flex:1; padding:0.3rem; border-radius:5px; font-size:8px; font-weight:800; border:1px solid #10b981; background:rgba(16,185,129,0.1); color:#10b981;">⚡ IN</button>
+                                        <button style="flex:1; padding:0.3rem; border-radius:5px; font-size:8px; border:1px solid #e4e4e7; background:#f9f9f9; color:#71717a;">MAYBE</button>
+                                        <button style="flex:1; padding:0.3rem; border-radius:5px; font-size:8px; border:1px solid #e4e4e7; background:#f9f9f9; color:#71717a;">OUT</button>
+                                    </div>
+                                </div>
+                                <!-- Payment -->
+                                <div style="margin:0 0.75rem; background:#fdfbf7; border:1px solid #f2b705; border-radius:8px; padding:0.6rem; text-align:center;">
+                                    <div style="font-size:6px; color:#71717a; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:2px;">Round 3 Match Fee</div>
+                                    <div style="font-size:14px; font-weight:900; color:#18181b; margin-bottom:0.4rem;">$15.00</div>
+                                    <button style="width:100%; padding:0.35rem; background:#000; border:none; border-radius:4px; font-size:8px; font-weight:700; color:#fff; cursor:pointer;">Pay with Apple Pay</button>
+                                </div>
+                                <!-- Sponsor slot showing Hilti or local -->
+                                <div style="margin:0.5rem 0.75rem; background:#12261c; border-radius:6px; padding:0.4rem; text-align:center; color:#fff;">
+                                    <div style="font-size:5px; color:#f2b705; text-transform:uppercase; font-weight:700;">★ Club Sponsor</div>
+                                    <div style="font-size:8px; font-weight:900; margin-top:2px;">HILTI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 5: The Treasurer Dashboard
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-xs font-bold text-[#f2b705] uppercase tracking-widest mb-2">Treasurer Benefits</div>
+                        <h2 class="text-4xl font-extrabold text-white mb-6 leading-tight">Full Financial Oversight</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            Instead of relying on organizers sending updates or scanning bank entries, the FDCC treasurer gets a live, centralized ledger showing the financial position of the entire senior club.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="glass-panel p-5 flex gap-4 items-start">
+                                <span class="text-[#f2b705] text-2xl mt-1"><i class="fa-solid fa-list-check"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Grade "League Table"</h4>
+                                    <p class="text-xs text-zinc-400">See which teams are collecting fees efficiently and which organizers need assistance.</p>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-5 flex gap-4 items-start">
+                                <span class="text-[#f2b705] text-2xl mt-1"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">One-Click CSV Ledger Export</h4>
+                                    <p class="text-xs text-zinc-400">Export clean CSV ledgers or sync with the centralized Treasurer Dashboard to eliminate double data entry.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual of Treasurer Dashboard -->
+                    <div class="glass-panel p-6 flex flex-col justify-between h-[380px]">
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider text-center border-b border-zinc-800 pb-3">Club Treasurer Central View</h3>
+                        <div class="space-y-3 flex-grow mt-4 text-xs font-mono">
+                            <div class="bg-zinc-900/60 p-2.5 rounded flex justify-between items-center">
+                                <span>🏏 1st XI (Davo)</span>
+                                <span class="badge-green font-bold text-[9px] px-2 py-0.5 rounded">95% collected ($270)</span>
+                            </div>
+                            <div class="bg-zinc-900/60 p-2.5 rounded flex justify-between items-center">
+                                <span>🏏 2nd XI (Thommo)</span>
+                                <span class="badge-green font-bold text-[9px] px-2 py-0.5 rounded">80% collected ($225)</span>
+                            </div>
+                            <div class="bg-zinc-900/60 p-2.5 rounded flex justify-between items-center">
+                                <span>🏏 3rd XI (Bazza)</span>
+                                <span class="bg-yellow-950/20 border border-yellow-800/30 text-yellow-500 font-bold text-[9px] px-2 py-0.5 rounded">60% collected ($165)</span>
+                            </div>
+                            <div class="bg-zinc-900/60 p-2.5 rounded flex justify-between items-center">
+                                <span>🏏 Under 18s (Johnno)</span>
+                                <span class="bg-red-950/20 border border-red-900/30 text-red-500 font-bold text-[9px] px-2 py-0.5 rounded">45% collected ($90)</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-xs text-zinc-500 pt-2 border-t border-zinc-800 font-sans">
+                            <span>Total Senior Collected: $750</span>
+                            <span class="text-emerald-400"><i class="fa-solid fa-file-csv mr-1"></i> Export CSV Ledger</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 6: Amplifying FDCC Sponsors
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-xs font-bold text-[#f2b705] uppercase tracking-widest mb-2">Sponsorship ROI</div>
+                        <h2 class="text-4xl font-extrabold text-white mb-6 leading-tight">Digital Real Estate for FDCC Sponsors</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            Traditional sponsorship relies on static signs at the oval or shirt logos. FEES PLEASE adds highly interactive digital real estate where players look weekly.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <span class="bg-emerald-950 text-emerald-400 p-2.5 rounded-lg text-lg"><i class="fa-solid fa-eye"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">High-Frequency Impressions</h4>
+                                    <p class="text-xs text-zinc-400">Every player checks the portal weekly to mark availability. Major sponsors (Hilti, Goodline, Caterpillar) get prominent banner space directly on their screens.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="bg-emerald-950 text-emerald-400 p-2.5 rounded-lg text-lg"><i class="fa-solid fa-share-nodes"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Interactive Calls to Action</h4>
+                                    <p class="text-xs text-zinc-400">Clickable links allow players to go directly to sponsor sites, order catering, or support local businesses directly from the app.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual representing sponsor layout -->
+                    <div class="glass-panel p-6 flex flex-col justify-between h-[380px]">
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider text-center border-b border-zinc-800 pb-3">Digital Sponsor Placement</h3>
+                        <div class="space-y-4 flex-grow flex flex-col justify-center">
+                            
+                            <!-- Hilti placeholder -->
+                            <div class="p-4 bg-white rounded-xl border border-zinc-200 text-center flex flex-col items-center justify-center">
+                                <div class="text-[7px] text-zinc-400 uppercase font-black tracking-widest">FDCC FRONT SHIRT SPONSOR</div>
+                                <div class="text-xl font-black text-red-600 tracking-tighter mt-1">HILTI</div>
+                                <div class="text-[8px] text-[#0a5c36] font-bold mt-1">Sponsoring Round 1 Match Fees</div>
+                            </div>
+
+                            <!-- Goodline placeholder -->
+                            <div class="p-4 bg-white rounded-xl border border-zinc-200 text-center flex flex-col items-center justify-center">
+                                <div class="text-[7px] text-zinc-400 uppercase font-black tracking-widest">FDCC SHOULDER SPONSOR</div>
+                                <div class="text-lg font-black text-blue-900 tracking-tighter mt-1 flex items-center gap-1.5">
+                                    <span class="text-lg">🐧</span> GOODLINE
+                                </div>
+                                <div class="text-[8px] text-zinc-500 mt-1">Click to visit goodline.com.au</div>
+                            </div>
+
+                        </div>
+                        <p class="text-[10px] text-zinc-500 text-center italic">Provides immediate digital exposure to the entire senior playing roster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 7: Competitive Matrix
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <div class="text-center mb-8">
+                    <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-1">Competition</div>
+                    <h2 class="text-4xl font-extrabold text-white leading-tight">Why We Fit FDCC Better</h2>
+                </div>
+                
+                <div class="glass-panel overflow-hidden">
+                    <table class="w-full competitor-table text-left text-zinc-300">
+                        <thead class="bg-zinc-900/60">
+                            <tr>
+                                <th style="width: 34%;" class="text-zinc-400 uppercase text-xs tracking-wider">Metrics</th>
+                                <th style="width: 22%;" class="highlight text-emerald-400 uppercase text-xs tracking-wider font-extrabold">FEES PLEASE</th>
+                                <th style="width: 22%;" class="text-zinc-500 uppercase text-xs tracking-wider">Teampay</th>
+                                <th style="width: 22%;" class="text-zinc-500 uppercase text-xs tracking-wider">Spond / PlayHQ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold text-white">Target Group</td>
+                                <td class="text-emerald-400 font-bold">Social &amp; Senior Teams</td>
+                                <td>League Management</td>
+                                <td>Junior Club Admin</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Direct Settlement to FDCC</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Within 1-2 days)</td>
+                                <td>✅ Yes</td>
+                                <td>⚠️ Delayed cycles</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Player App Downloads</td>
+                                <td class="text-emerald-400 font-bold">❌ No (Portal link)</td>
+                                <td class="text-red-400">✅ Required</td>
+                                <td class="text-red-400">✅ Required</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Cash Ledger Support</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Manual entries)</td>
+                                <td class="text-red-400">❌ Forces card checkout</td>
+                                <td>⚠️ Limited</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Co-branding &amp; Sponsors</td>
+                                <td class="text-emerald-400 font-bold">✅ Custom logos supported</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Smart Fixture Import</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Photo/Screenshot/Spreadsheet)</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Role separation (Account vs. Team Admin)</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Billing protection)</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p class="text-xs text-zinc-500 text-center mt-6">
+                    Unlike top-down league tools, FEES PLEASE is designed for the team organizer's match-day flow, maintaining 100% support for cash umpires.
+                </p>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 8: The Next Steps / Ask
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content text-center">
+                <div class="inline-block px-4 py-1.5 mb-6 badge-gold rounded-full text-xs font-bold tracking-widest uppercase">
+                    Proposed Partnership Summary
+                </div>
+                <h2 class="text-5xl font-extrabold text-white mb-10 leading-tight">Let's Get Started</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+                    <div class="glass-panel p-6 text-left border-t-4 border-[#f2b705]">
+                        <div class="text-xs font-bold font-mono text-[#f2b705] mb-2">STEP 1</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Shoulder Sponsor Match</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Confirm $1,000 p.a. Shoulder Sponsorship on senior shirts.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-6 text-left border-t-4 border-emerald-500">
+                        <div class="text-xs font-bold font-mono text-emerald-400 mb-2">STEP 2</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Pro Setup (Free)</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            FEES PLEASE configures the FDCC club account, adding senior rosters and links.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-6 text-left border-t-4 border-zinc-700">
+                        <div class="text-xs font-bold font-mono text-zinc-500 mb-2">STEP 3</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Pilot Launch</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Run a 2-week trial on selected senior grades before rolling out club-wide.
+                        </p>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white mb-4">A modern solution for a growing club.</h3>
+                <p class="text-zinc-400 max-w-lg mx-auto text-sm leading-relaxed mb-6">
+                    Simplifying volunteer admin, boosting cash collection, and providing high-visibility placement for all FDCC sponsors.
+                </p>
+                <div class="text-[#f2b705] text-xs font-mono uppercase tracking-wider">Proposal Presented by Ashley Graeme Pitt</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Presentation Controls -->
+    <div class="controls-bar">
+        <button class="nav-btn" id="prev-btn" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="slide-indicator" id="indicators">
+            <!-- Programmatically populated dots -->
+        </div>
+        <button class="nav-btn" id="next-btn" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></button>
+        <span class="text-xs font-mono text-zinc-500 min-w-[36px]" id="slide-num">1 / 8</span>
+    </div>
+
+    <!-- Presentation JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('slide-track');
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideNum = document.getElementById('slide-num');
+            const indicatorsContainer = document.getElementById('indicators');
+
+            // Generate dots
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = `indicator-dot ${i === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.indicator-dot');
+
+            function updateUI() {
+                // Update slide position
+                track.style.transform = `translateX(-${currentSlide * 100}vw)`;
+                
+                // Update active states
+                slides.forEach((slide, i) => {
+                    if (i === currentSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+
+                // Update counter
+                slideNum.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            }
+
+            function goToSlide(index) {
+                currentSlide = (index + totalSlides) % totalSlides;
+                updateUI();
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            // Button listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Keyboard listeners
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'Space') {
+                    e.preventDefault();
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+                    e.preventDefault();
+                    prevSlide();
+                }
+            });
+
+            // Touch Swipe gestures (Mobile)
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchStartX - touchEndX > swipeThreshold) {
+                    nextSlide(); // Swipe left -> Next slide
+                } else if (touchEndX - touchStartX > swipeThreshold) {
+                    prevSlide(); // Swipe right -> Previous slide
+                }
+            }
+
+            // Init active states
+            updateUI();
+        });
+    </script>
+</body>
+</html>

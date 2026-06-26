@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Fees Please — Free, Plus ($6.99/mo), and Pro</title>
+    <meta name="description" content="Simple, transparent pricing for Fees Please. Free for cash tracking, Plus at $6.99/month for availability invites and flat-fee transaction clips, or Pro for advanced team tools.">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main style="padding-top: 6rem;">
+
+    <!-- Hero -->
+    <section style="padding: 5rem 0 3rem; text-align: center; position: relative; overflow: hidden;">
+        <div style="position:absolute; inset:0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,188,125,0.1) 0%, transparent 70%); pointer-events:none;"></div>
+        <div class="container" style="position:relative;">
+            <div class="section-label">Pricing</div>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight:900; color:#fff; margin-bottom:1rem; line-height:1.1;">
+                Simple pricing.<br>No surprises.
+            </h1>
+            <p style="color:var(--muted); max-width:520px; margin: 0 auto 2.5rem; font-size:1.1rem; line-height:1.7;">
+                Free for cash tracking, always. Upgrade when availability invites and flat platform clips make sense for your team.
+            </p>
+
+            <!-- Billing Toggle -->
+            <div style="display:flex; justify-content:center; align-items:center; gap:0.75rem; font-size:0.875rem; color:var(--muted);">
+                Monthly
+                <label style="position:relative; display:inline-block; width:48px; height:26px; cursor:pointer;">
+                    <input type="checkbox" id="billing-toggle" style="opacity:0; width:0; height:0;">
+                    <span style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background:var(--surface2); border-radius:13px; border:1px solid var(--border); transition:0.3s;"
+                          onclick="this.previousElementSibling.click()"></span>
+                    <span id="toggle-knob" style="position:absolute; height:18px; width:18px; left:3px; bottom:3px; background:var(--green); border-radius:50%; transition:0.3s;"></span>
+                </label>
+                Annual <span style="color:var(--green); font-weight:700; font-size:0.75rem; background:rgba(0,188,125,0.1); padding:0.2rem 0.5rem; border-radius:9999px; margin-left:0.25rem;">Save 17%</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section style="padding: 2rem 0 5rem;">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- FREE -->
+                <div class="pricing-card animate-on-scroll" id="plan-free">
+                    <div class="pricing-tier">For Casual Teams</div>
+                    <div class="pricing-name">Free</div>
+                    <div class="pricing-desc">Everything you need to start collecting cash and tracking who's in on Saturday.</div>
+                    <div class="pricing-price">
+                        <span class="amount">$0</span>
+                        <span class="period"> / forever</span>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span><span><strong>1 Team Limit</strong></span></li>
+                        <li><span class="check">✓</span><span>Auto-load fixtures (League URL)</span></li>
+                        <li><span class="check">✓</span><span>Player availability portal (no app needed)</span></li>
+                        <li><span class="check">✓</span><span>Manual cash tracking — free forever</span></li>
+                        <li><span class="check">✓</span><span>Square card payments (2.5% platform clip)</span></li>
+                        <li><span class="check">✓</span><span>Basic fee ledger</span></li>
+                        <li><span class="check">✓</span><span>Platform sponsor branding</span></li>
+                        <li><span class="cross">✗</span><span style="color:var(--muted2);">Availability email invites</span></li>
+                        <li><span class="cross">✗</span><span style="color:var(--muted2);">AI match summaries</span></li>
+                        <li><span class="cross">✗</span><span style="color:var(--muted2);">Custom team sponsorship</span></li>
+                        <li><span class="cross">✗</span><span style="color:var(--muted2);">Season analytics</span></li>
+                    </ul>
+                    <a href="https://app.feesplease.app/auth/register" class="btn-secondary" style="width:100%; justify-content:center;" id="pricing-free-cta" data-ph-event="pricing_cta_click" data-ph-label="Free">
+                        Get Started Free
+                    </a>
+                </div>
+
+                <!-- PLUS -->
+                <div class="pricing-card featured animate-on-scroll" id="plan-plus">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-tier">For Organized Managers</div>
+                    <div class="pricing-name">Plus</div>
+                    <div class="pricing-desc">Keep more of your digital payments, send availability invites, and let a pub sponsor pay your subscription.</div>
+                    <div class="pricing-price">
+                        <span class="amount" data-monthly="$6.99" data-annual="$5.75">$6.99</span>
+                        <span class="period"> / month per team</span>
+                        <span class="annual-note" style="display:none; color:var(--green); font-size:0.8rem; margin-top:0.35rem;">Billed as <strong>$69/year</strong> — save $15</span>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span><span><strong>Everything in Free</strong></span></li>
+                        <li><span class="check">✓</span><span><strong>Square fee + 30¢ flat</strong> platform clip</span></li>
+                        <li><span class="check">✓</span><span>Availability &amp; selected lineup email invites</span></li>
+                        <li><span class="check">✓</span><span>AI match summaries (Dave, Rusty, Gaz &amp; Shazza)</span></li>
+                        <li><span class="check">✓</span><span>Team Wallet (Kitty &amp; expense tracking)</span></li>
+                        <li><span class="check">✓</span><span>Custom team sponsor logo on player portal</span></li>
+                        <li><span class="check">✓</span><span>Season financial analytics & breakdown</span></li>
+                        <li><span class="check">✓</span><span>Referral credits program (3 months free per referral)</span></li>
+                        <li><span class="check">✓</span><span>Unlimited teams (billed per team)</span></li>
+                    </ul>
+                    <a href="https://app.feesplease.app/auth/register?plan=plus" class="btn-primary" style="width:100%; justify-content:center;" id="pricing-plus-cta" data-ph-event="pricing_cta_click" data-ph-label="Plus">
+                        Start Plus →
+                    </a>
+                    <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">14-day free trial · Cancel anytime</p>
+                </div>
+
+                <!-- PRO -->
+                <div class="pricing-card animate-on-scroll" id="plan-pro">
+                    <div class="pricing-tier">For Power-User Organizers</div>
+                    <div class="pricing-name">Pro</div>
+                    <div class="pricing-desc">Flat rate covering up to 5 teams with our lowest transaction fees and SMS capabilities.</div>
+                    <div class="pricing-price">
+                        <span class="amount" data-monthly="$12.99" data-annual="$10.75">$12.99</span>
+                        <span class="period"> / month flat (up to 5 teams)</span>
+                        <span class="annual-note" style="display:none; color:var(--green); font-size:0.8rem; margin-top:0.35rem;">Billed as <strong>$129/year flat</strong> — save $27</span>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span><span><strong>Up to 5 teams included</strong> (flat rate)</span></li>
+                        <li><span class="check">✓</span><span><strong>Square fee + 15¢ flat</strong> platform clip</span></li>
+                        <li><span class="check">✓</span><span><strong>SMS Invites &amp; Alerts</strong> (100 SMS/month included)</span></li>
+                        <li><span class="check">✓</span><span>Includes all <strong>Plus</strong> features</span></li>
+                        <li><span class="check">✓</span><span>Advanced financial reporting & CSV export</span></li>
+                        <li><span class="check">✓</span><span>Dedicated email & chat support</span></li>
+                    </ul>
+                    <a href="https://app.feesplease.app/auth/register?plan=pro" class="btn-primary" style="width:100%; justify-content:center; background: linear-gradient(135deg, #009767, #00bc7d);" id="pricing-pro-cta" data-ph-event="pricing_cta_click" data-ph-label="Pro">
+                        Start Pro →
+                    </a>
+                    <p style="text-align:center; font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">14-day free trial · Cancel anytime</p>
+                </div>
+            </div>
+
+            <!-- Club Packs Promo -->
+            <div class="glass animate-on-scroll" style="margin-top: 4rem; padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                <div style="max-width: 580px;">
+                    <span style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 9999px; display: inline-block; margin-bottom: 0.75rem; background: rgba(242, 183, 5, 0.15); border: 1px solid rgba(242, 183, 5, 0.3); color: #f2b705;">Club Tiers</span>
+                    <h3 style="font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Need to manage a whole club?</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">Get a <strong>Club Pack</strong> to manage multiple grades under one single invoice. Includes the Central Treasurer Dashboard, direct Team Wallet sync, pooled SMS limits, and <strong>0% Fees Please platform fees</strong>.</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <div style="text-align: center; padding: 1rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 1rem;">
+                        <div style="font-size: 0.7rem; color: var(--muted); text-transform: uppercase;">Up to 5 Teams</div>
+                        <div style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0.25rem 0;">$350<span style="font-size: 0.8rem; font-weight: normal; color: var(--muted);">/yr</span></div>
+                        <div style="font-size: 0.65rem; color: var(--green);">Save $300+ vs Pro</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 1rem;">
+                        <div style="font-size: 0.7rem; color: var(--muted); text-transform: uppercase;">Up to 10 Teams</div>
+                        <div style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0.25rem 0;">$590<span style="font-size: 0.8rem; font-weight: normal; color: var(--muted);">/yr</span></div>
+                        <div style="font-size: 0.65rem; color: var(--green);">Save $700+ vs Pro</div>
+                    </div>
+                    <a href="mailto:hello@feesplease.app?subject=Club%20Pack%20Enquiry" class="btn-primary" style="font-size: 0.875rem; padding: 0.75rem 1.5rem;">Contact Sales</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Feature Comparison -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Full Comparison</div>
+                <h2>Every feature, side by side.</h2>
+            </div>
+            <div style="overflow-x:auto;" class="animate-on-scroll">
+                <table class="comparison-table" style="margin-top:2rem;">
+                    <thead>
+                        <tr>
+                            <th style="width:40%;">Feature</th>
+                            <th style="text-align:center;">Free</th>
+                            <th class="highlight" style="text-align:center;">Plus</th>
+                            <th style="text-align:center;">Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="4" style="padding:0.75rem 1.5rem; background:var(--surface2); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Team Management</td></tr>
+                        <tr>
+                            <td>Teams per subscription</td>
+                            <td style="text-align:center; color:#fff;">1 Team Limit</td>
+                            <td class="highlight" style="text-align:center;">Unlimited (billed per team)</td>
+                            <td style="text-align:center; color:#fff;">Up to 5 teams included</td>
+                        </tr>
+                        <tr>
+                            <td>Auto-load fixtures (League URL)</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Smart fixture upload (Screenshot/Spreadsheet)</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Player roster management</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Role separation (Account vs. Team Admin)</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓ (Billing Protection)</td>
+                            <td style="text-align:center; color:var(--green);">✓ (Billing Protection)</td>
+                        </tr>
+                        <tr>
+                            <td>Player availability portal</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Player app download required</td>
+                            <td style="text-align:center; color:var(--green);">Never</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">Never</td>
+                            <td style="text-align:center; color:var(--green);">Never</td>
+                        </tr>
+
+                        <tr><td colspan="4" style="padding:0.75rem 1.5rem; background:var(--surface2); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Payments & Fees</td></tr>
+                        <tr>
+                            <td>Cash tracking</td>
+                            <td style="text-align:center; color:var(--green);">✓ Free forever</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓ Free forever</td>
+                            <td style="text-align:center; color:var(--green);">✓ Free forever</td>
+                        </tr>
+                        <tr>
+                            <td>Square card payments</td>
+                            <td style="text-align:center; color:#fff;">✓ +2.5% clip</td>
+                            <td class="highlight" style="text-align:center;">✓ +30¢ flat</td>
+                            <td style="text-align:center;">✓ +15¢ flat</td>
+                        </tr>
+                        <tr>
+                            <td>Apple Pay / Google Pay</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Shareable Team Hub links</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+
+                        <tr><td colspan="4" style="padding:0.75rem 1.5rem; background:var(--surface2); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Communications</td></tr>
+                        <tr>
+                            <td>Manual comms (DIY)</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Availability email invites</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Selected lineup invites (with prepay links)</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>SMS invites &amp; alerts</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--green);">✓ (100 SMS/mo)</td>
+                        </tr>
+                        <tr>
+                            <td>Club-wide bulk announcements</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+
+                        <tr><td colspan="4" style="padding:0.75rem 1.5rem; background:var(--surface2); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">AI Features</td></tr>
+
+                        <tr>
+                            <td>AI match summaries (Dave, Rusty, Gaz, Shazza)</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Season wrap-up & award generation</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+
+                        <tr><td colspan="4" style="padding:0.75rem 1.5rem; background:var(--surface2); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Branding & Sponsorship</td></tr>
+                        <tr>
+                            <td>Platform sponsor branding</td>
+                            <td style="text-align:center; color:#fff;">On portal</td>
+                            <td class="highlight" style="text-align:center; color:var(--muted2);">Removed</td>
+                            <td style="text-align:center; color:var(--muted2);">Removed</td>
+                        </tr>
+                        <tr>
+                            <td>Custom team sponsor logo</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Downloadable branded lineup graphics</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Club-wide branding</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+
+                        <tr><td colspan="4" style="padding:0.75rem 1.5rem; background:var(--surface2); font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Analytics & Reporting</td></tr>
+                        <tr>
+                            <td>Basic match ledger</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Season financial analytics</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Club "league table" dashboard</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Team Wallet (Kitty &amp; expense tracking)</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Multi-season historical tracking</td>
+                            <td style="text-align:center; color:var(--muted2);">✗ (Current Only)</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Email Team Summary Reports</td>
+                            <td style="text-align:center; color:var(--muted2);">✗</td>
+                            <td class="highlight" style="text-align:center; color:var(--green);">✓</td>
+                            <td style="text-align:center; color:var(--green);">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding: 6rem 0;" id="faq">
+        <div class="container" style="max-width: 760px;">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">FAQ</div>
+                <h2>Common questions.</h2>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:1rem; margin-top:2.5rem;">
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;" open>
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        Is the Free tier really free forever?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">Yes. Cash tracking will always be free — that's a core promise. The only cost on the Free tier is if you use Square card payments, where we add a 2.5% platform clip on top of Square's standard processing fee.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        Do my players need to download an app?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">Never. Players receive a link (via SMS or email), tap it in their phone browser, and can update availability and pay fees instantly — no app store, no account creation required.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        How does the 2.5% Free tier clip work in practice?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">If a player pays a $15 match fee via Square on the Free tier, they pay $15 + Square's secure online processing fee (2.2% + 30¢) + our 2.5% clip. On the Plus tier, the percentage clip drops to 0% and you only pay a flat 30¢ platform clip per transaction on top of Square's fee. Cash and bank transfer tracking is always 100% free with no transaction clips.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        Can I add multiple teams?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">Yes. If you have multiple teams, you can pay per-team on the Plus tier, or upgrade to the Pro tier which covers up to 5 teams under a single flat rate ($12.99/mo or $129/yr). If you manage a larger club (5+ teams), we recommend purchasing a **Club Pack** which bundles your teams under a single annual invoice and unlocks the Central Treasurer Dashboard with 0% platform transaction clips.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        How does the referral program work?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">When you refer another team organizer and they upgrade to a Plus plan, you automatically receive a $15 credit (3 months free) applied to your next billing cycle. Refer 4 teams and you get a full year free. Credits are applied via Stripe and require the referred team to have an active paid plan.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        Do I need a registered business to connect Square?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">No. You do not need an ABN, LLC, or formal business registration to connect with Square. You can connect as an individual, complete simple identity verification, link a personal bank account, and begin accepting secure QR checkout payments in minutes.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        Can multiple coordinators manage the team?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">Yes. On Plus and Pro tiers, you can assign organizers as either Account Admins or Team Admins. Account Admins have full control over the subscription and billing details, while Team Admins can manage Game Day availability, lineup creation, and transaction logs without seeing billing details.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        Is my team's payment data secure?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">Yes. Card payments are processed directly by Square's PCI-compliant infrastructure. Fees Please never stores card numbers. Subscription billing is handled by Stripe. We never have access to your raw payment details.</p>
+                </details>
+
+                <details class="glass-card animate-on-scroll" style="padding:1.5rem; cursor:pointer;">
+                    <summary style="font-weight:700; color:#fff; font-size:0.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        Can I cancel anytime?
+                        <span style="color:var(--green); font-size:1.2rem;">+</span>
+                    </summary>
+                    <p style="color:var(--muted); font-size:0.875rem; line-height:1.7; margin-top:1rem;">Absolutely. Cancel your Plus subscription anytime from your account settings. You'll retain Plus features until the end of your current billing period. Your team data and ledger history is always accessible, even on the Free tier.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band" style="background: var(--bg-dark); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>Start free.<br><span class="text-gradient">Upgrade when it pays for itself.</span></h2>
+                <p>No credit card required. Free forever for cash tracking.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+                    <a href="https://app.feesplease.app/auth/register" class="btn-primary" id="pricing-footer-cta" data-ph-event="pricing_footer_cta_click">
+                        Create Your Team Free →
+                    </a>
+                <a href="https://app.feesplease.app/auth/register?plan=pro" class="btn-secondary" id="pricing-pro-enquiry">
+                    Start Pro Free Trial
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('billing-toggle');
+    const knob = document.getElementById('toggle-knob');
+    if (toggle && knob) {
+        toggle.addEventListener('change', () => {
+            knob.style.left = toggle.checked ? '27px' : '3px';
+        });
+    }
+});
+</script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

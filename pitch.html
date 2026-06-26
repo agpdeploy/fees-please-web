@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEES PLEASE — Investor Pitch Deck</title>
+    <meta name="description" content="Interactive investor presentation for FEES PLEASE, the social sports team fee collection engine.">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --green: #00bc7d;
+            --green-dark: #009767;
+            --green-glow: rgba(0, 188, 125, 0.15);
+            --bg: #0f0f11;
+            --surface: #18181b;
+            --surface-card: #202024;
+            --border: rgba(255, 255, 255, 0.06);
+            --text: #f4f4f5;
+            --muted: #a1a1aa;
+            --muted-dark: #52525b;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00d294, #00bc7d, #009767);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── Slide System ── */
+        .slide-container {
+            display: flex;
+            width: 1000vw; /* 10 slides */
+            height: 100vh;
+            transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 6rem;
+            position: relative;
+            box-sizing: border-box;
+            background: radial-gradient(circle at 50% 50%, rgba(24, 24, 27, 0.3) 0%, rgba(15, 15, 17, 1) 100%);
+        }
+
+        /* Background grid effect */
+        .slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 60px 60px;
+            background-position: center;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .slide-content {
+            width: 100%;
+            max-width: 1200px;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+        }
+
+        .slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Glassmorphism elements ── */
+        .glass-panel {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+        }
+
+        /* ── Controls & Indicators ── */
+        .controls-bar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(15, 15, 17, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .nav-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .nav-btn:hover {
+            background: var(--green);
+            border-color: var(--green);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 188, 125, 0.4);
+        }
+
+        .slide-indicator {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--muted-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .indicator-dot.active {
+            background: var(--green);
+            width: 24px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 188, 125, 0.5);
+        }
+
+        /* Keyboard Help Tip */
+        .keyboard-tip {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: rgba(24, 24, 27, 0.8);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: fadeOut 6s forwards 3s;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateY(-10px); }
+        }
+
+        /* ── Special Visual Elements ── */
+        .competitor-table th {
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border);
+            font-weight: 700;
+            text-align: left;
+        }
+        .competitor-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .competitor-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Mock conversation bubble */
+        .sms-bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            max-width: 85%;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+        .sms-left {
+            background: #27272a;
+            color: #fff;
+            align-self: flex-start;
+            border-bottom-left-radius: 0.25rem;
+        }
+        .sms-right {
+            background: #0084ff;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 0.25rem;
+        }
+        .sms-app {
+            background: rgba(16, 185, 129, 0.12);
+            color: #10b981;
+            border: 1px dashed rgba(16, 185, 129, 0.3);
+            align-self: center;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        /* Phone frame mockup */
+        .phone-frame {
+            width: 200px;
+            background: #000;
+            border-radius: 28px;
+            border: 5px solid #27272a;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            aspect-ratio: 9 / 19;
+            flex-shrink: 0;
+        }
+        .phone-notch {
+            width: 60px;
+            height: 6px;
+            background: #27272a;
+            border-radius: 0 0 6px 6px;
+            margin: 0 auto;
+        }
+        .phone-content {
+            flex: 1;
+            padding: 0.5rem;
+            overflow-y: auto;
+            scrollbar-width: none;
+            font-size: 8px;
+        }
+
+        /* Flow loops */
+        .flow-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .flow-card:hover {
+            border-color: var(--green);
+            background: rgba(0, 188, 125, 0.03);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Keyboard Help Navigation -->
+    <div class="keyboard-tip">
+        <span>Use</span>
+        <kbd class="px-2 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-xs">←</kbd>
+        <kbd class="px-2 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-xs">→</kbd>
+        <span>or</span>
+        <kbd class="px-3 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-xs">Space</kbd>
+        <span>to navigate</span>
+    </div>
+
+    <!-- Presentation Slide Track -->
+    <div class="slide-container" id="slide-track">
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 1: Title / Hook
+        ────────────────────────────────────────── -->
+        <div class="slide active" id="slide-1">
+            <!-- Glowing gradient background orb -->
+            <div class="absolute w-[45vw] h-[45vh] top-1/4 left-1/4 rounded-full bg-[rgba(0,188,125,0.08)] filter blur-[100px] pointer-events-none z-0"></div>
+            
+            <div class="slide-content text-center">
+                <div class="inline-block px-4 py-1.5 mb-6 bg-[rgba(0,188,125,0.1)] border border-[rgba(0,188,125,0.2)] rounded-full text-sm font-semibold tracking-wider text-emerald-400 uppercase">
+                    Seed Pitch presentation
+                </div>
+                <h1 class="text-7xl md:text-8xl font-black text-white mb-6 uppercase tracking-wider">
+                    FEES <span class="text-gradient">PLEASE</span>
+                </h1>
+                <p class="text-2xl md:text-3xl font-light text-zinc-300 max-w-3xl mx-auto mb-10 leading-relaxed font-display">
+                    The Game-Day Fee Engine &amp; Availability Portal for Social Sports Teams.
+                </p>
+                <div class="h-1 w-20 bg-emerald-500 mx-auto rounded-full mb-10"></div>
+                <p class="text-zinc-500 text-sm tracking-widest uppercase">Presented by Ashley Graeme Pitt</p>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 2: The Problem
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-2">The Problem</div>
+                        <h2 class="text-5xl font-extrabold text-white mb-8 leading-tight">The Organizer's Trench</h2>
+                        <p class="text-zinc-400 mb-6 leading-relaxed">
+                            Organizing an amateur social sports team is a weekly admin nightmare. The team organizer or manager spends hours in the "trenches" chasing availability and money from friends.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <span class="text-red-400 text-xl mt-1"><i class="fa-solid fa-circle-xmark"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Chasing Cash is Awkward</h4>
+                                    <p class="text-sm text-zinc-400">Nobody wants to constantly nag their mates for $15 on WhatsApp or at the pub.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-red-400 text-xl mt-1"><i class="fa-solid fa-circle-xmark"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Bank Reconciliations Splay</h4>
+                                    <p class="text-sm text-zinc-400">Organizers match direct transfers on bank statements manually against sticky notes.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-red-400 text-xl mt-1"><i class="fa-solid fa-circle-xmark"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">Organizers Front the Debt</h4>
+                                    <p class="text-sm text-zinc-400">Organizers pay registration fees upfront and end up hundreds of dollars out-of-pocket by season-end.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat mock graphic -->
+                    <div class="glass-panel p-6 flex flex-col h-[420px] justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 text-xs font-mono text-zinc-600">SMS Chat Thread &amp; Spreadsheet</div>
+                        <div class="flex flex-col gap-2 overflow-y-auto pr-2">
+                            <div class="sms-bubble sms-left">Who is in for Saturday's game vs Warriors? Pls tell me now so we don't play short.</div>
+                            <div class="sms-bubble sms-right">Sorry Davo, away this weekend. ❌</div>
+                            <div class="sms-bubble sms-left">Need everyone's match fees too. Only 3 people paid from last week! Umpire needs cash.</div>
+                            <div class="sms-bubble sms-right">Hey mate did I bank transfer you? Or do I owe? 🤷‍♂️</div>
+                            <div class="sms-bubble sms-left">I think you still owe $15. Or maybe it was cash? Let me check my Excel sheet...</div>
+                            <div class="sms-bubble sms-app">
+                                <i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Davo has fronted <strong>$180</strong> in court fees this season.
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-zinc-800 flex justify-between items-center text-xs text-zinc-500">
+                            <span>Status: Awkward &amp; Stressful</span>
+                            <span>Organizer Debt: $180</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 3: The Solution
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-2">The Solution</div>
+                        <h2 class="text-5xl font-extrabold text-white mb-6 leading-tight">Fast. Simple. Automated.</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            FEES PLEASE removes the friction entirely. We provide a single interface that handles player availability and matches it dynamically to cards, cash, and bank collections.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="glass-panel p-5">
+                                <div class="text-emerald-400 text-2xl mb-3"><i class="fa-solid fa-bolt"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">Availability Portal</h3>
+                                <p class="text-xs text-zinc-400">Players tap a web link from WhatsApp/SMS. No logins, no app downloads. 1-tap availability.</p>
+                            </div>
+                            <div class="glass-panel p-5">
+                                <div class="text-emerald-400 text-2xl mb-3"><i class="fa-solid fa-credit-card"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">Instant Digital Payments</h3>
+                                <p class="text-xs text-zinc-400">Square integration supports Apple Pay, Google Pay, and card entry directly on the portal.</p>
+                            </div>
+                            <div class="glass-panel p-5">
+                                <div class="text-emerald-400 text-2xl mb-3"><i class="fa-solid fa-bell"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">Availability Invites</h3>
+                                <p class="text-xs text-zinc-400">Send availability emails and "You've been selected" notifications with secure pre-pay links in one click.</p>
+                            </div>
+                            <div class="glass-panel p-5">
+                                <div class="text-emerald-400 text-2xl mb-3"><i class="fa-solid fa-beer-mug-empty"></i></div>
+                                <h3 class="text-lg font-bold text-white mb-2">AI Summaries &amp; Sponsors</h3>
+                                <p class="text-xs text-zinc-400">Custom AI match reports (Dave, Rusty, Gaz, Shazza) that players love, alongside local pub sponsorship options.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App Mockups teaser column -->
+                    <div class="lg:col-span-5 flex justify-center gap-4 relative">
+                        <!-- GameDay phone -->
+                        <div class="phone-frame scale-90 translate-y-4 opacity-75">
+                            <div class="phone-notch"></div>
+                            <div class="phone-content text-zinc-400" style="font-size:7px;">
+                                <div class="font-bold text-[#10b981] mb-2 uppercase">GameDay</div>
+                                <div class="bg-zinc-900 p-2 rounded mb-2">
+                                    <div class="font-black text-white text-[9px]">Lions vs Warriors</div>
+                                    <div>Saturday 10:30am</div>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between"><span>⚡ Davo</span><span class="text-emerald-400 font-bold">Paid</span></div>
+                                    <div class="flex justify-between"><span>⚡ Thommo</span><span class="text-yellow-400 font-bold">Cash</span></div>
+                                    <div class="flex justify-between"><span>❌ Bazza</span><span class="text-red-400 font-bold">Owes $30</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Player Portal Phone (Centered, full) -->
+                        <div class="phone-frame ring-4 ring-[#00bc7d]/30" style="z-index: 20;">
+                            <div class="phone-notch"></div>
+                            <div class="phone-content bg-white text-zinc-800" style="font-size:7px;">
+                                <div class="bg-zinc-950 p-2 text-center text-[8px] font-bold text-[#10b981] uppercase">The Lions Portal</div>
+                                <div class="p-2 text-center border-b border-zinc-200">
+                                    <div class="font-extrabold text-zinc-900 text-[10px]">Round 3 · In or Out?</div>
+                                </div>
+                                <div class="flex gap-1 p-2">
+                                    <div class="flex-1 text-center bg-emerald-100 border border-emerald-500 rounded p-1 text-emerald-600 font-bold">In ⚡</div>
+                                    <div class="flex-1 text-center bg-zinc-100 rounded p-1">Maybe</div>
+                                    <div class="flex-1 text-center bg-zinc-100 rounded p-1">Out</div>
+                                </div>
+                                <div class="bg-zinc-100 p-2 rounded m-2 text-center">
+                                    <div class="text-[6px] text-zinc-500">Match Fee Outstanding</div>
+                                    <div class="text-[12px] font-extrabold text-zinc-900">$15.00</div>
+                                    <button class="bg-[#10b981] text-white font-bold p-1 rounded w-full mt-1">Pay with Apple Pay</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 4: Product Showcase
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <div class="text-center mb-8">
+                    <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-1">Product Showcase</div>
+                    <h2 class="text-4xl font-extrabold text-white leading-tight">The Organizer &amp; Player Experience</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Column 1: Gameday Dashboard -->
+                    <div class="glass-panel p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="px-2.5 py-1 bg-emerald-950/40 border border-emerald-800/50 rounded-full text-xs font-bold text-emerald-400 uppercase tracking-wider mb-4 inline-block">App View</span>
+                            <h3 class="text-xl font-bold text-white mb-2">⚡ GameDay Dashboard</h3>
+                            <p class="text-sm text-zinc-400 mb-4 leading-relaxed">
+                                The organizer's overview screen. Shows who is confirmed in, outstanding fees side-by-side, and match logistics directly synced from league fixtures.
+                            </p>
+                        </div>
+                        <div class="h-28 bg-[#1c1c1f]/80 rounded-xl border border-zinc-800 p-3 text-[10px] font-mono flex flex-col justify-between">
+                            <div class="flex justify-between border-b border-zinc-800 pb-1.5">
+                                <span class="font-bold text-zinc-400">ROUND 3 vs WARRIORS</span>
+                                <span class="text-emerald-400">9 IN · 2 OUT</span>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex justify-between"><span>Davo (Captain)</span><span class="text-emerald-500 font-bold">PAID ✓</span></div>
+                                <div class="flex justify-between text-yellow-500"><span>Thommo</span><span class="font-bold">CASH OK</span></div>
+                                <div class="flex justify-between text-red-500"><span>Bazza</span><span class="font-bold">OWES $30</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Player Web Portal -->
+                    <div class="glass-panel p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="px-2.5 py-1 bg-blue-950/40 border border-blue-900/50 rounded-full text-xs font-bold text-blue-400 uppercase tracking-wider mb-4 inline-block">Web Portal View</span>
+                            <h3 class="text-xl font-bold text-white mb-2">📲 1-Tap Player Portal</h3>
+                            <p class="text-sm text-zinc-400 mb-4 leading-relaxed">
+                                The player-facing portal link. Zero authentication barriers. Players mark availability, view round details, and settle match fees via Apple Pay instantly.
+                            </p>
+                        </div>
+                        <div class="h-28 bg-white rounded-xl p-3 text-[9px] flex flex-col justify-between text-zinc-800">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                                <span class="font-extrabold text-zinc-950">Confirm Saturday</span>
+                            </div>
+                            <div class="flex gap-1.5">
+                                <span class="flex-1 bg-emerald-100 text-emerald-600 font-extrabold p-1 text-center rounded">IN ⚡</span>
+                                <span class="flex-1 bg-zinc-100 p-1 text-center rounded text-zinc-400">OUT</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-zinc-50 border border-zinc-100 rounded p-1">
+                                <span>Owes: $15.00</span>
+                                <span class="bg-[#10b981] text-white px-2 py-0.5 rounded font-bold text-[8px] cursor-pointer">Apple Pay</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: AI Banter Summary -->
+                    <div class="glass-panel p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="px-2.5 py-1 bg-amber-950/40 border border-amber-900/50 rounded-full text-xs font-bold text-amber-400 uppercase tracking-wider mb-4 inline-block">AI Integration</span>
+                            <h3 class="text-xl font-bold text-white mb-2">🤖 Automated Banter</h3>
+                            <p class="text-sm text-zinc-400 mb-4 leading-relaxed">
+                                Upload match screenshots or log stats in seconds. AI generated, highly shareable summaries (Dave, Rusty, Gaz, Shazza) drive massive engagement.
+                            </p>
+                        </div>
+                        <div class="h-28 bg-[#1c1c1f] rounded-xl border border-zinc-800 p-3 text-[9px] flex flex-col justify-between italic text-zinc-400">
+                            <div class="flex justify-between not-italic text-[7px] text-zinc-500 uppercase tracking-widest font-mono">
+                                <span>Rusty (AI Outbacker)</span>
+                                <span>Lions Won 🐊</span>
+                            </div>
+                            <p class="leading-relaxed">
+                                "The top batter was striking 'em sweeter than a camp oven roast today! I'd give you the full run-down, but me radiator is busted..."
+                            </p>
+                            <span class="not-italic text-emerald-400 font-bold flex items-center justify-center gap-1.5 border border-emerald-800/30 rounded p-1 bg-emerald-950/20 cursor-pointer">
+                                <i class="fa-brands fa-whatsapp"></i> Share to WhatsApp Chat
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 5: Market Opportunity
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-2">Market Opportunity</div>
+                        <h2 class="text-5xl font-extrabold text-white mb-6 leading-tight">Sizing the Social Grid</h2>
+                        <p class="text-zinc-400 mb-6 leading-relaxed">
+                            Amateur social sports is an underserved, highly viral market. Traditional sports software serves leagues (top-down) or parents of junior clubs. Social team organizers have been ignored.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="glass-panel p-4 flex gap-4 items-center">
+                                <div class="text-3xl text-emerald-400 font-black font-display w-24">4.5M</div>
+                                <div>
+                                    <h4 class="text-white font-bold">Active Social Players in Australia</h4>
+                                    <p class="text-xs text-zinc-400">Weekly participants across Cricket, Futsal, Basketball, and Netball.</p>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-4 flex gap-4 items-center">
+                                <div class="text-3xl text-emerald-400 font-black font-display w-24">10k+</div>
+                                <div>
+                                    <h4 class="text-white font-bold">Local Amateur Sports Clubs</h4>
+                                    <p class="text-xs text-zinc-400">Individual clubs managing between 5 to 50 active senior teams.</p>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-4 flex gap-4 items-center">
+                                <div class="text-3xl text-emerald-400 font-black font-display w-24">$50M+</div>
+                                <div>
+                                    <h4 class="text-white font-bold">Total Addressable Market (AU)</h4>
+                                    <p class="text-xs text-zinc-400">Based on a modest $69/team/year subscription and platform fee commission.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Market share / segment graphic -->
+                    <div class="glass-panel p-8 flex flex-col justify-center gap-6 h-[400px]">
+                        <h3 class="text-lg font-bold text-white text-center border-b border-zinc-800 pb-3">The Target Segments</h3>
+                        
+                        <!-- Segment 1 -->
+                        <div>
+                            <div class="flex justify-between text-xs text-zinc-400 mb-1.5">
+                                <span>1. Self-Organized Teams (Organizers)</span>
+                                <span class="text-emerald-400 font-bold">Primary Hook (Freemium)</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-3.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full" style="width: 70%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Segment 2 -->
+                        <div>
+                            <div class="flex justify-between text-xs text-zinc-400 mb-1.5">
+                                <span>2. Amateur Clubs (Treasurers)</span>
+                                <span class="text-blue-400 font-bold">Club Upsell (Pro)</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-3.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-full rounded-full" style="width: 20%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Segment 3 -->
+                        <div>
+                            <div class="flex justify-between text-xs text-zinc-400 mb-1.5">
+                                <span>3. Indoor Centers &amp; Leagues</span>
+                                <span class="text-amber-400 font-bold">Integration Partners</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-3.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-500 to-orange-400 h-full rounded-full" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-[10px] text-zinc-500 text-center italic mt-2">Organizers act as the viral user acquisition vector. One organizer introduces the portal to 12 players, 3 of whom run other teams, initiating the organic loop.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 6: Business Model
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <div class="text-center mb-8">
+                    <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-1">Business Model</div>
+                    <h2 class="text-4xl font-extrabold text-white leading-tight">Monetizing Team Admin</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Free Card -->
+                    <div class="glass-panel p-8 relative flex flex-col justify-between border-t-2 border-zinc-700">
+                        <div>
+                            <h3 class="text-zinc-400 font-bold uppercase tracking-wider text-xs mb-1">Entry Tier</h3>
+                            <h4 class="text-3xl font-extrabold text-white mb-2">Free</h4>
+                            <p class="text-xs text-zinc-400 mb-6">Designed to capture mass adoption from casual organizers with zero sales friction.</p>
+                            <div class="h-0.5 bg-zinc-800 mb-6"></div>
+                            <ul class="text-xs space-y-3 text-zinc-300">
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>1 Team limit</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Live player ledger</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Manual cash tracking</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span><strong>2.5% transaction clip</strong> on card fees</li>
+                                <li><span class="text-zinc-600 mr-1.5">✗</span>Platform ads on portal</li>
+                                <li><span class="text-zinc-600 mr-1.5">✗</span>No availability &amp; selection emails</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 text-center text-xs text-emerald-400 font-bold py-2 bg-emerald-950/20 border border-emerald-900/30 rounded">
+                            Monetized via transaction clip
+                        </div>
+                    </div>
+
+                    <!-- Plus Card (Featured) -->
+                    <div class="glass-panel p-8 relative flex flex-col justify-between border-2 border-emerald-500 shadow-[0_0_30px_rgba(0,188,125,0.15)]">
+                        <div class="absolute -top-3 right-8 bg-emerald-500 text-white font-extrabold text-[9px] uppercase tracking-wider py-1 px-3 rounded-full">
+                            Organizer Sweet Spot
+                        </div>
+                        <div>
+                            <h3 class="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-1">Individual Organizers</h3>
+                            <h4 class="text-3xl font-extrabold text-white mb-2">Plus</h4>
+                            <div class="text-2xl font-black text-white mb-2">$69<span class="text-xs font-normal text-zinc-400">/year per team</span></div>
+                            <p class="text-xs text-zinc-300 mb-6">Sends availability invites, selection emails with pre-pay links, and unlocks flat platform clips.</p>
+                            <div class="h-0.5 bg-emerald-800/40 mb-6"></div>
+                            <ul class="text-xs space-y-3 text-zinc-200">
+                                <li><span class="text-emerald-400 mr-1.5">✓</span><strong>30¢ Flat Platform Clip</strong> (Square fee + 30¢)</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Availability &amp; selection emails</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Custom team sponsor space</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>AI match summaries &amp; emails</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Season stats &amp; analytics</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Referral credits ($15 per conversion)</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 text-center text-xs text-white font-extrabold py-2 bg-emerald-500 border border-emerald-600 rounded cursor-pointer hover:bg-emerald-600 transition-colors">
+                            Upgrade Pays for Itself at $2k Fees
+                        </div>
+                    </div>
+
+                    <!-- Pro Card -->
+                    <div class="glass-panel p-8 relative flex flex-col justify-between border-t-2 border-zinc-700">
+                        <div>
+                            <h3 class="text-zinc-400 font-bold uppercase tracking-wider text-xs mb-1">Club &amp; Power Level</h3>
+                            <h4 class="text-3xl font-extrabold text-white mb-2">Pro</h4>
+                            <div class="text-2xl font-black text-white mb-2">$129<span class="text-xs font-normal text-zinc-400">/year flat</span></div>
+                            <p class="text-xs text-zinc-400 mb-6">Flat rate covering up to 5 teams under a single subscription. Ideal for organizers managing multiple grades.</p>
+                            <div class="h-0.5 bg-zinc-800 mb-6"></div>
+                            <ul class="text-xs space-y-3 text-zinc-300">
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Up to 5 teams included (flat rate)</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span><strong>Club Treasurer Dashboard</strong></li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Fee collection "league tables"</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>SMS invites &amp; alerts (100 SMS/mo)</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Team Wallet (Kitty &amp; expense tracking)</li>
+                                <li><span class="text-emerald-400 mr-1.5">✓</span>Dedicated support manager</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 text-center text-xs text-zinc-300 font-bold py-2 bg-zinc-800 border border-zinc-700 rounded">
+                            B2B Club Up-sell
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 7: Growth Loops
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-2">Growth Loops</div>
+                        <h2 class="text-5xl font-extrabold text-white mb-6 leading-tight">Product-Led Viral Engine</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            We don't need a heavy marketing budget because **FEES PLEASE** has viral mechanisms built directly into the player interaction and team financial model.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <span class="bg-emerald-950 text-emerald-400 p-2.5 rounded-lg text-lg"><i class="fa-solid fa-people-group"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">1-to-15 Virality Loop</h4>
+                                    <p class="text-xs text-zinc-400">An organizer invites 15 players. Those players see how smooth the portal works. When they organize touch rugby or basketball teams in other seasons, they register as organizers on FEES PLEASE.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="bg-emerald-950 text-emerald-400 p-2.5 rounded-lg text-lg"><i class="fa-solid fa-rotate"></i></span>
+                                <div>
+                                    <h4 class="text-white font-bold">The Referral Engine</h4>
+                                    <p class="text-xs text-zinc-400">Organizers earn $15 credit (3 months free) per conversion. Safe from fraud because the payout only triggers when the referred organizer upgrades to a paid plan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Loops Diagram -->
+                    <div class="grid grid-cols-1 gap-6">
+                        <!-- Pub loop diagram -->
+                        <div class="glass-panel p-6">
+                            <h3 class="text-sm font-bold text-white mb-4 text-center uppercase tracking-wider text-emerald-400">🍺 The Team Sponsorship Loop</h3>
+                            <div class="grid grid-cols-3 gap-3 text-center">
+                                <div class="flow-card">
+                                    <div class="text-2xl mb-1">🏨</div>
+                                    <div class="font-extrabold text-white text-[11px]">Local Pub</div>
+                                    <div class="text-[9px] text-emerald-400 font-bold mt-1">Pays $100</div>
+                                </div>
+                                <div class="flex items-center justify-center text-zinc-600"><i class="fa-solid fa-arrow-right text-lg"></i></div>
+                                <div class="flow-card border-emerald-500 bg-emerald-950/10">
+                                    <div class="text-2xl mb-1">📲</div>
+                                    <div class="font-extrabold text-white text-[11px]">FEES PLEASE Plus</div>
+                                    <div class="text-[9px] text-red-400 font-bold mt-1">Costs $69/yr</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center my-2 text-zinc-600"><i class="fa-solid fa-arrow-down text-lg"></i></div>
+                            <div class="flow-card max-w-sm mx-auto border-dashed border-emerald-500/50">
+                                <div class="text-2xl mb-1">🎉</div>
+                                <div class="font-extrabold text-white text-[11px]">Organizer Pockets $31 Profit</div>
+                                <div class="text-[9px] text-zinc-400 mt-1">Sponsor logo goes on every player's match portal. Instant ROI for organizer, pub, and FEES PLEASE.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 8: Competition
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content">
+                <div class="text-center mb-8">
+                    <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-1">Competition</div>
+                    <h2 class="text-4xl font-extrabold text-white leading-tight">Displacing the Competitors</h2>
+                </div>
+                
+                <div class="glass-panel overflow-hidden">
+                    <table class="w-full competitor-table text-left">
+                        <thead class="bg-zinc-900/60">
+                            <tr>
+                                <th style="width: 28%;" class="text-zinc-400 uppercase text-xs tracking-wider">Feature</th>
+                                <th style="width: 18%;" class="highlight text-emerald-400 uppercase text-xs tracking-wider font-extrabold">FEES PLEASE</th>
+                                <th style="width: 18%;" class="text-zinc-500 uppercase text-xs tracking-wider">Teampay</th>
+                                <th style="width: 18%;" class="text-zinc-500 uppercase text-xs tracking-wider">Spond</th>
+                                <th style="width: 18%;" class="text-zinc-500 uppercase text-xs tracking-wider">TeamSnap</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-zinc-300">
+                            <tr>
+                                <td class="font-semibold text-white">Subscription model</td>
+                                <td class="text-emerald-400 font-bold">Free / $69 yr</td>
+                                <td>Free (Clip only)</td>
+                                <td>Free (Clip only)</td>
+                                <td>$120 - $240 / yr</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Platform transaction clip</td>
+                                <td class="text-emerald-400 font-bold">2.5% (Free) / 30¢ flat (Plus)</td>
+                                <td class="text-red-400">3% – 5% clip</td>
+                                <td class="text-red-400">~2.9% + $0.30 clip</td>
+                                <td class="text-red-400">High clip fees</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Cash tracking support</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Free)</td>
+                                <td class="text-zinc-500">❌ Forces card only</td>
+                                <td class="text-zinc-500">⚠️ Limited</td>
+                                <td>✅ Yes</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Player app required</td>
+                                <td class="text-emerald-400 font-bold">❌ No (Portal link)</td>
+                                <td class="text-red-400">✅ Required</td>
+                                <td class="text-red-400">✅ Required</td>
+                                <td class="text-red-400">✅ Required</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Custom team sponsorship</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Plus / Pro)</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">AI-generated banter</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Plus / Pro)</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Smart fixture upload (Photo/Spreadsheet)</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Plus / Pro)</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-white">Role separation (Account vs. Team Admin)</td>
+                                <td class="text-emerald-400 font-bold">✅ Yes (Plus / Pro)</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                                <td class="text-zinc-500">❌ No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-6 flex gap-8 justify-center text-xs text-zinc-500">
+                    <span><strong class="text-zinc-300">Teampay</strong> targets league-level integration; useless for self-organized teams.</span>
+                    <span><strong class="text-zinc-300">Spond &amp; TeamSnap</strong> target complex youth and junior club organization, not social groups.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 9: Technology
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-9">
+            <div class="slide-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-2">Technology &amp; Scale</div>
+                        <h2 class="text-5xl font-extrabold text-white mb-6 leading-tight">Built to Scale</h2>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">
+                            Our stack is optimized for maximum developer velocity, low maintenance costs, and transaction security. We integrate with industry-leading providers so we can focus on core user features.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="glass-panel p-4 flex flex-col justify-between">
+                                <div class="text-xs text-zinc-500 font-bold uppercase">Frontend</div>
+                                <div class="text-lg font-black text-white mt-1">Next.js</div>
+                                <p class="text-[10px] text-zinc-500 mt-1">Server component rendering and API routing for lightning-fast loads.</p>
+                            </div>
+                            <div class="glass-panel p-4 flex flex-col justify-between">
+                                <div class="text-xs text-zinc-500 font-bold uppercase">Backend DB</div>
+                                <div class="text-lg font-black text-white mt-1">Supabase</div>
+                                <p class="text-[10px] text-zinc-500 mt-1">Row-Level Security (RLS) PostgreSQL database for solid multi-tenancy.</p>
+                            </div>
+                            <div class="glass-panel p-4 flex flex-col justify-between">
+                                <div class="text-xs text-zinc-500 font-bold uppercase">Subscriptions</div>
+                                <div class="text-lg font-black text-white mt-1">Stripe</div>
+                                <p class="text-[10px] text-zinc-500 mt-1">Handles recurrences, customer billing portal, and invoices automatically.</p>
+                            </div>
+                            <div class="glass-panel p-4 flex flex-col justify-between">
+                                <div class="text-xs text-zinc-500 font-bold uppercase">Fee Gateway</div>
+                                <div class="text-lg font-black text-white mt-1">Square</div>
+                                <p class="text-[10px] text-zinc-500 mt-1">Organizers connect existing merchant accounts. Money routes directly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Diagram representing secure multi-tenant flow -->
+                    <div class="glass-panel p-8 flex flex-col justify-center h-[380px] relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 text-xs font-mono text-zinc-600">Secure Direct Settlement Flow</div>
+                        
+                        <!-- Player Box -->
+                        <div class="flex items-center gap-4 bg-zinc-900 border border-zinc-800 p-3 rounded-lg mb-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">📱</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">1. Player Portal payment request</h4>
+                                <p class="text-[9px] text-zinc-500">Player taps Apple Pay ($15 match fee)</p>
+                            </div>
+                        </div>
+
+                        <!-- Square Box -->
+                        <div class="flex items-center gap-4 bg-zinc-900 border border-zinc-800 p-3 rounded-lg mb-4">
+                            <div class="w-8 h-8 rounded-full bg-zinc-950 flex items-center justify-center text-xs font-bold text-white">SQ</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">2. Square SDK processes payment token</h4>
+                                <p class="text-[9px] text-zinc-500">Direct integration, secure merchant settlement</p>
+                            </div>
+                            <div class="ml-auto text-emerald-400 font-bold text-[10px]">+2.5% clip</div>
+                        </div>
+
+                        <!-- Team Bank -->
+                        <div class="flex items-center gap-4 bg-emerald-950/20 border border-emerald-900/30 p-3 rounded-lg">
+                            <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">🏦</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-emerald-400">3. Net amount settles in Team's Bank</h4>
+                                <p class="text-[9px] text-zinc-500">FEES PLEASE never holds or custody-routes team funds.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ──────────────────────────────────────────
+             SLIDE 10: Growth Roadmap & Ask
+        ────────────────────────────────────────── -->
+        <div class="slide" id="slide-10">
+            <div class="slide-content text-center">
+                <div class="text-sm font-semibold text-emerald-400 uppercase tracking-widest mb-2">The Roadmap</div>
+                <h2 class="text-5xl font-extrabold text-white mb-10 leading-tight">Our Game Plan</h2>
+                
+                <!-- Horizontal timeline -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+                    <div class="glass-panel p-6 text-left border-t-4 border-emerald-500">
+                        <div class="text-xs font-bold font-mono text-emerald-400 mb-2">PHASE 1 · Q2</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Beta Launch</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Release core availability portal &amp; Square ledger tracking. Target initial cricket and soccer teams in South East Queensland.</p>
+                    </div>
+                    <div class="glass-panel p-6 text-left border-t-4 border-emerald-600/50">
+                        <div class="text-xs font-bold font-mono text-zinc-500 mb-2">PHASE 2 · Q3</div>
+                        <h4 class="text-lg font-bold text-white mb-2">AI &amp; Sponsorships</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Roll out Rusty, Gaz, and Shazza match summaries. Release team pub sponsorship logo upload and referral coupon credits.</p>
+                    </div>
+                    <div class="glass-panel p-6 text-left border-t-4 border-emerald-700/30">
+                        <div class="text-xs font-bold font-mono text-zinc-600 mb-2">PHASE 3 · Q4</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Club-Level Scale</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Launch Pro tier for club treasurers. Integrate SMS invite bundles and CSV accounting endpoints.</p>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white mb-4">FEES PLEASE is ready to play.</h3>
+                <p class="text-zinc-400 max-w-lg mx-auto text-sm leading-relaxed mb-6">
+                    A simple, virally spreading engine that turns team administration into local sponsorship revenue and group chat engagement.
+                </p>
+                <div class="text-zinc-500 text-xs tracking-wider uppercase">Contact: hello@feesplease.app</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Presentation Controls -->
+    <div class="controls-bar">
+        <button class="nav-btn" id="prev-btn" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="slide-indicator" id="indicators">
+            <!-- Programmatically populated dots -->
+        </div>
+        <button class="nav-btn" id="next-btn" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></button>
+        <span class="text-xs font-mono text-zinc-500 min-w-[36px]" id="slide-num">1 / 10</span>
+    </div>
+
+    <!-- Presentation JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('slide-track');
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideNum = document.getElementById('slide-num');
+            const indicatorsContainer = document.getElementById('indicators');
+
+            // Generate dots
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = `indicator-dot ${i === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.indicator-dot');
+
+            function updateUI() {
+                // Update slide position
+                track.style.transform = `translateX(-${currentSlide * 100}vw)`;
+                
+                // Update active states
+                slides.forEach((slide, i) => {
+                    if (i === currentSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+
+                // Update counter
+                slideNum.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            }
+
+            function goToSlide(index) {
+                currentSlide = (index + totalSlides) % totalSlides;
+                updateUI();
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            // Button listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Keyboard listeners
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'Space') {
+                    e.preventDefault();
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+                    e.preventDefault();
+                    prevSlide();
+                }
+            });
+
+            // Touch Swipe gestures (Mobile)
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchStartX - touchEndX > swipeThreshold) {
+                    nextSlide(); // Swipe left -> Next slide
+                } else if (touchEndX - touchStartX > swipeThreshold) {
+                    prevSlide(); // Swipe right -> Previous slide
+                }
+            }
+
+            // Init active states
+            updateUI();
+        });
+    </script>
+</body>
+</html>

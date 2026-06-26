@@ -3,163 +3,734 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fees Please | Less Chasing. More Playing</title>
+    <title>Fees Please | Stop Chasing Match Fees. Start Playing.</title>
+    <meta name="description" content="Fees Please automates match fee collection for social sports teams. Track cash, collect card payments via Square, and let AI chase up the late payers. Free to start.">
+    <meta name="keywords" content="match fees app, team fee collection, sports team payments, futsal fee tracker, netball court fees, cricket subs app, squad management australia">
+    <meta property="og:title" content="Fees Please | Stop Chasing Match Fees">
+    <meta property="og:description" content="Auto-load fixtures, invite your players, and track match fees for free. Upgrade for availability emails, prepay links, AI summaries, and lower flat transaction clips.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://feesplease.app">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="assets/icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="flex flex-col min-h-screen antialiased">
+<body>
 
-    <div id="header-placeholder"></div>
+<div id="header-placeholder"></div>
 
-    <main>
-        <section class="relative h-screen flex items-center justify-center overflow-hidden">
-            <img src="assets/hero.jpg" alt="A group of cricketers collecting match fees on a pitch" class="absolute inset-0 w-full h-full object-cover">
-            
-            <div class="video-overlay absolute inset-0 bg-black/60"></div>
-            
-            <div class="relative z-10 text-center px-6 mt-16">
-                <h1 class="text-5xl md:text-8xl font-black italic tracking-tighter mb-6 text-white">
-                    FEES <span class="text-[#00bc7d]">PLEASE.</span>
-                </h1>
-                <p class="text-lg md:text-2xl text-zinc-300 font-normal mb-10 max-w-2xl mx-auto leading-relaxed">
-                    The payment and game-day engine for local sports clubs. Track subs, manage the ledger, and automate the banter.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#features" class="bg-[#00bc7d] hover:bg-[#009767] px-8 py-4 rounded-full font-bold text-white transition-all shadow-lg shadow-[#00bc7d]/20 w-full sm:w-auto">See How It Works</a>
-                    <a href="mailto:hello@feesplease.app" class="glass px-8 py-4 rounded-full font-bold text-white hover:bg-white/5 transition-all w-full sm:w-auto">Get Early Access</a>
-                </div>
+<main>
+
+    <!-- ══════════════════════════════════
+         HERO
+    ══════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <img src="assets/hero.jpg" alt="Cricket team on the pitch" class="hero-img">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                🇦🇺 Built for Aussie Social Sport &nbsp;·&nbsp; Free to Start
             </div>
-        </section>
-
-        <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-white">Built for the Boundary Line</h2>
-                <p class="text-zinc-400 text-lg">Everything you need to run the weekend, from the first ball to the clubhouse fridge.</p>
+            <h1>Stop being your team's <span class="text-gradient">debt collector.</span></h1>
+            <p>No player app downloads, no spreadsheet setup. Just sync your league URL, share one link with your team, and start tracking match fees instantly.</p>
+            <div class="hero-ctas">
+                <a href="https://app.feesplease.app/auth/register" class="btn-primary" id="hero-cta-primary" data-ph-event="hero_cta_click" data-ph-label="Create Free Team">
+                    Create Your Team Free →
+                </a>
+                <a href="features.html" class="btn-secondary" id="hero-cta-secondary" data-ph-event="hero_cta_click" data-ph-label="See Features">
+                    See How It Works
+                </a>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-zinc-800 opacity-20 text-9xl font-black italic">01</div>
-                    <div class="relative z-10">
-                        <div class="text-[#00bc7d] text-2xl mb-4 font-black">GAMEDAY</div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Match Day Collections</h3>
-                        <p class="text-zinc-400 leading-relaxed mb-4">Track payments as they happen. Whether a player taps their card, transfers digitally, or hands you a crumpled twenty, record it instantly.</p>
-                        <p class="text-zinc-300 text-sm font-medium border-l-2 border-[#00bc7d] pl-3">
-                            <span class="italic">Bonus:</span> Manage players by their actual club nicknames. Nobody knows who David is, but everyone knows "Davo".
-                        </p>
+            <div class="hero-social-proof">
+                <span>Free forever</span> for cash tracking &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; Setup in 2 minutes
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         PAIN vs PLEASURE
+    ══════════════════════════════════ -->
+    <section class="pain-section" id="pain">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Sound familiar?</div>
+                <h2>The old way is exhausting.</h2>
+                <p>Every team organizer knows the grind. Here's what Fees Please fixes.</p>
+            </div>
+            <div class="pain-grid animate-on-scroll">
+                <div class="pain-col old">
+                    <h3>❌ Without Fees Please</h3>
+                    <div class="pain-item">
+                        <span class="pain-icon">😩</span>
+                        <span>Chasing "I'll pay you next week, mate" for the 4th time</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">📊</span>
+                        <span>Maintaining a dodgy spreadsheet that only you understand</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">💸</span>
+                        <span>Fronting the registration money out of your own pocket</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">📱</span>
+                        <span>Bombarding the group chat with "who's in Saturday?" every week</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">📝</span>
+                        <span>Manually tallying up who paid cash and who transferred</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">🤷</span>
+                        <span>No idea how much the team actually owes going into finals</span>
                     </div>
                 </div>
-                
-                <div class="glass p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-zinc-800 opacity-20 text-9xl font-black italic">02</div>
-                    <div class="relative z-10">
-                        <div class="text-[#00bc7d] text-2xl mb-4 font-black">THE LEDGER</div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Live Net Position</h3>
-                        <p class="text-zinc-400 leading-relaxed">Throw away the spreadsheets. See exactly who is paid up, who is in arrears, and the total cash position of the club in real-time.</p>
+                <div class="pain-col new">
+                    <h3>✅ With Fees Please</h3>
+                    <div class="pain-item">
+                        <span class="pain-icon">📩</span>
+                        <span>One-tap availability invites & selected lineup emails</span>
                     </div>
-                </div>
-
-                <div class="glass p-8 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-zinc-800 opacity-20 text-9xl font-black italic">03</div>
-                    <div class="relative z-10">
-                        <div class="text-[#00bc7d] text-2xl mb-4 font-black">INTEGRATIONS</div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Powered by Square</h3>
-                        <p class="text-zinc-400 leading-relaxed">Direct-to-club settlement via Square's PCI-compliant infrastructure. Generate payment links, share them via WhatsApp, and let Square handle the heavy lifting securely.</p>
+                    <div class="pain-item">
+                        <span class="pain-icon">📋</span>
+                        <span>Live ledger — who's paid, who hasn't, and how much you've got</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">💳</span>
+                        <span>Players scan-to-pay via Square QR code — money lands in your account</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">📲</span>
+                        <span>Players update availability in one tap from the portal link</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">🏦</span>
+                        <span>Cash and card tracked side-by-side in one place</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">📈</span>
+                        <span>Season financial summary ready to go at any time</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="tech" class="py-24 bg-zinc-950 border-t border-zinc-800">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div class="order-2 md:order-1 glass p-8 flex flex-col items-center">
-                        <div class="w-full space-y-4">
-                            <div class="bg-[#00bc7d]/20 border border-[#00bc7d] rounded-xl p-4 text-center">
-                                <span class="text-[#00bc7d] font-bold">Club Master Tenant</span>
-                                <p class="text-xs text-emerald-100/70 mt-1">Treasurer / Committee Access</p>
+    <!-- ══════════════════════════════════
+         HOW IT WORKS
+    ══════════════════════════════════ -->
+    <section class="steps-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">How It Works</div>
+                <h2>Set up your team in 2 minutes.</h2>
+                <p>No installs, no training, no spreadsheets. Just sign up and start tracking.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">📅</div>
+                    <h3>Sync or Upload Fixtures</h3>
+                    <p>Paste your PlayHQ URL or do a Smart Upload (screenshot/spreadsheet). Fees Please instantly auto-populates all fixture dates, times, and venues. Zero typing.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">📲</div>
+                    <h3>Share the Team Hub Link</h3>
+                    <p>Post your Team Hub link in the group chat. Players tap it to update availability and pay fees in any browser — no app installs required.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">✅</div>
+                    <h3>Watch Your Ledger Auto-Update</h3>
+                    <p>Track cash manually, let players scan the QR code to pay via card, and watch your live team ledger reconcile instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         UPGRADE CALCULATOR
+    ══════════════════════════════════ -->
+    <section style="padding: 5rem 0; background: var(--bg-dark); border-top: 1px solid var(--border);" id="calculator">
+        <div class="container">
+            <div class="animate-on-scroll" style="max-width: 680px; margin: 0 auto; text-align: center;">
+                <div class="section-label">Upgrade Calculator</div>
+                <h2 style="font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">Is Plus worth it for your team?</h2>
+                <p style="color: var(--muted); margin-bottom: 2.5rem;">Drag the sliders to match your team. We'll tell you whether it makes financial sense to upgrade.</p>
+
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 1.5rem; padding: 2rem 2.5rem; text-align: left;">
+
+                    <!-- Slider 1: Players -->
+                    <div style="margin-bottom: 1.75rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Players per team</label>
+                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;" id="calc-players-display">12</span>
+                        </div>
+                        <input type="range" id="calc-players" min="6" max="25" step="1" value="12"
+                            style="width:100%; accent-color: var(--green); cursor: pointer;">
+                    </div>
+
+                    <!-- Slider 2: Fee per game -->
+                    <div style="margin-bottom: 1.75rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Match fee per player</label>
+                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;">$<span id="calc-fee-display">15</span></span>
+                        </div>
+                        <input type="range" id="calc-fee" min="5" max="50" step="5" value="15"
+                            style="width:100%; accent-color: var(--green); cursor: pointer;">
+                    </div>
+
+                    <!-- Slider 3: Rounds -->
+                    <div style="margin-bottom: 2rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Games per season</label>
+                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;" id="calc-rounds-display">18</span>
+                        </div>
+                        <input type="range" id="calc-rounds" min="5" max="40" step="1" value="18"
+                            style="width:100%; accent-color: var(--green); cursor: pointer;">
+                    </div>
+
+                    <!-- % paid by card toggle -->
+                    <div style="margin-bottom: 2rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
+                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Paid digitally (card / Apple Pay)</label>
+                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;"><span id="calc-digital-display">60</span>%</span>
+                        </div>
+                        <input type="range" id="calc-digital" min="10" max="100" step="10" value="60"
+                            style="width:100%; accent-color: var(--green); cursor: pointer;">
+                    </div>
+
+                    <!-- Results -->
+                    <div style="border-top: 1px solid var(--border); padding-top: 1.5rem; display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+                        <div style="background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.18); border-radius: 1rem; padding: 1.25rem; text-align:center;">
+                            <div style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #ef4444; margin-bottom: 0.4rem;">Free tier cost</div>
+                            <div style="font-size: 1.75rem; font-weight: 900; color: #ef4444;" id="calc-free-cost">$49</div>
+                            <div style="font-size: 0.7rem; color: var(--muted); margin-top: 0.3rem;">Your clip to Fees Please</div>
+                        </div>
+                        <div style="background: rgba(0,188,125,0.07); border: 1px solid rgba(0,188,125,0.18); border-radius: 1rem; padding: 1.25rem; text-align:center;">
+                            <div style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin-bottom: 0.4rem;">Plus tier cost</div>
+                            <div style="font-size: 1.75rem; font-weight: 900; color: var(--green);" id="calc-plus-cost">$108</div>
+                            <div style="font-size: 0.7rem; color: var(--muted); margin-top: 0.3rem;">Sub + flat clip/yr</div>
+                        </div>
+                    </div>
+
+                    <!-- Verdict -->
+                    <div id="calc-verdict" style="border-radius: 0.875rem; padding: 1rem 1.25rem; text-align:center; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border);">
+                        <div id="calc-verdict-text" style="font-size: 0.9rem; font-weight: 700; color: #fff;">📋 Free tier is cost-effective, but Plus is only $59 more/yr.</div>
+                        <div id="calc-verdict-sub" style="font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem;">Plus removes ads, lets you add custom sponsors (e.g. your local pub), and unlocks AI summaries, availability invites, and lineup prepay links.</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.75rem; color: var(--muted2); margin-top: 1rem;">Calculation: (players × fee × games × digital%) × 2.5% platform clip = your Free tier cost. Plus costs $69/yr + 30¢ flat platform clip per digital transaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         FEATURES OVERVIEW
+    ══════════════════════════════════ -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Features</div>
+                <h2>Everything your team actually needs.</h2>
+                <p>No bloat. No enterprise software complexity. Just the features that make team management easier.</p>
+            </div>
+
+            <!-- Feature 1: Ledger -->
+            <div class="feature-row animate-on-scroll">
+                <div class="feature-visual">
+                    <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem;">Live Ledger</div>
+                    <div class="mock-ledger">
+                        <div class="mock-player-row">
+                            <span class="mock-player-name">💰 Davo</span>
+                            <span class="mock-badge paid">Paid (Card)</span>
+                        </div>
+                        <div class="mock-player-row">
+                            <span class="mock-player-name">🏏 Thommo</span>
+                            <span class="mock-badge cash">Cash ✓</span>
+                        </div>
+                        <div class="mock-player-row">
+                            <span class="mock-player-name">😬 Bazza</span>
+                            <span class="mock-badge unpaid">Owes $15</span>
+                        </div>
+                        <div class="mock-player-row">
+                            <span class="mock-player-name">🤙 Johnno</span>
+                            <span class="mock-badge paid">Paid (Card)</span>
+                        </div>
+                        <div class="mock-player-row">
+                            <span class="mock-player-name">🍺 Gnarly Pete</span>
+                            <span class="mock-badge unpaid">Owes $30</span>
+                        </div>
+                    </div>
+                    <div class="mock-stat-grid">
+                        <div class="mock-stat"><div class="value">$270</div><div class="label">Collected</div></div>
+                        <div class="mock-stat"><div class="value" style="color:#ef4444">$45</div><div class="label">Outstanding</div></div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">Real-Time Ledger</div>
+                    <h2>Throw away the spreadsheet.</h2>
+                    <p>Track every cash payment and card transaction in one live ledger. Know exactly who is paid up, who owes what, and your team's total financial position — any time, from your phone.</p>
+                    <ul class="feature-checklist">
+                        <li>Cash and card tracked side-by-side</li>
+                        <li>Player nicknames (nobody knows who "David" is)</li>
+                        <li>Season-long running totals</li>
+                        <li>Export to CSV for the club treasurer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 2: Availability Portal -->
+            <div class="feature-row reverse animate-on-scroll">
+                <div class="feature-visual">
+                    <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem;">Player Portal</div>
+                    <div style="background: var(--bg-dark); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+                        <div style="font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem;">Saturday vs. Northside Warriors</div>
+                        <div style="font-size: 0.75rem; color: var(--muted); margin-bottom: 1.5rem;">10:30am · Memorial Park Oval 2</div>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
+                            <button style="padding:0.75rem; border-radius:0.75rem; background:rgba(0,188,125,0.15); border: 1px solid rgba(0,188,125,0.4); color: var(--green); font-weight:700; font-size:0.85rem;">✅ In</button>
+                            <button style="padding:0.75rem; border-radius:0.75rem; background:var(--surface2); border: 1px solid var(--border); color: var(--muted); font-weight:600; font-size:0.85rem;">❓ Maybe</button>
+                            <button style="padding:0.75rem; border-radius:0.75rem; background:var(--surface2); border: 1px solid var(--border); color: var(--muted); font-weight:600; font-size:0.85rem;">❌ Out</button>
+                        </div>
+                        <div style="background:rgba(0,188,125,0.08); border: 1px solid rgba(0,188,125,0.15); border-radius:0.75rem; padding:1rem;">
+                            <div style="font-size:0.75rem; color:var(--muted); margin-bottom:0.5rem;">Outstanding Match Fee</div>
+                            <div style="font-size:1.5rem; font-weight:800; color:#fff;">$15.00</div>
+                            <button style="margin-top:0.75rem; width:100%; padding:0.65rem; background:var(--green); color:#fff; font-weight:700; border:none; border-radius:0.6rem; font-size:0.875rem; cursor:pointer;">Pay with Card →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">Player Portal</div>
+                    <h2>Players don't need to download anything.</h2>
+                    <p>Share a link. Players open it in their browser, tap "In" or "Out", and pay their fees — all in under 30 seconds. No app store, no account creation, no friction.</p>
+                    <ul class="feature-checklist">
+                        <li>Works on any phone browser (iOS & Android)</li>
+                        <li>One-tap availability updates</li>
+                        <li>Inline card payments via Square (Apple Pay / Google Pay)</li>
+                        <li>Custom team sponsor logo visible to every player (Plus)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3: Payments -->
+            <div class="feature-row animate-on-scroll">
+                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align:center;">
+                        <div style="display: flex; align-items:center; justify-content:center; gap: 1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
+                            <div style="background:var(--bg-dark); border-radius:1rem; padding:1rem 1.5rem; border: 1px solid var(--border);">
+                                <div style="font-size:0.7rem; color:var(--muted); margin-bottom:0.25rem;">Standard Square Fee</div>
+                                <div style="font-size:1.4rem; font-weight:800; color:#fff;">1.6%</div>
+                                <div style="font-size:0.7rem; color:var(--muted);">All tiers</div>
                             </div>
-                            <div class="flex gap-4 justify-center">
-                                <div class="w-1/2 bg-zinc-900 border border-zinc-700 rounded-xl p-4 text-center shadow-lg">
-                                    <span class="text-white font-medium text-sm">First Grade</span>
-                                    <p class="text-xs text-zinc-400 mt-1">Captain Access</p>
-                                </div>
-                                <div class="w-1/2 bg-zinc-900 border border-zinc-700 rounded-xl p-4 text-center shadow-lg">
-                                    <span class="text-white font-medium text-sm">Reserves</span>
-                                    <p class="text-xs text-zinc-400 mt-1">Captain Access</p>
-                                </div>
+                            <div style="font-size:1.5rem; color:var(--muted);">+</div>
+                            <div style="background:rgba(239,68,68,0.08); border-radius:1rem; padding:1rem 1.5rem; border: 1px solid rgba(239,68,68,0.2);">
+                                <div style="font-size:0.7rem; color:#ef4444; margin-bottom:0.25rem;">Platform Clip (Free)</div>
+                                <div style="font-size:1.4rem; font-weight:800; color:#ef4444;">2.5%</div>
+                                <div style="font-size:0.7rem; color:var(--muted);">Free tier only</div>
                             </div>
                         </div>
+                        <div style="font-size:1.2rem; color:var(--muted); margin-bottom:1rem;">vs.</div>
+                        <div style="background: rgba(0,188,125,0.08); border: 1px solid rgba(0,188,125,0.2); border-radius:1rem; padding:1.25rem 2rem;">
+                            <div style="font-size:0.7rem; color:var(--green); font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.5rem;">Plus Tier ($69/yr)</div>
+                            <div style="font-size:1.4rem; font-weight:800; color:var(--green);">30¢ flat clip</div>
+                            <div style="font-size:0.75rem; color:var(--muted); margin-top:0.25rem;">Standard Square fee + 30¢ flat platform clip</div>
+                        </div>
                     </div>
-                    <div class="order-1 md:order-2">
-                        <h2 class="text-4xl font-bold mb-6 text-gradient">Delegated Authority</h2>
-                        <p class="text-zinc-300 text-lg mb-6 leading-relaxed">
-                            Built on an enterprise-grade multi-tenant architecture, scaled perfectly for local sports. 
-                        </p>
-                        <ul class="space-y-4 text-zinc-400">
-                            <li class="flex items-start gap-3">
-                                <span class="text-[#00bc7d] mt-1">✔</span>
-                                <span><strong>Strict Data Isolation:</strong> Your club's data is securely isolated in its own logical vault.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-[#00bc7d] mt-1">✔</span>
-                                <span><strong>Captain Access:</strong> Give captains the power to record cash and check subs for their specific team on game day, without exposing the entire club ledger.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-[#00bc7d] mt-1">✔</span>
-                                <span><strong>Committee View:</strong> Treasurers maintain the master oversight across all grades and teams seamlessly.</span>
-                            </li>
-                        </ul>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">Payments</div>
+                    <h2>No more chasing bank transfers.</h2>
+                    <p>Connect your Square account and generate an instant payment link for players. They pay by card from the portal — money settles directly into your account, not through us.</p>
+                    <ul class="feature-checklist">
+                        <li>Apple Pay & Google Pay supported</li>
+                        <li>Cash is always free to track (no fees ever)</li>
+                        <li>30¢ flat platform clip on Plus (instead of 2.5% platform percentage clip)</li>
+                        <li>Player receipts sent automatically by Square</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         AI BANTER SECTION
+    ══════════════════════════════════ -->
+    <section class="ai-section" id="ai">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">AI — Plus & Pro</div>
+                <h2>Meet your new media managers.</h2>
+                <p>Upload a screenshot of your match scoresheet or log stats in seconds. Let Dave (our local analyst) write a report, or let AI generate slapstick summaries in the voice of Rusty, Gaz, Shazza, an Aussie legend, or even a mystical green alien.</p>
+                <p style="margin-top: 1.25rem; color: var(--muted); font-size: 0.9rem;">Dave also acts as your <strong>Resident AI Help Assistant</strong> in the help section to answer queries and interrogate team data, alongside screenshot/video support ticket submissions.</p>
+            </div>
+            <div class="ai-card-grid">
+                <div class="ai-card animate-on-scroll">
+                    <div class="ai-avatar" style="background: rgba(0,188,125,0.15);">🐊</div>
+                    <div class="ai-card-name">Rusty</div>
+                    <div class="ai-bubble">
+                        "The top batter was striking 'em sweeter than a camp oven roast today! I'd give you the full match run-down, but I'm pretty sure I've got a busted radiator... Time to hit the road! Let's get out there!"
+                    </div>
+                </div>
+                <div class="ai-card animate-on-scroll">
+                    <div class="ai-avatar" style="background: rgba(59,130,246,0.15);">🌭</div>
+                    <div class="ai-card-name">Gaz</div>
+                    <div class="ai-bubble">
+                        "Back in my day we didn't have these fancy stats, but I'll admit the boys played alright. Best on ground fired up. Now, if someone could fetch me a snag from the sausage sizzle... me hammies are absolutely gone."
+                    </div>
+                </div>
+                <div class="ai-card animate-on-scroll">
+                    <div class="ai-avatar" style="background: rgba(239,68,68,0.15);">🍷</div>
+                    <div class="ai-card-name">Shazza</div>
+                    <div class="ai-bubble">
+                        "Well, wasn't that a noice, different, and unusual game? The boys looked very effluent out there in the new activewear. I'm parched, time to crack open the plonk with a nice glass of Cardonnay! Look at moy!"
                     </div>
                 </div>
             </div>
-        </section>
+            <div style="text-align:center; margin-top: 2.5rem;" class="animate-on-scroll">
+                <p style="font-size:0.875rem; color:var(--muted); margin-bottom:1rem;">AI Match Summaries, availability emails, and selected lineup prepay links are available on Plus and Pro tiers.</p>
+                <a href="pricing.html" class="btn-secondary" id="ai-pricing-link">See Pricing →</a>
+            </div>
+        </div>
+    </section>
 
-        <section class="py-24 bg-[#18181b] border-t border-zinc-800">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4 text-white">Meet Your New Media Managers</h2>
-                    <p class="text-zinc-400 text-lg max-w-2xl mx-auto">Automate your match reports and social media posts. Just feed in the weekend's stats, and let our native AI agents handle the club banter.</p>
+    <!-- ══════════════════════════════════
+         SOLUTIONS / SPORT SPECIFIC
+    ══════════════════════════════════ -->
+    <section style="padding: 6rem 0; background: var(--bg-dark); border-top: 1px solid var(--border);" id="solutions">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Solutions</div>
+                <h2>Built for every social sport.</h2>
+                <p>Same problem, same solution — no matter what you play.</p>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem;" class="solutions-grid">
+                <div class="glass-card animate-on-scroll" style="padding: 2rem;">
+                    <div style="font-size:2rem; margin-bottom:1rem;">⚽</div>
+                    <h3 style="font-weight:700; color:#fff; margin-bottom:0.5rem;">Futsal & Indoor Soccer</h3>
+                    <p style="font-size:0.875rem; color:var(--muted); line-height:1.6;">Court fees, weekly subs, and player availability all sorted. Works with any indoor center competition.</p>
+                    <a href="#" style="font-size:0.85rem; color:var(--green); font-weight:600; display:inline-block; margin-top:1rem;">Learn more →</a>
                 </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 hover:border-[#00bc7d]/50 transition-colors">
-                        <div class="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
-                            <div class="w-12 h-12 rounded-full bg-[#00bc7d]/20 flex items-center justify-center text-xl">🐊</div>
-                            <h4 class="text-white font-bold text-lg">Rusty</h4>
-                        </div>
-                        <div class="bg-zinc-950 rounded-xl p-4 relative">
-                            <div class="absolute -left-2 top-4 w-4 h-4 bg-zinc-950 rotate-45"></div>
-                            <p class="text-zinc-300 italic text-sm">"The top batter was striking 'em sweeter than a camp oven roast today! I’d give you the full match run-down, but I'm pretty sure I've got a busted radiator... Time to hit the road! Let's get out there!"</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 hover:border-[#00bc7d]/50 transition-colors">
-                        <div class="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-xl">🌭</div>
-                            <h4 class="text-white font-bold text-lg">Gaz</h4>
-                        </div>
-                        <div class="bg-zinc-950 rounded-xl p-4 relative">
-                            <div class="absolute -left-2 top-4 w-4 h-4 bg-zinc-950 rotate-45"></div>
-                            <p class="text-zinc-300 italic text-sm">"Back in my day we didn't have these fancy stats, but I'll admit the boys played alright. Best on ground fired up. Now, if someone could fetch me a snag from the sausage sizzle... me hammies are absolutely gone."</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-zinc-900 rounded-2xl p-6 border border-zinc-800 hover:border-[#00bc7d]/50 transition-colors">
-                        <div class="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
-                            <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-xl">🍷</div>
-                            <h4 class="text-white font-bold text-lg">Shazza</h4>
-                        </div>
-                        <div class="bg-zinc-950 rounded-xl p-4 relative">
-                            <div class="absolute -left-2 top-4 w-4 h-4 bg-zinc-950 rotate-45"></div>
-                            <p class="text-zinc-300 italic text-sm">"Well, wasn't that a noice, different, and unusual game? The boys looked very effluent out there in the new activewear today. I'm parched, time to crack open the plonk with a nice glass of Cardonnay! Look at moy!"</p>
-                        </div>
-                    </div>
+                <div class="glass-card animate-on-scroll" style="padding: 2rem;">
+                    <div style="font-size:2rem; margin-bottom:1rem;">🏏</div>
+                    <h3 style="font-weight:700; color:#fff; margin-bottom:0.5rem;">Social Cricket</h3>
+                    <p style="font-size:0.875rem; color:var(--muted); line-height:1.6;">Match day subs, Last Man Stands, and T20 comps. Auto-load your LMS fixtures and never chase umpire fees again.</p>
+                    <a href="#" style="font-size:0.85rem; color:var(--green); font-weight:600; display:inline-block; margin-top:1rem;">Learn more →</a>
+                </div>
+                <div class="glass-card animate-on-scroll" style="padding: 2rem;">
+                    <div style="font-size:2rem; margin-bottom:1rem;">🏀</div>
+                    <h3 style="font-weight:700; color:#fff; margin-bottom:0.5rem;">Basketball</h3>
+                    <p style="font-size:0.875rem; color:var(--muted); line-height:1.6;">Split court hire evenly, track who's in for next Thursday's game, and stop fronting the cash yourself.</p>
+                    <a href="#" style="font-size:0.85rem; color:var(--green); font-weight:600; display:inline-block; margin-top:1rem;">Learn more →</a>
+                </div>
+                <div class="glass-card animate-on-scroll" style="padding: 2rem;">
+                    <div style="font-size:2rem; margin-bottom:1rem;">🏐</div>
+                    <h3 style="font-weight:700; color:#fff; margin-bottom:0.5rem;">Netball & More</h3>
+                    <p style="font-size:0.875rem; color:var(--muted); line-height:1.6;">Works for any social sport. Touch footy, AFL, volleyball — if there are fees to collect, Fees Please handles it.</p>
+                    <a href="#" style="font-size:0.85rem; color:var(--green); font-weight:600; display:inline-block; margin-top:1rem;">Learn more →</a>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <div id="footer-placeholder"></div>
-    <script src="js/main.js"></script>
+    <!-- ══════════════════════════════════
+         COMPETITOR COMPARISON
+    ══════════════════════════════════ -->
+    <section class="comparison-section" id="compare">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">vs. The Competition</div>
+                <h2>Why organizers choose <span style="color: var(--green); font-weight: 900; text-transform: uppercase;">FEES PLEASE</span>.</h2>
+                <p>Not built for leagues or junior sports clubs. Built for you — the person who just needs to collect $15 from 12 mates.</p>
+            </div>
+            <div style="overflow-x: auto;" class="animate-on-scroll">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight" style="color: var(--green); font-weight: 900; text-transform: uppercase;">FEES PLEASE</th>
+                            <th>Teampay</th>
+                            <th>Spond</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Subscription Cost</td>
+                            <td class="highlight"><span class="win">Free or $6.99/mo</span></td>
+                            <td><span class="loss">$0 but heavy clip</span></td>
+                            <td><span class="loss">$0 but heavy clip</span></td>
+                        </tr>
+                        <tr>
+                            <td>Platform Transaction Clip</td>
+                            <td class="highlight"><span class="win">2.5% (Free) / 30¢ flat (Plus)</span></td>
+                            <td><span class="loss">3% – 5%</span></td>
+                            <td><span class="loss">~2.9% + $0.30</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cash Tracking</td>
+                            <td class="highlight"><span class="win">✅ Free Forever</span></td>
+                            <td><span class="loss">❌ Forces digital only</span></td>
+                            <td>⚠️ Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Player App Download Required</td>
+                            <td class="highlight"><span class="win">❌ Never</span></td>
+                            <td>✅ Required</td>
+                            <td>✅ Required for best experience</td>
+                        </tr>
+                        <tr>
+                            <td>AI Match Summaries</td>
+                            <td class="highlight"><span class="win">✅ Plus / Pro</span></td>
+                            <td><span class="loss">❌</span></td>
+                            <td><span class="loss">❌</span></td>
+                        </tr>
+                        <tr>
+                            <td>Custom Team Sponsorship</td>
+                            <td class="highlight"><span class="win">✅ Plus / Pro</span></td>
+                            <td><span class="loss">❌</span></td>
+                            <td><span class="loss">❌</span></td>
+                        </tr>
+                        <tr>
+                            <td>Built for casual adult teams</td>
+                            <td class="highlight"><span class="win">✅ Primary focus</span></td>
+                            <td><span class="loss">❌ League-first</span></td>
+                            <td><span class="loss">❌ Youth sports focus</span></td>
+                        </tr>
+                        <tr>
+                            <td>Referral Credits</td>
+                            <td class="highlight"><span class="win">✅ 3 months free per referral</span></td>
+                            <td><span class="loss">❌</span></td>
+                            <td><span class="loss">❌</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         REFERRAL PROGRAM
+    ══════════════════════════════════ -->
+    <section class="referral-section" id="referrals">
+        <div class="container">
+            <div class="referral-card animate-on-scroll">
+                <div class="section-label">Referral Program</div>
+                <h2 style="font-size:clamp(1.75rem, 4vw, 2.75rem); font-weight:800; color:#fff; margin-bottom:0.75rem;">Know another team organizer? Get rewarded.</h2>
+                <p style="color:var(--muted); max-width:500px; margin:0 auto 3rem; line-height:1.7;">Refer another team to Plus and earn 3 months of credit ($15). Refer four teams and get a full year free.</p>
+
+                <div class="referral-steps">
+                    <div class="referral-step">
+                        <div class="referral-step-icon">🔗</div>
+                        <div class="referral-step-label">
+                            <strong>Share Your Link</strong>
+                            Get your unique referral link from the app dashboard.
+                        </div>
+                    </div>
+                    <div class="referral-step">
+                        <div class="referral-step-icon" style="font-size:1.25rem; color:var(--muted);">→</div>
+                    </div>
+                    <div class="referral-step">
+                        <div class="referral-step-icon">👥</div>
+                        <div class="referral-step-label">
+                            <strong>Team Signs Up</strong>
+                            The team organizer you referred upgrades to Plus.
+                        </div>
+                    </div>
+                    <div class="referral-step">
+                        <div class="referral-step-icon" style="font-size:1.25rem; color:var(--muted);">→</div>
+                    </div>
+                    <div class="referral-step">
+                        <div class="referral-step-icon">🎉</div>
+                        <div class="referral-step-label">
+                            <strong>You Get 3 Months Free</strong>
+                            $15 credit applied to your next billing cycle.
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://app.feesplease.app/auth/register" class="btn-primary" id="referral-cta-btn" data-ph-event="referral_cta_click">
+                    Start Referring →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         PRICING TEASER
+    ══════════════════════════════════ -->
+    <section class="pricing-section" id="pricing-teaser">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Simple Pricing</div>
+                <h2>Less than the cost of a jug.</h2>
+                <p>Free for cash tracking. $6.99/month if you want to save time and lower platform transaction fees. Simple as that.</p>
+            </div>
+            <div style="display:flex; justify-content:center; align-items:center; gap:0.75rem; margin-bottom:2.5rem; font-size:0.875rem; color:var(--muted);" class="animate-on-scroll">
+                Monthly
+                <label style="position:relative; display:inline-block; width:48px; height:26px; cursor:pointer;">
+                    <input type="checkbox" id="billing-toggle" style="opacity:0; width:0; height:0;">
+                    <span style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background:var(--surface2); border-radius:13px; border:1px solid var(--border); transition:0.3s;"
+                          onclick="this.previousElementSibling.click()"></span>
+                    <span id="toggle-knob" style="position:absolute; height:18px; width:18px; left:3px; bottom:3px; background:var(--green); border-radius:50%; transition:0.3s;"></span>
+                </label>
+                Annual <span style="color:var(--green); font-weight:700; font-size:0.75rem; background:rgba(0,188,125,0.1); padding:0.2rem 0.5rem; border-radius:9999px; margin-left:0.25rem;">Save 17%</span>
+            </div>
+            <div class="pricing-grid">
+                <!-- FREE -->
+                <div class="pricing-card animate-on-scroll">
+                    <div class="pricing-tier">Tier 1</div>
+                    <div class="pricing-name">Free</div>
+                    <div class="pricing-desc">Perfect for casual teams happy to track cash. Gets you started with zero commitment.</div>
+                    <div class="pricing-price">
+                        <span class="amount">$0</span>
+                        <span class="period"> / forever</span>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span><span>1 Team Limit</span></li>
+                        <li><span class="check">✓</span><span>Auto-load fixtures (League URL)</span></li>
+                        <li><span class="check">✓</span><span>Player availability portal</span></li>
+                        <li><span class="check">✓</span><span>Cash tracking — free forever</span></li>
+                        <li><span class="check">✓</span><span>Square payments (2.5% platform clip)</span></li>
+                        <li><span class="cross">✗</span><span style="color:var(--muted2);">Availability &amp; selection emails</span></li>
+                        <li><span class="cross">✗</span><span style="color:var(--muted2);">AI match summaries</span></li>
+                        <li><span class="cross">✗</span><span style="color:var(--muted2);">Custom team sponsorship</span></li>
+                    </ul>
+                    <a href="https://app.feesplease.app/auth/register" class="btn-secondary" style="width:100%; justify-content:center;" id="free-cta-btn" data-ph-event="pricing_cta_click" data-ph-label="Free">
+                        Get Started Free
+                    </a>
+                </div>
+
+                <!-- PLUS -->
+                <div class="pricing-card featured animate-on-scroll">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-tier">Tier 2</div>
+                    <div class="pricing-name">Plus</div>
+                    <div class="pricing-desc">For the team manager who wants to stop nagging and start playing. Per team, per subscription.</div>
+                    <div class="pricing-price">
+                        <span class="amount" data-monthly="$6.99" data-annual="$5.75">$6.99</span>
+                        <span class="period"> / month per team</span>
+                        <span class="annual-note" style="display:none;">Billed as $69/yr — save $15</span>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span><span><strong>Everything in Free</strong></span></li>
+                        <li><span class="check">✓</span><span><strong>Square fee + 30¢ flat</strong> platform clip</span></li>
+                        <li><span class="check">✓</span><span>Availability &amp; selection emails</span></li>
+                        <li><span class="check">✓</span><span>AI match summaries &amp; drafted comms</span></li>
+                        <li><span class="check">✓</span><span>Custom team sponsor logo</span></li>
+                        <li><span class="check">✓</span><span>Season financial analytics</span></li>
+                        <li><span class="check">✓</span><span>Referral credits program</span></li>
+                    </ul>
+                    <a href="https://app.feesplease.app/auth/register?plan=plus" class="btn-primary" style="width:100%; justify-content:center;" id="plus-cta-btn" data-ph-event="pricing_cta_click" data-ph-label="Plus">
+                        Start Plus →
+                    </a>
+                </div>
+
+                <!-- PRO -->
+                <div class="pricing-card animate-on-scroll">
+                    <div class="pricing-tier">Tier 3</div>
+                    <div class="pricing-name">Pro</div>
+                    <div class="pricing-desc">Flat rate covering up to 5 teams with our lowest transaction fees and SMS capabilities.</div>
+                    <div class="pricing-price">
+                        <span class="amount" data-monthly="$12.99" data-annual="$10.75">$12.99</span>
+                        <span class="period"> / month flat (up to 5 teams)</span>
+                        <span class="annual-note" style="display:none;">Billed as $129/yr flat — save $27</span>
+                    </div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span><span><strong>Up to 5 teams included</strong> (flat rate)</span></li>
+                        <li><span class="check">✓</span><span><strong>Square fee + 15¢ flat</strong> platform clip</span></li>
+                        <li><span class="check">✓</span><span><strong>SMS Invites &amp; Alerts</strong> (100/mo included)</span></li>
+                        <li><span class="check">✓</span><span>Includes all <strong>Plus</strong> features</span></li>
+                        <li><span class="check">✓</span><span>Advanced reports &amp; CSV export</span></li>
+                        <li><span class="check">✓</span><span>Dedicated email &amp; chat support</span></li>
+                    </ul>
+                    <a href="https://app.feesplease.app/auth/register?plan=pro" class="btn-primary" style="width:100%; justify-content:center; background:linear-gradient(135deg,#009767,#00bc7d);" id="pro-cta-btn" data-ph-event="pricing_cta_click" data-ph-label="Pro">
+                        Start Pro →
+                    </a>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:2rem;" class="animate-on-scroll">
+                <a href="pricing.html" style="font-size:0.875rem; color:var(--green); font-weight:600;" id="full-pricing-link">View full pricing details & FAQ →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         BLOG TEASER
+    ══════════════════════════════════ -->
+    <section style="padding: 6rem 0; background: var(--bg-dark); border-top: 1px solid var(--border);" id="blog">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">From the Blog</div>
+                <h2>Guides for the organizer in the trenches.</h2>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem; margin-top:3rem;" class="blog-grid">
+                <div class="glass-card animate-on-scroll" style="padding:2rem; display:flex; flex-direction:column;">
+                    <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); margin-bottom:0.75rem;">Strategy</div>
+                    <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:0.75rem; line-height:1.4;">How to collect match fees without ruining the friendship</h3>
+                    <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; flex:1;">Chasing your mates for money is awkward. Here's how to automate it so the app takes the heat, not you.</p>
+                    <a href="#" style="font-size:0.85rem; color:var(--green); font-weight:600; margin-top:1.25rem;">Read more →</a>
+                </div>
+                <div class="glass-card animate-on-scroll" style="padding:2rem; display:flex; flex-direction:column;">
+                    <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); margin-bottom:0.75rem;">Sponsorship</div>
+                    <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:0.75rem; line-height:1.4;">How to get your local pub to sponsor your social team</h3>
+                    <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; flex:1;">A $100–$200 sponsorship from a local pub can pay your entire Plus subscription. Here's how to ask.</p>
+                    <a href="#" style="font-size:0.85rem; color:var(--green); font-weight:600; margin-top:1.25rem;">Read more →</a>
+                </div>
+                <div class="glass-card animate-on-scroll" style="padding:2rem; display:flex; flex-direction:column;">
+                    <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); margin-bottom:0.75rem;">Tools</div>
+                    <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:0.75rem; line-height:1.4;">5 sports team spreadsheet templates (and why they all fail)</h3>
+                    <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; flex:1;">We tried every spreadsheet template for tracking team fees. Here's what they all get wrong and what actually works.</p>
+                    <a href="#" style="font-size:0.85rem; color:var(--green); font-weight:600; margin-top:1.25rem;">Read more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CTA BAND
+    ══════════════════════════════════ -->
+    <section class="cta-band">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <div class="section-label">Ready to start?</div>
+                <h2>Less chasing.<br><span class="text-gradient">More playing.</span></h2>
+                <p>Set up your team in 2 minutes. It's free to start and always free for cash tracking.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+                    <a href="https://app.feesplease.app/auth/register" class="btn-primary" id="footer-cta-btn" data-ph-event="footer_cta_click">
+                        Create Your Team Free →
+                    </a>
+                    <a href="pricing.html" class="btn-secondary" id="footer-pricing-link">
+                        View Pricing
+                    </a>
+                </div>
+                <p style="font-size:0.8rem; color:var(--muted2); margin-top:1.5rem;">No credit card required · Free forever for cash tracking · Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+// Fix billing toggle knob position
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('billing-toggle');
+    const knob = document.getElementById('toggle-knob');
+    if (toggle && knob) {
+        toggle.addEventListener('change', () => {
+            knob.style.left = toggle.checked ? '27px' : '3px';
+        });
+    }
+});
+</script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
