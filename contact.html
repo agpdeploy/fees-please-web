@@ -23,81 +23,94 @@
 
     <div id="header-placeholder"></div>
 
-    <main class="flex-grow pt-32 pb-24 px-6 max-w-4xl mx-auto w-full">
+    <main class="flex-grow pt-32 pb-24 px-6 max-w-2xl mx-auto w-full">
         <div class="glass p-8 md:p-12">
-            <div style="margin-bottom: 2rem;">
-                <span style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 9999px; display: inline-block; margin-bottom: 0.75rem; background: rgba(0, 188, 125, 0.15); border: 1px solid rgba(0, 188, 125, 0.3); color: var(--green);">Support Desk</span>
-                <h1 class="text-4xl font-bold mb-2 text-white">Contact Us</h1>
-                <p class="text-zinc-400 mt-2">Need help or want to suggest a feature? Submit your request directly to our secure queue.</p>
+            <div style="margin-bottom: 2rem; text-align: center;">
+                <span style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 9999px; display: inline-block; margin-bottom: 0.75rem; background: rgba(0, 188, 125, 0.15); border: 1px solid rgba(0, 188, 125, 0.3); color: var(--green);">Secure Support</span>
+                <h1 class="text-3xl font-bold mb-2 text-white" style="font-family: 'Outfit', sans-serif;">Contact Us</h1>
+                <p class="text-zinc-400 mt-2 text-sm">Submit your enquiry directly to our Jira Service Desk support queue.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr; md:grid-template-columns: 1.2fr 0.8fr; gap: 3rem; margin-top: 2rem;">
-                <!-- Left Column: Jira Service Management (JSM) -->
+            <!-- Form -->
+            <form id="jsm-contact-form" class="space-y-6">
+                <!-- Dropdown -->
                 <div>
-                    <h2 class="text-xl font-bold text-white mb-4" style="font-family: 'Outfit', sans-serif;">🔒 Spam-Proof Support</h2>
-                    <p class="text-zinc-400 text-sm mb-6 leading-relaxed">
-                        To protect our systems from automated email spambots, we do not expose direct support email addresses. Instead, all support is handled through our secure **Jira Service Desk (Space Key: FPC)**. 
-                    </p>
-                    
-                    <div class="glass-panel p-6 border border-zinc-800 rounded-xl mb-8" style="background: rgba(255,255,255,0.01);">
-                        <h3 class="text-white font-bold mb-2 text-sm">Submit a Ticket (Jira Service Management)</h3>
-                        <p class="text-zinc-500 text-xs mb-6 leading-relaxed">
-                            Report issues, attach screenshots/videos of bugs, request billing changes, or submit feature ideas directly to our queue.
-                        </p>
-                        <a href="https://feesplease.atlassian.net/servicedesk/customer/portal/1" 
-                           target="_blank" 
-                           rel="noopener" 
-                           class="btn-primary" 
-                           style="width: 100%; justify-content: center; padding: 0.75rem 1.5rem; text-decoration: none;"
-                           id="jsm-portal-link">
-                            Open Jira Support Portal →
-                        </a>
-                    </div>
-                    
-                    <div style="font-size: 0.75rem; color: var(--muted); border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem;">
-                        <p><strong>Note for Organisers:</strong> When submitting a ticket on Jira Service Desk, please include your registered Fees Please email address and team name so we can assist you faster.</p>
-                    </div>
+                    <label for="enquiry-type" class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Type of Enquiry</label>
+                    <select id="enquiry-type" name="enquiry-type" required class="w-full bg-[#1e1e24] border border-zinc-800 rounded-lg px-4 py-3 text-sm text-zinc-200 focus:outline-none focus:border-[#00bc7d] transition-colors">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="Registering a team/club">Registering a team/club</option>
+                        <option value="Becoming a sponsor">Becoming a sponsor</option>
+                        <option value="Billing or Subscription issue">Billing or Subscription issue</option>
+                        <option value="Feature Request">Feature Request</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                    </select>
                 </div>
 
-                <!-- Right Column: Secondary / Fallback Methods -->
+                <!-- Email -->
                 <div>
-                    <h2 class="text-xl font-bold text-white mb-4" style="font-family: 'Outfit', sans-serif;">Other Inquiries</h2>
-                    
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-[#00bc7d] font-bold text-sm mb-1">General & Billing</h3>
-                            <p class="text-zinc-400 text-xs leading-relaxed">For partnership inquiries or subscription details, submit a general inquiry via the Jira Customer Portal.</p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-[#00bc7d] font-bold text-sm mb-1">Response Times</h3>
-                            <p class="text-zinc-400 text-xs leading-relaxed">We aim to review and respond to all Jira Service Desk tickets within 24–48 hours, especially on Friday and Saturday (Game Day!).</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-[#00bc7d] font-bold text-sm mb-1">Social Channels</h3>
-                            <p class="text-zinc-400 text-xs leading-relaxed">Follow our social handles in the footer to keep up to date with updates and release announcements.</p>
-                        </div>
-                    </div>
+                    <label for="email" class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full bg-[#1e1e24] border border-zinc-800 rounded-lg px-4 py-3 text-sm text-zinc-200 focus:outline-none focus:border-[#00bc7d] transition-colors">
                 </div>
-            </div>
+
+                <!-- Mobile -->
+                <div>
+                    <label for="mobile" class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="0400 000 000" required class="w-full bg-[#1e1e24] border border-zinc-800 rounded-lg px-4 py-3 text-sm text-zinc-200 focus:outline-none focus:border-[#00bc7d] transition-colors">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label for="description" class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Enquiry Description</label>
+                    <textarea id="description" name="description" rows="5" placeholder="Tell us how we can help..." required class="w-full bg-[#1e1e24] border border-zinc-800 rounded-lg px-4 py-3 text-sm text-zinc-200 focus:outline-none focus:border-[#00bc7d] transition-colors leading-relaxed"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary w-full justify-center py-3 text-sm font-bold mt-2" id="submit-btn">
+                    Continue to Secure Submission →
+                </button>
+
+                <!-- Anti-Spam / Secure Info Note -->
+                <p class="text-[11px] text-zinc-500 text-center leading-relaxed mt-4">
+                    <i class="fa-solid fa-shield-halved" style="margin-right: 4px; color: var(--green);"></i> 
+                    We protect your privacy. Submitting this form redirects you to Atlassian's secure Jira Service Desk portal with your details pre-filled. No spam, no raw email exposure.
+                </p>
+            </form>
         </div>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <!-- 
-    ========================================================================
-    Jira Service Management Floating Widget Integration
-    ========================================================================
-    To embed Atlassian JSM floating widget directly on this page:
-    1. In Jira: Go to Project Settings -> Widget -> Enable Widget.
-    2. Set Widget key, title, and default request type.
-    3. Copy the script tag snippet provided by Jira.
-    4. Paste it directly below this comment block.
-    ========================================================================
-    -->
-
+    <script>
+        document.getElementById('jsm-contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Redirecting to Jira Support...';
+            
+            const enquiry = document.getElementById('enquiry-type').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const desc = document.getElementById('description').value;
+            
+            // Format a clean, readable description block for the Jira Agent
+            const fullDesc = `Enquiry Details:\n${desc}\n\n-----------------\nContact Details:\nEmail: ${email}\nMobile: ${mobile}`;
+            
+            // Build JSM Portal URL
+            // Direct request type 34 group portal
+            const portalUrl = new URL('https://feespleaseapp.atlassian.net/servicedesk/customer/portal/34/group/34/create/34');
+            
+            // Append pre-fill parameters
+            portalUrl.searchParams.set('summary', enquiry);
+            portalUrl.searchParams.set('description', fullDesc);
+            
+            // Map mobile to the custom field (customfield_10171)
+            portalUrl.searchParams.set('customfield_10171', mobile);
+            
+            // Redirect user to submit on Jira Service Desk (spam-safe)
+            window.location.href = portalUrl.toString();
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
