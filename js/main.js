@@ -120,7 +120,7 @@ function buildFooter() {
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="index.html#blog" style="font-size:0.875rem; color:#71717a;" class="footer-link">Blog</a>
                         <a href="#" style="font-size:0.875rem; color:#71717a;" class="footer-link">Help Centre</a>
-                        <a href="mailto:hello@feesplease.app" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
+                        <a href="contact.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
                     </div>
                 </div>
                 <div>
@@ -133,6 +133,11 @@ function buildFooter() {
             </div>
             <div style="padding-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
                 <p style="font-size:0.8rem; color:#52525b;">© 2026 Fees Please. All rights reserved.</p>
+                <div style="display:flex; gap:1.25rem; align-items:center;">
+                    <a href="https://www.facebook.com/people/Fees-Please/61591266593079/" target="_blank" rel="noopener" style="color:#52525b; transition:color 0.2s;" onmouseover="this.style.color='#00bc7d'" onmouseout="this.style.color='#52525b'" aria-label="Facebook"><i class="fa-brands fa-facebook-f" style="font-size:1rem;"></i></a>
+                    <a href="https://www.instagram.com/feespleaseapp" target="_blank" rel="noopener" style="color:#52525b; transition:color 0.2s;" onmouseover="this.style.color='#00bc7d'" onmouseout="this.style.color='#52525b'" aria-label="Instagram"><i class="fa-brands fa-instagram" style="font-size:1rem;"></i></a>
+                    <a href="https://www.youtube.com/@feespleaseapp" target="_blank" rel="noopener" style="color:#52525b; transition:color 0.2s;" onmouseover="this.style.color='#00bc7d'" onmouseout="this.style.color='#52525b'" aria-label="YouTube"><i class="fa-brands fa-youtube" style="font-size:1rem;"></i></a>
+                </div>
                 <p style="font-size:0.8rem; color:#52525b;">Made in Australia 🇦🇺</p>
             </div>
         </div>
