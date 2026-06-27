@@ -66,13 +66,16 @@
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn-primary w-full justify-center py-3 text-sm font-bold mt-2" id="submit-btn">
-                    Continue to Secure Submission →
+                    Submit Enquiry
                 </button>
+
+                <!-- Error Container -->
+                <div id="error-message" class="text-xs text-red-500 hidden text-center mt-2 leading-relaxed bg-red-950/20 border border-red-900/30 p-2.5 rounded-lg"></div>
 
                 <!-- Anti-Spam / Secure Info Note -->
                 <p class="text-[11px] text-zinc-500 text-center leading-relaxed mt-4">
                     <i class="fa-solid fa-shield-halved" style="margin-right: 4px; color: var(--green);"></i> 
-                    We protect your privacy. Submitting this form redirects you to Atlassian's secure Jira Service Desk portal with your details pre-filled. No spam, no raw email exposure.
+                    We protect your privacy. Submitting this form sends your details directly to our secure Atlassian support queue.
                 </p>
             </form>
         </div>
@@ -85,30 +88,60 @@
             e.preventDefault();
             
             const submitBtn = document.getElementById('submit-btn');
+            const errorDiv = document.getElementById('error-message');
+            
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Redirecting to Jira Support...';
+            submitBtn.textContent = 'Submitting...';
+            errorDiv.classList.add('hidden');
+            errorDiv.textContent = '';
             
             const enquiry = document.getElementById('enquiry-type').value;
             const email = document.getElementById('email').value;
             const mobile = document.getElementById('mobile').value;
-            const desc = document.getElementById('description').value;
+            const description = document.getElementById('description').value;
             
-            // Format a clean, readable description block for the Jira Agent
-            const fullDesc = `Enquiry Details:\n${desc}\n\n-----------------\nContact Details:\nEmail: ${email}\nMobile: ${mobile}`;
-            
-            // Build JSM Portal URL
-            // Direct request type 34 group portal
-            const portalUrl = new URL('https://feespleaseapp.atlassian.net/servicedesk/customer/portal/34/group/34/create/34');
-            
-            // Append pre-fill parameters
-            portalUrl.searchParams.set('summary', enquiry);
-            portalUrl.searchParams.set('description', fullDesc);
-            
-            // Map mobile to the custom field (customfield_10171)
-            portalUrl.searchParams.set('customfield_10171', mobile);
-            
-            // Redirect user to submit on Jira Service Desk (spam-safe)
-            window.location.href = portalUrl.toString();
+            fetch('https://app.feesplease.app/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ enquiry, email, mobile, description })
+            })
+            .then(async response => {
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to submit enquiry');
+                }
+                
+                // Show Success Screen
+                const form = document.getElementById('jsm-contact-form');
+                form.innerHTML = `
+                    <div class="text-center py-8">
+                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">✅</div>
+                        <h3 class="text-white font-extrabold text-2xl mb-3" style="font-family: 'Outfit', sans-serif;">Enquiry Received!</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                            Thank you for reaching out. We have logged your request directly in our support system. 
+                            Your ticket reference is <strong class="text-[#00bc7d]">${data.issueKey || 'Logged'}</strong>.
+                        </p>
+                        <p class="text-zinc-500 text-xs leading-relaxed">
+                            Our team will review your ticket and follow up with you via email shortly.
+                        </p>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Enquiry';
+                
+                // Fallback details if JSM API fails
+                errorDiv.classList.remove('hidden');
+                errorDiv.innerHTML = `
+                    <p class="font-bold mb-1">Submission failed</p>
+                    <p class="text-[11px] mb-2">${error.message || 'Unable to reach the support server.'}</p>
+                    <p class="text-[11px] text-zinc-400">Please try again or submit your ticket directly via our <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/34/group/34/create/34" target="_blank" rel="noopener" class="underline text-[#00bc7d]">Jira Customer Portal</a>.</p>
+                `;
+            });
         });
     </script>
     <script src="js/main.js"></script>
