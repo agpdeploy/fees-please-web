@@ -33,6 +33,70 @@
     <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- JSON-LD Schema Markup for AI Search Crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Fees Please Subscription Plans",
+      "description": "Subscription plans for Fees Please, the social sports match fee collection app.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Fees Please"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "AUD",
+        "lowPrice": "0",
+        "highPrice": "12.99",
+        "offerCount": "3",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free Plan",
+            "price": "0",
+            "priceCurrency": "AUD",
+            "description": "Free for manual cash tracking and player portals. 2.5% Square platform clip."
+          },
+          {
+            "@type": "Offer",
+            "name": "Plus Plan",
+            "price": "6.99",
+            "priceCurrency": "AUD",
+            "description": "Unlimited teams, availability invites, selected lineup invites with prepay links, AI match summaries, custom sponsors, and 30¢ flat Square platform clip.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "6.99",
+              "priceCurrency": "AUD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "MON"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro Plan",
+            "price": "12.99",
+            "priceCurrency": "AUD",
+            "description": "Up to 5 teams flat rate, lower 15¢ flat Square platform clip, advanced organization tools.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "12.99",
+              "priceCurrency": "AUD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "1",
+                "unitCode": "MON"
+              }
+            }
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
 

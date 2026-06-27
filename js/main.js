@@ -55,8 +55,8 @@ function buildNav() {
     const navLinks = [
         { href: 'features.html', label: 'Features' },
         { href: 'pricing.html', label: 'Pricing' },
+        { href: 'square.html', label: 'Square' },
         { href: 'index.html#solutions', label: 'Solutions' },
-        { href: 'index.html#blog', label: 'Blog' },
     ];
 
     const linksHTML = navLinks.map(l => {
@@ -111,6 +111,7 @@ function buildFooter() {
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="features.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Features</a>
                         <a href="pricing.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Pricing</a>
+                        <a href="square.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Square Integration</a>
                         <a href="index.html#solutions" style="font-size:0.875rem; color:#71717a;" class="footer-link">Solutions</a>
                     </div>
                 </div>

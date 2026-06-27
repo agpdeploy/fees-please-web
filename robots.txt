@@ -1,0 +1,26 @@
+# robots.txt for Fees Please
+# Allow all search engines and AI web crawlers to index the site
+
+User-agent: *
+Allow: /
+
+# Explicitly ensure major AI search agents crawl features and pages
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://feesplease.app/sitemap.xml
