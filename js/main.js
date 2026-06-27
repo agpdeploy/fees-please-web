@@ -61,7 +61,7 @@ function buildNav() {
 
     const linksHTML = navLinks.map(l => {
         const active = currentPage === l.href ? 'text-white' : 'text-zinc-400 hover:text-white';
-        return `<a href="${l.href}" class="text-sm font-medium ${active} transition-colors nav-link" data-ph-event="nav_click" data-ph-label="${l.label}">${l.label}</a>`;
+        return `<a href="${l.href}" class="text-sm font-medium ${active} transition-colours nav-link" data-ph-event="nav_click" data-ph-label="${l.label}">${l.label}</a>`;
     }).join('');
 
     return `
@@ -79,7 +79,7 @@ function buildNav() {
                     Get Started Free →
                 </a>
             </div>
-            <button class="md:hidden text-zinc-400 hover:text-white transition-colors" id="mobile-menu-btn" aria-label="Open menu">
+            <button class="md:hidden text-zinc-400 hover:text-white transition-colours" id="mobile-menu-btn" aria-label="Open menu">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -87,7 +87,7 @@ function buildNav() {
         </div>
         <!-- Mobile Menu -->
         <div class="hidden md:hidden border-t border-white/5 px-6 py-4 space-y-4" id="mobile-menu" style="background: rgba(15,15,17,0.95);">
-            ${navLinks.map(l => `<a href="${l.href}" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colors py-1">${l.label}</a>`).join('')}
+            ${navLinks.map(l => `<a href="${l.href}" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours py-1">${l.label}</a>`).join('')}
             <a href="https://app.feesplease.app" class="btn-primary text-sm py-2.5 w-full justify-center mt-2">Get Started Free →</a>
         </div>
     </nav>`;
@@ -119,7 +119,7 @@ function buildFooter() {
                     <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#52525b; margin-bottom:1rem;">Resources</p>
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="index.html#blog" style="font-size:0.875rem; color:#71717a;" class="footer-link">Blog</a>
-                        <a href="#" style="font-size:0.875rem; color:#71717a;" class="footer-link">Help Center</a>
+                        <a href="#" style="font-size:0.875rem; color:#71717a;" class="footer-link">Help Centre</a>
                         <a href="mailto:hello@feesplease.app" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
                     </div>
                 </div>
