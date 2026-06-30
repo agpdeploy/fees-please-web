@@ -178,40 +178,52 @@ img { max-width: 100%; }
     position: relative;
     z-index: 10;
     padding: 0 1.5rem;
-    max-width: 900px;
+    max-width: 1200px;
+    width: 100%;
 }
 
-.hero-badge {
-    display: inline-flex;
+/* ── Hero Split Grid ── */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(0,188,125,0.1);
-    border: 1px solid rgba(0,188,125,0.25);
-    padding: 0.4rem 1rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--green);
-    margin-bottom: 2rem;
-    animation: fadeInDown 0.6s ease both;
+    text-align: left;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     font-weight: 900;
     font-style: italic;
     letter-spacing: -0.03em;
-    line-height: 1;
+    line-height: 1.1;
     color: #fff;
     margin-bottom: 1.5rem;
+    text-align: left;
     animation: fadeInUp 0.7s ease 0.1s both;
 }
 
 .hero p {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     color: #a1a1aa;
-    max-width: 640px;
-    margin: 0 auto 2.5rem;
+    max-width: 580px;
+    margin: 0 0 2.5rem 0;
+    text-align: left;
     line-height: 1.7;
     animation: fadeInUp 0.7s ease 0.2s both;
 }
@@ -220,18 +232,59 @@ img { max-width: 100%; }
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
     animation: fadeInUp 0.7s ease 0.3s both;
 }
 
 .hero-social-proof {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
     animation: fadeInUp 0.7s ease 0.4s both;
     color: var(--muted);
     font-size: 0.85rem;
+    text-align: left;
 }
 
 .hero-social-proof span { color: var(--green); font-weight: 700; }
+
+/* ── Phone Mockups ── */
+.phone-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-frame {
+    width: 260px;
+    background: #0f0f11;
+    border-radius: 36px;
+    border: 8px solid #27272a;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.05), 0 0 0 1px #000;
+    overflow: hidden;
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-notch {
+    width: 70px;
+    height: 8px;
+    background: #27272a;
+    border-radius: 0 0 8px 8px;
+    margin: 8px auto 0;
+    flex-shrink: 0;
+}
+
+.phone-screen {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.phone-screen::-webkit-scrollbar {
+    display: none;
+}
 
 /* ===========================
    PAIN POINTS
@@ -730,6 +783,30 @@ footer { background: var(--bg-dark); border-top: 1px solid var(--border); paddin
    RESPONSIVE
 =========================== */
 @media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+        margin-top: 2rem;
+    }
+    .hero-text {
+        align-items: center;
+    }
+    .hero h1 {
+        text-align: center;
+        font-size: clamp(2.5rem, 7vw, 3.75rem);
+    }
+    .hero p {
+        text-align: center;
+        margin: 0 auto 2rem;
+    }
+    .hero-ctas {
+        justify-content: center;
+    }
+    .hero-social-proof {
+        text-align: center;
+        margin-top: 2rem;
+    }
     .pain-grid { grid-template-columns: 1fr; }
     .steps-grid { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
