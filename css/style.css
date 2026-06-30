@@ -273,6 +273,18 @@ img { max-width: 100%; }
     border-radius: 0 0 8px 8px;
     margin: 8px auto 0;
     flex-shrink: 0;
+    position: relative;
+    z-index: 12;
+}
+
+.phone-status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: #000;
+    z-index: 10;
 }
 
 .phone-screen {
@@ -280,6 +292,8 @@ img { max-width: 100%; }
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    position: relative;
+    z-index: 5;
 }
 
 .phone-screen::-webkit-scrollbar {
