@@ -19,17 +19,38 @@ posthog.init(POSTHOG_KEY, {
     persistence: 'localStorage'
 });
 
-// ── Consent Banner ─────────────────────────────────────────
+// ── Consent Banner & Google Analytics ───────────────────────
+function loadGoogleAnalytics() {
+    if (window.ga_loaded) return;
+    window.ga_loaded = true;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-085XCYD57B';
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function() {
+        window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-085XCYD57B');
+}
+
 function showConsentBanner() {
     const consent = localStorage.getItem('fp_analytics_consent');
-    if (consent === 'accepted') { posthog.opt_in_capturing(); return; }
+    if (consent === 'accepted') { 
+        posthog.opt_in_capturing(); 
+        loadGoogleAnalytics();
+        return; 
+    }
     if (consent === 'declined') return;
 
     const banner = document.createElement('div');
     banner.className = 'consent-banner';
     banner.id = 'consent-banner';
     banner.innerHTML = `
-        <p>We use analytics to improve your experience. <a href="privacy.html">Privacy Policy</a></p>
+        <p>We use cookies and analytics to improve your experience. <a href="privacy.html">Privacy Policy</a></p>
         <button class="consent-btn decline" id="consent-decline">Decline</button>
         <button class="consent-btn accept" id="consent-accept">Accept</button>
     `;
@@ -38,6 +59,7 @@ function showConsentBanner() {
     document.getElementById('consent-accept').addEventListener('click', () => {
         localStorage.setItem('fp_analytics_consent', 'accepted');
         posthog.opt_in_capturing();
+        loadGoogleAnalytics();
         posthog.capture('analytics_consent_accepted');
         banner.remove();
     });
