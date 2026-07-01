@@ -212,7 +212,7 @@
     ══════════════════════════════════ -->
     <section style="padding: 5rem 0; background: var(--bg-dark); border-top: 1px solid var(--border);" id="plan-selector-section">
         <style>
-            @media (max-width: 768px) {
+            @media (max-width: 900px) {
                 .selector-grid {
                     grid-template-columns: 1fr !important;
                 }
@@ -436,40 +436,44 @@
                     }
                 });
 
-                // Window resize handler
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth > 768 && mBar) {
-                        mBar.style.display = 'none';
-                    }
-                });
-
-                // Intersection Observer to show/hide sticky bar on mobile scroll
-                if ('IntersectionObserver' in window) {
-                    var observer = new IntersectionObserver(function(entries) {
-                        entries.forEach(function(entry) {
-                            if (window.innerWidth <= 768 && mBar) {
-                                if (entry.isIntersecting) {
-                                    mBar.style.display = 'flex';
-                                    setTimeout(function() {
-                                        mBar.style.transform = 'translateY(0)';
-                                        mBar.style.opacity = '1';
-                                    }, 50);
-                                } else {
-                                    mBar.style.transform = 'translateY(100%)';
-                                    mBar.style.opacity = '0';
-                                    setTimeout(function() {
-                                        if (mBar.style.opacity === '0') {
-                                            mBar.style.display = 'none';
-                                        }
-                                    }, 300);
+                var target = document.getElementById('plan-selector-section');
+                
+                function handleScroll() {
+                    if (!mBar || !target) return;
+                    var rect = target.getBoundingClientRect();
+                    var inView = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (window.innerWidth <= 900) {
+                        if (inView) {
+                            mBar.style.display = 'flex';
+                            mBar.offsetHeight; // Force browser layout reflow
+                            mBar.style.transform = 'translateY(0)';
+                            mBar.style.opacity = '1';
+                        } else {
+                            mBar.style.transform = 'translateY(100%)';
+                            mBar.style.opacity = '0';
+                            setTimeout(function() {
+                                if (mBar.style.opacity === '0') {
+                                    mBar.style.display = 'none';
                                 }
-                            }
-                        });
-                    }, { threshold: 0.05 });
-
-                    var target = document.getElementById('plan-selector-section');
-                    if (target) observer.observe(target);
+                            }, 300);
+                        }
+                    } else {
+                        mBar.style.display = 'none';
+                        mBar.style.transform = 'translateY(100%)';
+                        mBar.style.opacity = '0';
+                    }
                 }
+
+                window.addEventListener('scroll', handleScroll);
+                window.addEventListener('resize', handleScroll);
+                
+                // Trigger scroll check on state update to catch instant layout adjustments
+                var originalUpdateRec = updateRec;
+                updateRec = function() {
+                    originalUpdateRec();
+                    handleScroll();
+                };
                 
                 // Initial execution
                 updateRec();
