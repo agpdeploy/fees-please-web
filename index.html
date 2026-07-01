@@ -210,79 +210,200 @@
     <!-- ══════════════════════════════════
          UPGRADE CALCULATOR
     ══════════════════════════════════ -->
-    <section style="padding: 5rem 0; background: var(--bg-dark); border-top: 1px solid var(--border);" id="calculator">
+    <section style="padding: 5rem 0; background: var(--bg-dark); border-top: 1px solid var(--border);" id="plan-selector-section">
+        <style>
+            @media (max-width: 768px) {
+                .selector-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
         <div class="container">
-            <div class="animate-on-scroll" style="max-width: 680px; margin: 0 auto; text-align: center;">
-                <div class="section-label">Upgrade Calculator</div>
-                <h2 style="font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">Is Plus worth it for your team?</h2>
-                <p style="color: var(--muted); margin-bottom: 2.5rem;">Drag the sliders to match your team. We'll tell you whether it makes financial sense to upgrade.</p>
+            <div class="animate-on-scroll" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div class="section-label">Plan Selector</div>
+                <h2 style="font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">Which plan fits your team?</h2>
+                <p style="color: var(--muted); margin-bottom: 3rem; max-width: 580px; margin-left: auto; margin-right: auto;">Select the features you need. We'll instantly match you with the plan that provides the most value for your team.</p>
 
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 1.5rem; padding: 2rem 2.5rem; text-align: left;">
+                <div class="selector-grid" style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 2rem; text-align: left; align-items: start;">
+                    
+                    <!-- Left Column: Checkbox Options -->
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 1.5rem; padding: 2rem;">
+                        <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin-bottom: 1.25rem; font-weight: 800;">Select your requirements:</h4>
+                        
+                        <!-- Option 1: Digital Payments -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-rates" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Save on digital transaction fees</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Drop Square platform percentage fees down to a flat 30¢ or 15¢ clip.</div>
+                            </div>
+                        </label>
 
-                    <!-- Slider 1: Players -->
-                    <div style="margin-bottom: 1.75rem;">
-                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
-                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Players per team</label>
-                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;" id="calc-players-display">12</span>
-                        </div>
-                        <input type="range" id="calc-players" min="6" max="25" step="1" value="12"
-                            style="width:100%; accent-color: var(--green); cursor: pointer;">
+                        <!-- Option 2: Smart Upload -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-upload" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Upload fixtures via Smart Upload</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Import game schedules instantly via photo screenshots or spreadsheets.</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 3: Role Separation -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-roles" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Add team co-managers (Billing Protection)</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Let others manage lineups and ledgers without exposing your subscription details.</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 4: Custom Sponsors -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-sponsors" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Showcase custom team sponsors</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Display local brand logos and links on player portals and lineup emails.</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 5: Roster Invites / Lineups -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-emails" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Automated lineup & availability emails</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Send weekly match selection invites complete with inline prepay links.</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 6: AI commentaries -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-ai" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">AI Dave match commentaries</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Generate slapstick post-game summaries in the voice of Aussie characters.</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 7: SMS alerts -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-sms" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Direct SMS invites & alerts</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Text availability prompts directly to players (100 SMS credits included/mo).</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 8: Multiple Teams -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-multiteams" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Manage multiple teams (2-5)</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Access a flat-rate plan that covers up to 5 teams under a single subscription.</div>
+                            </div>
+                        </label>
                     </div>
-
-                    <!-- Slider 2: Fee per game -->
-                    <div style="margin-bottom: 1.75rem;">
-                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
-                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Match fee per player</label>
-                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;">$<span id="calc-fee-display">15</span></span>
+                    
+                    <!-- Right Column: Recommendation Result Card -->
+                    <div style="background: var(--surface); border: 2px solid var(--border); border-radius: 1.5rem; padding: 2.25rem 2rem; transition: border-color 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;" id="recommendation-card">
+                        <div>
+                            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.75rem;" id="rec-label">Recommended Plan</div>
+                            <h3 style="font-size: 2.25rem; font-weight: 900; color: #fff; margin-bottom: 0.5rem;" id="rec-name">Free Plan</h3>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: var(--green); margin-bottom: 1.5rem;" id="rec-price">$0 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ forever</span></div>
+                            
+                            <p style="font-size: 0.9rem; color: #e4e4e7; line-height: 1.6; margin-bottom: 1.5rem;" id="rec-desc">Perfect for casual teams tracking cash payments and using manual ledger sheets.</p>
+                            
+                            <ul style="list-style: none; padding: 0; margin: 0 0 2rem 0; font-size: 0.85rem; color: var(--muted); line-height: 1.8;" id="rec-features">
+                                <li>✓ Track unlimited cash payments</li>
+                                <li>✓ Live digital match ledgers</li>
+                                <li>✓ Single-tap player availability</li>
+                                <li>✓ Apple Pay & Google Pay supported</li>
+                            </ul>
                         </div>
-                        <input type="range" id="calc-fee" min="5" max="50" step="5" value="15"
-                            style="width:100%; accent-color: var(--green); cursor: pointer;">
-                    </div>
-
-                    <!-- Slider 3: Rounds -->
-                    <div style="margin-bottom: 2rem;">
-                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
-                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Games per season</label>
-                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;" id="calc-rounds-display">18</span>
+                        
+                        <div>
+                            <a href="https://app.feesplease.app/auth/register" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;" id="rec-btn">Get Started Free</a>
+                            <a href="pricing.html" style="display: block; text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">Compare all features →</a>
                         </div>
-                        <input type="range" id="calc-rounds" min="5" max="40" step="1" value="18"
-                            style="width:100%; accent-color: var(--green); cursor: pointer;">
-                    </div>
-
-                    <!-- % paid by card toggle -->
-                    <div style="margin-bottom: 2rem;">
-                        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem;">
-                            <label style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">Paid digitally (card / Apple Pay)</label>
-                            <span style="font-size: 1.4rem; font-weight: 900; color:#fff;"><span id="calc-digital-display">60</span>%</span>
-                        </div>
-                        <input type="range" id="calc-digital" min="10" max="100" step="10" value="60"
-                            style="width:100%; accent-color: var(--green); cursor: pointer;">
-                    </div>
-
-                    <!-- Results -->
-                    <div style="border-top: 1px solid var(--border); padding-top: 1.5rem; display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.18); border-radius: 1rem; padding: 1.25rem; text-align:center;">
-                            <div style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #ef4444; margin-bottom: 0.4rem;">Free tier cost</div>
-                            <div style="font-size: 1.75rem; font-weight: 900; color: #ef4444;" id="calc-free-cost">$49</div>
-                            <div style="font-size: 0.7rem; color: var(--muted); margin-top: 0.3rem;">Your clip to Fees Please</div>
-                        </div>
-                        <div style="background: rgba(0,188,125,0.07); border: 1px solid rgba(0,188,125,0.18); border-radius: 1rem; padding: 1.25rem; text-align:center;">
-                            <div style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin-bottom: 0.4rem;">Plus tier cost</div>
-                            <div style="font-size: 1.75rem; font-weight: 900; color: var(--green);" id="calc-plus-cost">$108</div>
-                            <div style="font-size: 0.7rem; color: var(--muted); margin-top: 0.3rem;">Sub + flat clip/yr</div>
-                        </div>
-                    </div>
-
-                    <!-- Verdict -->
-                    <div id="calc-verdict" style="border-radius: 0.875rem; padding: 1rem 1.25rem; text-align:center; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border);">
-                        <div id="calc-verdict-text" style="font-size: 0.9rem; font-weight: 700; color: #fff;">📋 Free tier is cost-effective, but Plus is only $59 more/yr.</div>
-                        <div id="calc-verdict-sub" style="font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem;">Plus removes ads, lets you add custom team sponsors, and unlocks AI summaries, availability invites, and lineup prepay links.</div>
                     </div>
                 </div>
-
-                <p style="font-size: 0.75rem; color: var(--muted2); margin-top: 1rem;">Calculation: (players × fee × games × digital%) × 2.5% platform clip = your Free tier cost. Plus costs $69/yr + 30¢ flat platform clip per digital transaction.</p>
             </div>
         </div>
+        
+        <script>
+            (function() {
+                var checkboxes = [
+                    document.getElementById('feat-rates'),
+                    document.getElementById('feat-upload'),
+                    document.getElementById('feat-roles'),
+                    document.getElementById('feat-sponsors'),
+                    document.getElementById('feat-emails'),
+                    document.getElementById('feat-ai'),
+                    document.getElementById('feat-sms'),
+                    document.getElementById('feat-multiteams')
+                ];
+                
+                var card = document.getElementById('recommendation-card');
+                var label = document.getElementById('rec-label');
+                var name = document.getElementById('rec-name');
+                var price = document.getElementById('rec-price');
+                var desc = document.getElementById('rec-desc');
+                var features = document.getElementById('rec-features');
+                var btn = document.getElementById('rec-btn');
+                
+                function updateRec() {
+                    var sms = document.getElementById('feat-sms').checked;
+                    var multiteams = document.getElementById('feat-multiteams').checked;
+                    
+                    var rates = document.getElementById('feat-rates').checked;
+                    var upload = document.getElementById('feat-upload').checked;
+                    var roles = document.getElementById('feat-roles').checked;
+                    var sponsors = document.getElementById('feat-sponsors').checked;
+                    var emails = document.getElementById('feat-emails').checked;
+                    var ai = document.getElementById('feat-ai').checked;
+                    
+                    if (sms || multiteams) {
+                        // Recommend Pro
+                        card.style.borderColor = 'var(--green)';
+                        label.style.color = 'var(--green)';
+                        name.textContent = 'Pro Plan';
+                        price.innerHTML = '$12.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month flat</span>';
+                        desc.textContent = 'Designed for power-organizers and multi-team captains. Includes direct SMS invites, advanced reporting, up to 5 teams, and flat rates.';
+                        features.innerHTML = '<li>✓ Up to 5 teams included flat-rate</li><li>✓ Direct SMS invites & alerts (100 credits/mo)</li><li>✓ Lowest 15¢ flat Square platform clip</li><li>✓ Includes all Plus features</li>';
+                        btn.textContent = 'Start 14-Day Free Trial';
+                        btn.href = 'https://app.feesplease.app/auth/register?plan=pro';
+                    } else if (rates || upload || roles || sponsors || emails || ai) {
+                        // Recommend Plus
+                        card.style.borderColor = 'var(--green)';
+                        label.style.color = 'var(--green)';
+                        name.textContent = 'Plus Plan';
+                        price.innerHTML = '$6.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month per team</span>';
+                        desc.textContent = 'Best value for active organizers. Unlocks fixture uploads, automated availability emails, custom sponsorships, and slashes Square platform clip to 30¢ flat.';
+                        features.innerHTML = '<li>✓ Smart upload (screenshot/spreadsheet fixtures)</li><li>✓ Selected lineups & automated email invites</li><li>✓ Custom team sponsors (keep 100% of revenue)</li><li>✓ 30¢ flat platform clip (saves 2.2% per transaction)</li>';
+                        btn.textContent = 'Start 14-Day Free Trial';
+                        btn.href = 'https://app.feesplease.app/auth/register?plan=plus';
+                    } else {
+                        // Recommend Free
+                        card.style.borderColor = 'var(--border)';
+                        label.style.color = 'var(--muted)';
+                        name.textContent = 'Free Plan';
+                        price.innerHTML = '$0 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ forever</span>';
+                        desc.textContent = 'Perfect for casual teams tracking cash payments and using manual ledger sheets.';
+                        features.innerHTML = '<li>✓ Track unlimited cash payments</li><li>✓ Live digital match ledgers</li><li>✓ Single-tap player availability</li><li>✓ Apple Pay & Google Pay supported</li>';
+                        btn.textContent = 'Get Started Free';
+                        btn.href = 'https://app.feesplease.app/auth/register';
+                    }
+                }
+                
+                checkboxes.forEach(function(cb) {
+                    if (cb) {
+                        cb.addEventListener('change', updateRec);
+                    }
+                });
+                
+                // Initial execution
+                updateRec();
+            })();
+        </script>
     </section>
 
     <!-- ══════════════════════════════════
