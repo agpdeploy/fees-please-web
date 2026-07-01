@@ -177,31 +177,56 @@
     <!-- ══════════════════════════════════
          HOW IT WORKS
     ══════════════════════════════════ -->
-    <section class="steps-section" id="how-it-works">
+    <section class="steps-section" id="how-it-works" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 5rem 0;">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-label">How It Works</div>
-                <h2>Set up your team in minutes.</h2>
-                <p>Load your team, fixtures, and match fees in minutes.</p>
+            <div class="section-header animate-on-scroll" style="text-align: center; margin-bottom: 3.5rem;">
+                <div class="section-label" style="color: var(--green); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 0.75rem;">How It Works</div>
+                <h2 style="font-size: 2.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem;">Set up your team in minutes.</h2>
+                <p style="color: #475569; max-width: 580px; margin: 0 auto; font-size: 1.05rem;">Load your team, fixtures, and match fees in minutes.</p>
             </div>
-            <div class="steps-grid">
-                <div class="step-card animate-on-scroll">
-                    <div class="step-number">01</div>
-                    <div class="step-icon">📅</div>
-                    <h3>Sync or Upload Fixtures</h3>
-                    <p>Paste your PlayHQ URL or do a Smart Upload (screenshot/spreadsheet). Fees Please instantly auto-populates all fixture dates, times, and venues. Zero typing.</p>
+            <div class="steps-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <style>
+                    .light-step-card {
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 1.25rem;
+                        padding: 2.25rem 2rem;
+                        position: relative;
+                        overflow: hidden;
+                        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+                        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+                    }
+                    .light-step-card:hover {
+                        transform: translateY(-4px);
+                        border-color: rgba(0, 188, 125, 0.3);
+                        box-shadow: 0 15px 35px rgba(0, 188, 125, 0.06);
+                    }
+                    @media (max-width: 900px) {
+                        .steps-grid {
+                            grid-template-columns: 1fr !important;
+                        }
+                    }
+                </style>
+                
+                <div class="light-step-card animate-on-scroll">
+                    <div class="step-number" style="font-size: 5rem; font-weight: 900; font-style: italic; color: rgba(15, 23, 42, 0.045); position: absolute; right: 1rem; top: -0.5rem; line-height: 1; user-select: none;">01</div>
+                    <div class="step-icon" style="font-size: 2.5rem; margin-bottom: 1.25rem; display: inline-block;">📅</div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Sync or Upload Fixtures</h3>
+                    <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin: 0;">Paste your PlayHQ URL or do a Smart Upload (screenshot/spreadsheet). Fees Please instantly auto-populates all fixture dates, times, and venues. Zero typing.</p>
                 </div>
-                <div class="step-card animate-on-scroll">
-                    <div class="step-number">02</div>
-                    <div class="step-icon">👥</div>
-                    <h3>Add Your Players</h3>
-                    <p>Import your roster via Smart Upload to start tracking match fees against each player immediately.</p>
+                
+                <div class="light-step-card animate-on-scroll">
+                    <div class="step-number" style="font-size: 5rem; font-weight: 900; font-style: italic; color: rgba(15, 23, 42, 0.045); position: absolute; right: 1rem; top: -0.5rem; line-height: 1; user-select: none;">02</div>
+                    <div class="step-icon" style="font-size: 2.5rem; margin-bottom: 1.25rem; display: inline-block;">👥</div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Add Your Players</h3>
+                    <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin: 0;">Import your roster via Smart Upload to start tracking match fees against each player immediately.</p>
                 </div>
-                <div class="step-card animate-on-scroll">
-                    <div class="step-number">03</div>
-                    <div class="step-icon">💳</div>
-                    <h3>Get Paid</h3>
-                    <p>Connect your Square account (it's free to create) or track cash manually. Let players scan the QR code to pay via card, and watch your live team ledger reconcile instantly.</p>
+                
+                <div class="light-step-card animate-on-scroll">
+                    <div class="step-number" style="font-size: 5rem; font-weight: 900; font-style: italic; color: rgba(15, 23, 42, 0.045); position: absolute; right: 1rem; top: -0.5rem; line-height: 1; user-select: none;">03</div>
+                    <div class="step-icon" style="font-size: 2.5rem; margin-bottom: 1.25rem; display: inline-block;">💳</div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Get Paid</h3>
+                    <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin: 0;">Connect your Square account (it's free to create) or track cash manually. Let players scan the QR code to pay via card, and watch your live team ledger reconcile instantly.</p>
                 </div>
             </div>
         </div>
