@@ -275,7 +275,16 @@
                             </div>
                         </label>
 
-                        <!-- Option 6: Multiple Teams -->
+                        <!-- Option 6: Team Sheets / Lineups -->
+                        <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
+                            <input type="checkbox" id="feat-lineups" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Generate printable team sheets & lineup graphics</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Create beautiful branded lineup sheets to share on your social chats or print out for matches.</div>
+                            </div>
+                        </label>
+
+                        <!-- Option 7: Multiple Teams -->
                         <label style="display: flex; gap: 1rem; align-items: flex-start; cursor: pointer; color: #fff;">
                             <input type="checkbox" id="feat-multiteams" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
                             <div>
@@ -319,6 +328,7 @@
                     document.getElementById('feat-emails'),
                     document.getElementById('feat-wallet'),
                     document.getElementById('feat-history'),
+                    document.getElementById('feat-lineups'),
                     document.getElementById('feat-multiteams')
                 ];
                 
@@ -339,6 +349,7 @@
                     var emails = document.getElementById('feat-emails').checked;
                     var wallet = document.getElementById('feat-wallet').checked;
                     var history = document.getElementById('feat-history').checked;
+                    var lineups = document.getElementById('feat-lineups').checked;
                     
                     if (multiteams) {
                         // Recommend Pro
@@ -351,14 +362,14 @@
                         footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 15¢ flat platform clip.';
                         btn.textContent = 'Start 14-Day Free Trial';
                         btn.href = 'https://app.feesplease.app/auth/register?plan=pro';
-                    } else if (rates || sponsors || emails || wallet || history) {
+                    } else if (rates || sponsors || emails || wallet || history || lineups) {
                         // Recommend Plus
                         card.style.borderColor = 'var(--green)';
                         label.style.color = 'var(--green)';
                         name.textContent = 'Plus Plan';
                         price.innerHTML = '$6.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month per team</span>';
                         desc.textContent = 'Best value for active organizers. Unlocks automated lineup emails, Team Wallet tracking, multi-season history, and slashes Square platform clip to 30¢ flat.';
-                        features.innerHTML = '<li>✓ Selected lineups & automated email invites</li><li>✓ Custom team sponsors (keep 100% of revenue)</li><li>✓ Team Wallet (track individual player contributions)</li><li><li>✓ Multi-season history and statistics</li><li>✓ 30¢ flat platform clip (saves 2.2% per transaction)</li>';
+                        features.innerHTML = '<li>✓ Selected lineups & automated email invites</li><li>✓ Downloadable branded lineup graphics & team sheets</li><li>✓ Team Wallet (track individual player contributions)</li><li>✓ Custom team sponsors & multi-season statistics</li><li>✓ 30¢ flat platform clip (saves 2.2% per transaction)</li>';
                         footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 30¢ flat platform clip.';
                         btn.textContent = 'Start 14-Day Free Trial';
                         btn.href = 'https://app.feesplease.app/auth/register?plan=plus';
