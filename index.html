@@ -261,8 +261,8 @@
                         <label style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; cursor: pointer; color: #fff;">
                             <input type="checkbox" id="feat-wallet" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
                             <div>
-                                <div style="font-weight: 700; font-size: 0.95rem;">Track individual player contributions (Team Wallet)</div>
-                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Understand exactly what each player has contributed to reward them if there is a surplus.</div>
+                                <div style="font-weight: 700; font-size: 0.95rem;">Reward regular players</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Understand exactly what each player has contributed to reward them if there is a surplus of funds.</div>
                             </div>
                         </label>
 
@@ -271,7 +271,7 @@
                             <input type="checkbox" id="feat-history" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
                             <div>
                                 <div style="font-weight: 700; font-size: 0.95rem;">Review season history</div>
-                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Access and analyze transaction data, stats, and kitty history across multiple seasons.</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Access and analyse transaction data, stats, and kitty history across multiple seasons.</div>
                             </div>
                         </label>
 
@@ -319,6 +319,18 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Sticky Recommendation Bar -->
+        <div id="mobile-rec-bar" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #18181b; border-top: 2px solid var(--border); padding: 0.85rem 1.25rem; z-index: 1000; box-shadow: 0 -10px 30px rgba(0,0,0,0.5); justify-content: space-between; align-items: center; transition: transform 0.3s ease, opacity 0.3s ease; transform: translateY(100%); opacity: 0;">
+            <div>
+                <div style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); transition: color 0.2s;" id="mobile-rec-label">Recommended Plan</div>
+                <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.15rem;">
+                    <span style="font-weight: 900; color: #fff; font-size: 1.15rem;" id="mobile-rec-name">Free Plan</span>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: var(--green);" id="mobile-rec-price">$0</span>
+                </div>
+            </div>
+            <a href="https://app.feesplease.app/auth/register" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; margin: 0; width: auto;" id="mobile-rec-btn">Get Started Free</a>
+        </div>
         
         <script>
             (function() {
@@ -340,6 +352,13 @@
                 var features = document.getElementById('rec-features');
                 var footnote = document.getElementById('rec-footnote');
                 var btn = document.getElementById('rec-btn');
+
+                // Mobile bar elements
+                var mBar = document.getElementById('mobile-rec-bar');
+                var mLabel = document.getElementById('mobile-rec-label');
+                var mName = document.getElementById('mobile-rec-name');
+                var mPrice = document.getElementById('mobile-rec-price');
+                var mBtn = document.getElementById('mobile-rec-btn');
                 
                 function updateRec() {
                     var multiteams = document.getElementById('feat-multiteams').checked;
@@ -356,23 +375,39 @@
                         card.style.borderColor = 'var(--green)';
                         label.style.color = 'var(--green)';
                         name.textContent = 'Pro Plan';
-                        price.innerHTML = '$12.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month flat</span>';
-                        desc.textContent = 'Designed for power-organizers and multi-team captains. Covers up to 5 teams flat-rate and offers the lowest flat transaction fees.';
+                        price.innerHTML = '$12.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month flat (or $10.75/mo billed annually)</span>';
+                        desc.textContent = 'Designed for power-organisers and multi-team captains. Covers up to 5 teams flat-rate and offers the lowest flat transaction fees.';
                         features.innerHTML = '<li>✓ Up to 5 teams included flat-rate</li><li>✓ Lowest 15¢ flat Square platform clip</li><li>✓ Includes all Plus features</li>';
                         footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 15¢ flat platform clip.';
-                        btn.textContent = 'Start 14-Day Free Trial';
+                        btn.textContent = 'Get Started Free';
                         btn.href = 'https://app.feesplease.app/auth/register?plan=pro';
+
+                        if (mName) {
+                            mName.textContent = 'Pro Plan';
+                            mPrice.innerHTML = '$12.99 <span style="font-size: 0.72rem; color: var(--muted); font-weight: normal;">(or $10.75/mo annually)</span>';
+                            mBtn.textContent = 'Get Started Free';
+                            mBtn.href = 'https://app.feesplease.app/auth/register?plan=pro';
+                            mLabel.style.color = 'var(--green)';
+                        }
                     } else if (rates || sponsors || emails || wallet || history || lineups) {
                         // Recommend Plus
                         card.style.borderColor = 'var(--green)';
                         label.style.color = 'var(--green)';
                         name.textContent = 'Plus Plan';
-                        price.innerHTML = '$6.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month per team</span>';
-                        desc.textContent = 'Best value for active organizers. Unlocks automated lineup emails, Team Wallet tracking, multi-season history, and slashes Square platform clip to 30¢ flat.';
+                        price.innerHTML = '$6.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month per team (or $5.75/mo billed annually)</span>';
+                        desc.textContent = 'Best value for active organisers. Unlocks automated lineup emails, Team Wallet tracking, multi-season history, and slashes Square platform clip to 30¢ flat.';
                         features.innerHTML = '<li>✓ Selected lineups & automated email invites</li><li>✓ Downloadable branded lineup graphics & team sheets</li><li>✓ Team Wallet (track individual player contributions)</li><li>✓ Custom team sponsors & multi-season statistics</li><li>✓ 30¢ flat platform clip (saves 2.2% per transaction)</li>';
                         footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 30¢ flat platform clip.';
-                        btn.textContent = 'Start 14-Day Free Trial';
+                        btn.textContent = 'Get Started Free';
                         btn.href = 'https://app.feesplease.app/auth/register?plan=plus';
+
+                        if (mName) {
+                            mName.textContent = 'Plus Plan';
+                            mPrice.innerHTML = '$6.99 <span style="font-size: 0.72rem; color: var(--muted); font-weight: normal;">(or $5.75/mo annually)</span>';
+                            mBtn.textContent = 'Get Started Free';
+                            mBtn.href = 'https://app.feesplease.app/auth/register?plan=plus';
+                            mLabel.style.color = 'var(--green)';
+                        }
                     } else {
                         // Recommend Free
                         card.style.borderColor = 'var(--border)';
@@ -384,14 +419,57 @@
                         footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 2.5% platform clip.';
                         btn.textContent = 'Get Started Free';
                         btn.href = 'https://app.feesplease.app/auth/register';
+
+                        if (mName) {
+                            mName.textContent = 'Free Plan';
+                            mPrice.innerHTML = '$0';
+                            mBtn.textContent = 'Get Started Free';
+                            mBtn.href = 'https://app.feesplease.app/auth/register';
+                            mLabel.style.color = 'var(--muted)';
+                        }
                     }
                 }
-                
+
                 checkboxes.forEach(function(cb) {
                     if (cb) {
                         cb.addEventListener('change', updateRec);
                     }
                 });
+
+                // Window resize handler
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mBar) {
+                        mBar.style.display = 'none';
+                    }
+                });
+
+                // Intersection Observer to show/hide sticky bar on mobile scroll
+                if ('IntersectionObserver' in window) {
+                    var observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (window.innerWidth <= 768 && mBar) {
+                                if (entry.isIntersecting) {
+                                    mBar.style.display = 'flex';
+                                    setTimeout(function() {
+                                        mBar.style.transform = 'translateY(0)';
+                                        mBar.style.opacity = '1';
+                                    }, 50);
+                                } else {
+                                    mBar.style.transform = 'translateY(100%)';
+                                    mBar.style.opacity = '0';
+                                    setTimeout(function() {
+                                        if (mBar.style.opacity === '0') {
+                                            mBar.style.display = 'none';
+                                        }
+                                    }, 300);
+                                }
+                            }
+                        });
+                    }, { threshold: 0.05 });
+
+                    var target = document.getElementById('plan-selector-section');
+                    if (target) observer.observe(target);
+                }
                 
                 // Initial execution
                 updateRec();
