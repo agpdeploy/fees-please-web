@@ -136,7 +136,7 @@ function buildFooter() {
                 <div>
                     <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#52525b; margin-bottom:1rem;">Resources</p>
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
-                        <a href="#" style="font-size:0.875rem; color:#71717a;" class="footer-link">Help Centre</a>
+                        <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" rel="noopener" style="font-size:0.875rem; color:#71717a;" class="footer-link">Help Centre</a>
                         <a href="contact.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
                     </div>
                 </div>
