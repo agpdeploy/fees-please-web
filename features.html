@@ -1,1506 +1,690 @@
 <!DOCTYPE html>
 
-
-
 <html lang="en">
-
-
 
 <head>
 
-
-
-    
-
-
-
     <meta charset="UTF-8">
-
-
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
     <title>Features | Fees Please - Match Fee Collection, AI Summaries &amp; More</title>
-
-
 
     <meta name="description" content="Explore all Fees Please features: GameDay mode, real-time ledger, Square card payments, player portal, AI match summaries, and custom sponsorship.">
 
-
-
     <link rel="canonical" href="https://feesplease.app/features.html">
-
-
-
-
-
-
 
     <!-- Open Graph / Facebook -->
 
-
-
     <meta property="og:type" content="website">
-
-
 
     <meta property="og:url" content="https://feesplease.app/features.html">
 
-
-
     <meta property="og:title" content="Features | Fees Please - Match Fee Collection, AI Summaries &amp; More">
-
-
 
     <meta property="og:description" content="Explore all Fees Please features: GameDay mode, real-time ledger, Square card payments, player portal, AI match summaries, and custom sponsorship.">
 
-
-
     <meta property="og:image" content="https://feesplease.app/assets/og-share.png">
-
-
-
-
-
-
 
     <!-- Twitter -->
 
-
-
     <meta name="twitter:card" content="summary_large_image">
-
-
 
     <meta name="twitter:url" content="https://feesplease.app/features.html">
 
-
-
     <meta name="twitter:title" content="Features | Fees Please - Match Fee Collection, AI Summaries &amp; More">
-
-
 
     <meta name="twitter:description" content="Explore all Fees Please features: GameDay mode, real-time ledger, Square card payments, player portal, AI match summaries, and custom sponsorship.">
 
-
-
     <meta name="twitter:image" content="https://feesplease.app/assets/og-share.png">
-
-
-
-
-
-
 
     <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
 
-
-
     <script src="https://cdn.tailwindcss.com"></script>
-
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
-
     <link rel="stylesheet" href="css/style.css">
-
-
 
     <style>
 
-
-
         /* ── Phone Frame System ── */
-
-
 
         .phone-wrap {
 
-
-
             display: flex;
-
-
 
             justify-content: center;
 
-
-
             align-items: center;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-frame {
 
-
-
             width: 280px;
 
-
-
             background: #0f0f11;
-
-
 
             border-radius: 40px;
 
-
-
             border: 8px solid #27272a;
-
-
 
             box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.05), 0 0 0 1px #000;
 
-
-
             overflow: hidden;
 
-
-
             position: relative;
-
-
 
             max-height: 540px;
 
-
-
             display: flex;
-
-
 
             flex-direction: column;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-notch {
 
-
-
             width: 80px;
-
-
 
             height: 8px;
 
-
-
             background: #27272a;
-
-
 
             border-radius: 0 0 8px 8px;
 
-
-
             margin: 8px auto 0;
-
-
 
             flex-shrink: 0;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-screen {
 
-
-
             flex: 1;
-
-
 
             overflow-y: auto;
 
-
-
             scrollbar-width: none;
-
-
 
             -ms-overflow-style: none;
 
-
-
         }
-
-
 
         .phone-screen::-webkit-scrollbar { display: none; }
 
-
-
-
-
-
-
         .phone-header {
 
-
-
             display: flex;
-
-
 
             justify-content: space-between;
 
-
-
             align-items: center;
-
-
 
             padding: 0.625rem 0.875rem;
 
-
-
             background: #000;
-
-
 
             border-bottom: 1px solid #27272a;
 
-
-
             flex-shrink: 0;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-header-title {
 
-
-
             font-size: 13px;
-
-
 
             font-weight: 900;
 
-
-
             color: #10b981;
-
-
 
             letter-spacing: 0.01em;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-header-sub {
 
-
-
             font-size: 8px;
-
-
 
             font-weight: 700;
 
-
-
             color: #52525b;
-
-
 
             text-transform: uppercase;
 
-
-
             letter-spacing: 0.12em;
-
-
 
             margin-top: 1px;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-header-icon {
 
-
-
             width: 28px;
-
-
 
             height: 28px;
 
-
-
             background: #18181b;
-
-
 
             border-radius: 50%;
 
-
-
             display: flex;
-
-
 
             align-items: center;
 
-
-
             justify-content: center;
 
-
-
             font-size: 11px;
-
-
 
             color: #71717a;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-nav {
 
-
-
             background: #000;
-
-
 
             border-top: 1px solid #27272a;
 
-
-
             display: flex;
-
-
 
             padding: 0.4rem 0 0.5rem;
 
-
-
             flex-shrink: 0;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-nav-item {
 
-
-
             flex: 1;
-
-
 
             display: flex;
 
-
-
             flex-direction: column;
 
-
-
             align-items: center;
-
-
 
             gap: 2px;
 
-
-
             font-size: 8px;
-
-
 
             font-weight: 900;
 
-
-
             text-transform: uppercase;
-
-
 
             letter-spacing: 0.05em;
 
-
-
             color: #52525b;
-
-
 
             padding: 0.1rem 0;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-nav-item i { font-size: 13px; }
 
-
-
         .phone-nav-item.active { color: #10b981; }
-
-
-
-
-
-
 
         .phone-card {
 
-
-
             background: #fff;
-
-
 
             border-radius: 12px;
 
-
-
             margin: 0.5rem;
-
-
 
             padding: 0.75rem;
 
-
-
             border: 1px solid #e4e4e7;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-card-dark {
 
-
-
             background: #18181b;
-
-
 
             border-radius: 12px;
 
-
-
             margin: 0.5rem;
-
-
 
             padding: 0.75rem;
 
-
-
             border: 1px solid #27272a;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-label {
 
-
-
             font-size: 8px;
-
-
 
             font-weight: 700;
 
-
-
             text-transform: uppercase;
-
-
 
             letter-spacing: 0.12em;
 
-
-
             color: #52525b;
-
-
 
             margin-bottom: 0.25rem;
 
-
-
         }
-
-
-
-
-
-
 
         .phone-section-title {
 
-
-
             font-size: 11px;
-
-
 
             font-weight: 900;
 
-
-
             color: #fff;
-
-
 
             text-transform: uppercase;
 
-
-
             letter-spacing: 0.08em;
 
-
-
         }
-
-
-
-
-
-
 
         /* ── Feature visual override for phone frames ── */
 
-
-
         .feature-visual.phone-visual {
-
-
 
             background: transparent;
 
-
-
             border: none;
-
-
 
             padding: 1.5rem;
 
-
-
             min-height: 0;
 
-
-
         }
-
-
-
-
-
-
 
         /* ── WhatsApp-style AI cards ── */
 
-
-
         .wa-card {
-
-
 
             background: #18181b;
 
-
-
             border: 1px solid #27272a;
 
-
-
             border-radius: 1rem;
-
-
 
             padding: 1.25rem;
 
-
-
             display: flex;
 
-
-
             flex-direction: column;
-
-
 
             gap: 0.75rem;
 
-
-
             transition: border-color 0.3s, transform 0.3s;
 
-
-
         }
-
-
 
         .wa-card:hover {
 
-
-
             border-color: rgba(16,185,129,0.3);
-
-
 
             transform: translateY(-3px);
 
-
-
         }
-
-
 
         .wa-header {
 
-
-
             display: flex;
 
-
-
             align-items: center;
-
-
 
             gap: 0.625rem;
 
-
-
         }
-
-
 
         .wa-avatar {
 
-
-
             width: 36px;
-
-
 
             height: 36px;
 
-
-
             border-radius: 50%;
-
-
 
             display: flex;
 
-
-
             align-items: center;
 
-
-
             justify-content: center;
-
-
 
             font-size: 1.25rem;
 
-
-
             flex-shrink: 0;
 
-
-
         }
-
-
 
         .wa-name { font-weight: 800; font-size: 0.875rem; color: #fff; }
 
-
-
         .wa-role { font-size: 0.7rem; color: #71717a; }
-
-
 
         .wa-bubble {
 
-
-
             background: #0f0f11;
-
-
 
             border-radius: 0 0.75rem 0.75rem 0.75rem;
 
-
-
             padding: 0.875rem 1rem;
-
-
 
             font-size: 0.825rem;
 
-
-
             color: #a1a1aa;
-
-
 
             font-style: italic;
 
-
-
             line-height: 1.65;
 
-
-
             border: 1px solid #27272a;
-
-
 
             position: relative;
 
-
-
         }
-
-
 
         .wa-bubble::before {
 
-
-
             content: '';
-
-
 
             position: absolute;
 
-
-
             top: 0;
-
-
 
             left: -6px;
 
-
-
             border: 6px solid transparent;
-
-
 
             border-top-color: #27272a;
 
-
-
             border-right-color: #27272a;
-
-
 
             border-top-width: 0;
 
-
-
             border-right-width: 6px;
 
-
-
         }
-
-
 
         .wa-share-btn {
 
-
-
             display: flex;
-
-
 
             align-items: center;
 
-
-
             justify-content: center;
-
-
 
             gap: 0.4rem;
 
-
-
             background: rgba(16,185,129,0.1);
-
-
 
             border: 1px solid rgba(16,185,129,0.25);
 
-
-
             border-radius: 9999px;
-
-
 
             padding: 0.4rem 0.9rem;
 
-
-
             font-size: 0.75rem;
-
-
 
             font-weight: 700;
 
-
-
             color: #10b981;
 
-
-
             cursor: pointer;
-
-
 
             align-self: flex-start;
 
-
-
             transition: background 0.2s;
 
-
-
         }
-
-
 
         .wa-share-btn:hover { background: rgba(16,185,129,0.18); }
 
-
-
-
-
-
-
         /* ── Sponsorship flow diagram ── */
-
-
 
         .sponsor-flow {
 
-
-
             display: flex;
-
-
 
             flex-direction: column;
 
-
-
             gap: 0;
-
-
 
             background: #18181b;
 
-
-
             border: 1px solid #27272a;
-
-
 
             border-radius: 1rem;
 
-
-
             overflow: hidden;
 
-
-
         }
-
-
 
         .sponsor-flow-row {
 
-
-
             display: flex;
 
-
-
             align-items: center;
-
-
 
             gap: 0.875rem;
 
-
-
             padding: 0.875rem 1.125rem;
-
-
 
             border-bottom: 1px solid #27272a;
 
-
-
         }
-
-
 
         .sponsor-flow-row:last-child { border-bottom: none; }
 
-
-
         .sponsor-flow-icon {
-
-
 
             width: 36px;
 
-
-
             height: 36px;
-
-
 
             border-radius: 50%;
 
-
-
             display: flex;
-
-
 
             align-items: center;
 
-
-
             justify-content: center;
 
-
-
             font-size: 1.1rem;
-
-
 
             flex-shrink: 0;
 
-
-
         }
-
-
 
         .sponsor-flow-arrow {
 
-
-
             display: flex;
-
-
 
             align-items: center;
 
-
-
             justify-content: center;
-
-
 
             padding: 0.25rem 0 0.25rem 3.375rem;
 
-
-
             color: #10b981;
-
-
 
             font-size: 1.1rem;
 
-
-
         }
-
-
-
-
-
-
 
         /* ── Feature nav scroll active highlight ── */
 
-
-
         .feature-nav-link { transition: color 0.2s; }
-
-
-
-
-
-
 
         /* ── Portal mockup (web page, not app) ── */
 
-
-
         .portal-frame {
 
-
-
             background: #fff;
-
-
 
             border-radius: 16px;
 
-
-
             overflow: hidden;
-
-
 
             border: 1px solid #e4e4e7;
 
-
-
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-
-
 
             max-width: 300px;
 
-
-
             margin: 0 auto;
 
-
-
         }
-
-
 
         .portal-header {
 
-
-
             background: #0f0f11;
-
-
 
             padding: 1rem;
 
-
-
             text-align: center;
 
-
-
         }
-
-
 
         .portal-body {
 
-
-
             background: #fff;
-
-
 
             padding: 1rem;
 
-
-
         }
-
-
 
         .portal-avail-btn {
 
-
-
             flex: 1;
-
-
 
             padding: 0.625rem 0.25rem;
 
-
-
             border-radius: 8px;
-
-
 
             font-size: 0.75rem;
 
-
-
             font-weight: 700;
-
-
 
             border: 2px solid transparent;
 
-
-
             cursor: pointer;
-
-
 
             text-align: center;
 
-
-
         }
-
-
 
     </style>
 
-
-
-
-
-
-
     <!-- JSON-LD Schema Markup for AI Search Crawlers -->
-
-
 
     <script type="application/ld+json">
 
-
-
     {
-
-
 
       "@context": "https://schema.org",
 
-
-
       "@type": "SoftwareApplication",
-
-
 
       "name": "Fees Please Features",
 
-
-
       "description": "Exploration of features within Fees Please - GameDay dashboard, live ledger tracking, Team Wallet, and automated player availability invites.",
-
-
 
       "brand": {
 
-
-
         "@type": "Brand",
-
-
 
         "name": "Fees Please"
 
-
-
       },
-
-
 
       "applicationCategory": "SportsApplication, FinancialApplication",
 
-
-
       "operatingSystem": "All",
-
-
 
       "featureList": "Live sideline availability tracking, Colour-coded Ledger (debt and credit badges), Square payments, Google Pay and Apple Pay integration, Team Wallet (Kitty buffers, player rewards, and expense logging), PlayHQ fixture synchronization, Smart fixture photo/spreadsheet upload, Dave AI help assistant and commentators"
 
-
-
     }
-
-
 
     </script>
 
-
-
 </head>
-
-
 
 <body>
 
-
-
-
-
-
-
 <div id="header-placeholder"></div>
-
-
-
-
-
-
 
 <main style="padding-top: 6rem;">
 
-
-
-
-
-
-
     <!-- Hero -->
-
-
 
     <section style="padding: 5rem 0 4rem; text-align:center; position:relative; overflow:hidden;">
 
-
-
         <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 50% at 50% 0%, rgba(16,185,129,0.1) 0%, transparent 70%); pointer-events:none;"></div>
-
-
 
         <div class="container" style="position:relative;">
 
-
-
             <div class="section-label">Features</div>
-
-
 
             <h1 style="font-size:clamp(2.5rem, 6vw, 4rem); font-weight:900; color:#fff; margin-bottom:1rem; line-height:1.1;">
 
-
-
                 Every feature your team needs.<br><span class="text-gradient">Nothing it doesn't.</span>
-
-
 
             </h1>
 
-
-
             <p style="color:var(--muted); max-width:560px; margin:0 auto 2.5rem; font-size:1.05rem; line-height:1.7;">
-
-
 
                 No enterprise bloat. No MBA-level dashboards. Just the stuff that makes a team organiser's Saturday significantly less stressful.
 
-
-
             </p>
-
-
 
             <a href="https://app.feesplease.app/auth/register" class="btn-primary" id="features-hero-cta" data-ph-event="features_cta_click">
 
-
-
                 Get Started Free →
-
-
 
             </a>
 
-
-
         </div>
-
-
 
     </section>
 
-
-
-
-
-
-
     <!-- Feature Nav / Jump Links -->
-
-
 
     <nav style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-dark); position:sticky; top:64px; z-index:40; overflow-x:auto;">
 
-
-
         <div class="container" style="display:flex; gap:2rem; padding:1rem 1.5rem; white-space:nowrap;">
-
-
 
             <a href="#gameday" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">⚡ GameDay</a>
 
-
-
             <a href="#ledger"  style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">👛 Ledger</a>
-
-
 
             <a href="#payments" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">💳 Payments</a>
 
-
-
             <a href="#portal" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">📲 Team Hub</a>
-
-
 
             <a href="#playhq" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">🔗 PlayHQ Sync</a>
 
-
-
-            <a href="#offline" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">📱 Offline Sync</a>
-
-
-
             <a href="#wallet" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">💰 Team Wallet</a>
-
-
 
             <a href="#ai"    style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">🤖 AI Summaries</a>
 
-
-
             <a href="#sponsorship" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">🍺 Sponsorship</a>
-
-
 
         </div>
 
-
-
     </nav>
-
-
-
-
-
-
-
-
-
-
 
     <!-- ══════════════════════════════════════
 
-
-
          1. GAMEDAY
-
-
 
     ══════════════════════════════════════ -->
 
-
-
     <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="gameday">
-
-
 
         <div class="container">
 
-
-
             <div class="feature-row animate-on-scroll">
-
-
-
-
-
-
 
                 <!-- Phone mockup: GameDay tab active -->
 
@@ -1524,107 +708,49 @@
 
                 </div>
 
-                
-
                 <!-- Text side -->
-
-
 
                 <div class="feature-text">
 
-
-
                     <div class="section-label">⚡ GameDay</div>
-
-
 
                     <h2>Your match-day command centre.</h2>
 
-
-
                     <p>Open the app on game day and everything is right there - who's confirmed in, who's maybe, who's out, and who still owes from last week. Tap to record cash on the spot. No faff.</p>
-
-
 
                     <ul class="feature-checklist">
 
-
-
                         <li>Live player availability (In / Maybe / Out) at a glance</li>
-
-
 
                         <li><strong>Debt &amp; Credit Indicators</strong> - colour-coded red (owes) and green (in credit) badges</li>
 
-
-
                         <li>One-tap cash recording &amp; advance credit logging</li>
-
-
 
                         <li>Preload players with default fee rates or create players on the fly</li>
 
-
-
                         <li>Fee collection progress bar - know you're squared up before the final whistle</li>
-
-
 
                     </ul>
 
-
-
                 </div>
-
-
 
             </div>
 
-
-
         </div>
-
-
 
     </section>
 
-
-
-
-
-
-
-
-
-
-
     <!-- ══════════════════════════════════════
-
-
 
          2. LEDGER
 
-
-
     ══════════════════════════════════════ -->
-
-
 
     <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="ledger">
 
-
-
         <div class="container">
 
-
-
             <div class="feature-row reverse animate-on-scroll">
-
-
-
-
-
-
 
                 <!-- Phone mockup: Ledger tab active -->
 
@@ -1648,119 +774,55 @@
 
                 </div>
 
-                
-
                 <!-- Text side -->
-
-
 
                 <div class="feature-text">
 
-
-
                     <div class="section-label">👛 Live Ledger</div>
-
-
 
                     <h2>Ditch the spreadsheet. For good.</h2>
 
-
-
                     <p>The real-time ledger is the heart of Fees Please. See who paid cash, who tapped their card, who owes for last week <em>and</em> this week - updated the moment a payment is recorded.</p>
-
-
 
                     <ul class="feature-checklist">
 
-
-
                         <li>Cash, card, and bank transfer tracked side-by-side</li>
-
-
 
                         <li><strong>Flexible Fees</strong> - set different fee rates for regular members and casual fill-ins</li>
 
-
-
                         <li>Per-player running debt and credit balance across the season</li>
-
-
 
                         <li>Identify game-by-game negative positions (when collected fees don't cover court costs)</li>
 
-
-
                         <li>Log manual adjustments to quickly correct historic entries</li>
-
-
 
                         <li><strong>Team Summary Reports</strong> - regular automated email reports detailing availability and financial state</li>
 
-
-
                         <li><strong>Multi-Season History</strong> - track your kitty balance, outstanding debts, and historical season stats (Plus &amp; Pro)</li>
-
-
 
                         <li>Season-end financial summary and insights</li>
 
-
-
                     </ul>
-
-
 
                 </div>
 
-
-
             </div>
-
-
 
         </div>
 
-
-
     </section>
-
-
-
-
-
-
-
-
-
-
 
     <!-- ══════════════════════════════════════
 
-
-
          3. PAYMENTS
-
-
 
     ══════════════════════════════════════ -->
 
-
-
     <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="payments">
-
-
 
         <div class="container">
 
-
-
             <div class="feature-row animate-on-scroll">
-
-
-
-
-
-
 
                 <!-- Player-facing payment portal (web, not app) -->
 
@@ -1784,163 +846,77 @@
 
                 </div>
 
-                
-
                 <!-- Text side -->
-
-
 
                 <div class="feature-text">
 
-
-
                     <div class="section-label">💳 Payments</div>
-
-
 
                     <h2>Card payments, directly into your account.</h2>
 
-
-
                     <p>Connect your existing Square account and start accepting card payments via the player portal. Apple Pay and Google Pay supported out of the box. Money settles directly to your bank - Fees Please never touches it.</p>
-
-
 
                     <ul class="feature-checklist">
 
-
-
                         <li>Apple Pay &amp; Google Pay - one-tap, no card details needed</li>
-
-
 
                         <li>Standard Square processing + 30¢ flat platform clip (Plus tier)</li>
 
-
-
                         <li>Scan to Pay QR code - sideline card checkout via player's phone</li>
-
-
 
                         <li><strong>Individual Onboarding</strong> - connect your Square account as an individual (no registered business entity required)</li>
 
-
-
                         <li>Shareable Team Hub links sent via SMS, Email, or group chat</li>
 
-
-
-                        <li>Player receipts sent automatically by Square</li>
-
-
+                        <li>Payments reconcile instantly on your ledger</li>
 
                         <li>Cash and bank transfer tracking - always 100% free</li>
 
-
-
                     </ul>
-
-
 
                     <div style="margin-top:1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
 
-
-
                         <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.15); border-radius:0.75rem; padding:0.875rem; text-align:center;">
-
-
 
                             <div style="font-size:0.65rem; color:var(--green); font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Settles in</div>
 
-
-
                             <div style="font-size:1.25rem; font-weight:800; color:#fff; margin:0.25rem 0;">1–2 days</div>
-
-
 
                             <div style="font-size:0.7rem; color:var(--muted);">Direct to your account</div>
 
-
-
                         </div>
-
-
 
                         <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.15); border-radius:0.75rem; padding:0.875rem; text-align:center;">
 
-
-
                             <div style="font-size:0.65rem; color:var(--green); font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Security</div>
-
-
 
                             <div style="font-size:1.25rem; font-weight:800; color:#fff; margin:0.25rem 0;">PCI DSS</div>
 
-
-
                             <div style="font-size:0.7rem; color:var(--muted);">Square certified</div>
-
-
 
                         </div>
 
-
-
                     </div>
-
-
 
                 </div>
 
-
-
             </div>
-
-
 
         </div>
 
-
-
     </section>
-
-
-
-
-
-
-
-
-
-
 
     <!-- ══════════════════════════════════════
 
-
-
          4. PLAYER PORTAL
-
-
 
     ══════════════════════════════════════ -->
 
-
-
     <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="portal">
-
-
 
         <div class="container">
 
-
-
             <div class="feature-row reverse animate-on-scroll">
-
-
-
-
-
-
 
                 <!-- Phone frame: player's phone viewing the web portal -->
 
@@ -1964,959 +940,369 @@
 
                 </div>
 
-                
-
                 <!-- Text side -->
 
-
-
                 <div class="feature-text">
-
-
 
                     <div class="section-label">📲 Team Hub &amp; Portal</div>
 
-
-
                     <h2>One link. No app. Done in 10 seconds.</h2>
-
-
 
                     <p>Post your Team Hub link in the group chat. Players tap it to update availability and pay fees in any phone browser - no app store installs, no account registration, no typing email addresses. Built for lazy players.</p>
 
-
-
                     <ul class="feature-checklist">
-
-
 
                         <li>No app download - pure web browser</li>
 
-
-
                         <li>One-tap availability: In / Maybe / Out</li>
-
-
 
                         <li>Inline card payment (Apple Pay / Google Pay / Credit card)</li>
 
-
-
                         <li><strong>Branded Team Graphics</strong> - choose team colours, set lineup order, and download custom lineup cards to share on group chats or socials</li>
 
-
-
-                        <li><strong>Privacy &amp; Nicknames</strong> - hide surnames by default (e.g. "Ash P.") or use nicknames</li>
-
-
+                        <li><strong>Privacy Controls</strong> - hide surnames by default (e.g. "Ash P.") on public team links</li>
 
                         <li><strong>Account vs. Team Admins</strong> - separate roles to protect billing data while sharing team management</li>
 
-
-
-                        <li><strong>Player Dashboard</strong> - optional email login for players to manage availability, see transaction history, and get referral links</li>
-
-
+                        <li><strong>Player Dashboard</strong> - optional email login for players to manage availability and see transaction history</li>
 
                     </ul>
 
-
-
                 </div>
-
-
 
             </div>
 
-
-
         </div>
-
-
 
     </section>
 
-
-
-
-
-
-
     <!-- ══════════════════════════════════════
-
-
 
          PLAYHQ SYNC
 
-
-
     ══════════════════════════════════════ -->
-
-
 
     <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="playhq">
 
-
-
         <div class="container">
 
-
-
             <div class="feature-row animate-on-scroll">
-
-
-
-                
-
-
 
                 <!-- Mock integration card visual -->
 
-
-
                 <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
 
-
-
                     <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 2rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-
-
 
                         <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;">Integration Connected</div>
 
-
-
                         <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-
-
 
                             <span style="font-size: 2rem;">🏏</span>
 
-
-
                             <span style="color: var(--green); font-size: 1.5rem;">⚡</span>
-
-
 
                             <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: 'Outfit', sans-serif;">PlayHQ</span>
 
-
-
                         </div>
-
-
 
                         <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 1rem; padding: 1rem; text-align: left; margin-bottom: 1rem;">
 
-
-
                             <div style="font-size: 0.65rem; color: var(--green); font-weight: 700; text-transform: uppercase;">Fixture Auto-Sync</div>
-
-
 
                             <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-top: 0.25rem;">Round 4 vs Warriors</div>
 
-
-
                             <div style="font-size: 0.7rem; color: var(--muted); margin-top: 0.1rem;">Sat 10:30am · Oval 1</div>
 
-
-
                         </div>
-
-
 
                         <div style="font-size: 0.75rem; color: var(--muted);">Roster & fixture synced automatically in background.</div>
 
-
-
                     </div>
-
-
 
                 </div>
 
-
-
-
-
-
-
                 <!-- Text side -->
 
-
-
                 <div class="feature-text">
-
-
 
                     <div class="section-label">🔗 PlayHQ Sync</div>
 
-
-
                     <h2>Automatic fixture &amp; roster syncing.</h2>
-
-
 
                     <p>Stop typing out game times and typing in opponent names. Paste your public PlayHQ link, and Fees Please handles the rest. Your schedule, team list, and match details auto-sync in the background.</p>
 
-
-
                     <ul class="feature-checklist">
-
-
 
                         <li>Sync fixtures, schedules, and game times instantly</li>
 
-
-
                         <li><strong>Smart Fixture Upload</strong> - drag-and-drop a photo, screenshot, or spreadsheet to populate matches instantly</li>
-
-
 
                         <li>Auto-import and merge new players to your roster</li>
 
-
-
                         <li>Automatic venue details and maps generated</li>
-
-
 
                         <li>Background cron jobs check for time/venue changes</li>
 
-
-
                         <li>Full PlayHQ Organisation Key sync (Pro tier)</li>
 
-
-
                     </ul>
-
-
 
                 </div>
 
-
-
-
-
-
-
             </div>
 
-
-
         </div>
-
-
 
     </section>
 
 
 
-
-
-
-
     <!-- ══════════════════════════════════════
-
-
-
-         OFFLINE SYNC
-
-
-
-    ══════════════════════════════════════ -->
-
-
-
-    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="offline">
-
-
-
-        <div class="container">
-
-
-
-            <div class="feature-row reverse animate-on-scroll">
-
-
-
-
-
-
-
-                <!-- Offline visual card -->
-
-
-
-                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
-
-
-
-                    <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 2rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-
-
-
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">☁️🚫</div>
-
-
-
-                        <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Offline Mode Active</h3>
-
-
-
-                        <p style="font-size: 0.75rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem;">Sideline cell signal is gone? No stress. Toggles, roster changes, and cash payments are saved locally on your phone.</p>
-
-
-
-                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.75rem; color: #f59e0b; font-weight: 700;">
-
-
-
-                            <span class="pulse-amber" style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%; display: inline-block;"></span>
-
-
-
-                            Sync Pending (Auto-Syncs Online)
-
-
-
-                        </div>
-
-
-
-                    </div>
-
-
-
-                </div>
-
-
-
-
-
-
-
-                <!-- Text side -->
-
-
-
-                <div class="feature-text">
-
-
-
-                    <div class="section-label">📱 Offline Mode &amp; PWA</div>
-
-
-
-                    <h2>Sideline proof. Zero signal required.</h2>
-
-
-
-                    <p>Fees Please is built as a Progressive Web App (PWA) that installs straight to your phone's home screen. Our offline sync engine lets you log cash, check rosters, and manage Game Day on the sideline even when cellular reception is completely dead. Everything syncs back automatically as soon as you're online.</p>
-
-
-
-                    <ul class="feature-checklist">
-
-
-
-                        <li>Save the app directly to your phone's home screen</li>
-
-
-
-                        <li>Log cash payments and lineup changes offline</li>
-
-
-
-                        <li>Auto-caches upcoming match details when you open the app</li>
-
-
-
-                        <li>Seamless background sync once a connection is detected</li>
-
-
-
-                        <li>Zero data loss, guaranteed</li>
-
-
-
-                    </ul>
-
-
-
-                </div>
-
-
-
-
-
-
-
-            </div>
-
-
-
-        </div>
-
-
-
-    </section>
-
-
-
-
-
-
-
-    <!-- ══════════════════════════════════════
-
-
 
          TEAM WALLET
 
-
-
     ══════════════════════════════════════ -->
-
-
 
     <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="wallet">
 
-
-
         <div class="container">
 
-
-
             <div class="feature-row animate-on-scroll">
-
-
-
-                
-
-
 
                 <!-- Mock Team Wallet card visual -->
 
-
-
                 <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
-
-
 
                     <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 2rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
 
-
-
                         <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;">Team Kitty Balance</div>
-
-
 
                         <div style="font-size: 2.25rem; font-weight: 900; color: #fff; font-family: 'Outfit', sans-serif; margin-bottom: 1.5rem;">$385.00</div>
 
-
-
-                        
-
-
-
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
-
-
 
                             <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 0.75rem; padding: 0.75rem; text-align: left;">
 
-
-
                                 <div style="font-size: 0.65rem; color: var(--green); font-weight: 700; text-transform: uppercase;">Kitty Expenses</div>
-
-
 
                                 <div style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-top: 0.25rem;">$120.00</div>
 
-
-
                             </div>
-
-
 
                             <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: 0.75rem; padding: 0.75rem; text-align: left;">
 
-
-
                                 <div style="font-size: 0.65rem; color: #ef4444; font-weight: 700; text-transform: uppercase;">Outstanding Debts</div>
-
-
 
                                 <div style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-top: 0.25rem;">$45.00</div>
 
-
-
                             </div>
 
-
-
                         </div>
-
-
-
-
-
-
 
                         <!-- Contributions List -->
 
-
-
                         <div style="text-align: left; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #27272a; padding-top: 1rem;">
 
-
-
                             <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #fff;">
-
-
 
                                 <span>💰 Davo (Contribution)</span>
 
-
-
                                 <span style="color: var(--green); font-weight: 700;">+$45.00</span>
 
-
-
                             </div>
-
-
 
                             <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #fff;">
 
-
-
                                 <span>🍺 Team Carton (Expense)</span>
-
-
 
                                 <span style="color: #ef4444; font-weight: 700;">-$60.00</span>
 
-
-
                             </div>
-
-
 
                         </div>
 
-
-
                     </div>
 
-
-
                 </div>
-
-
-
-
-
-
 
                 <!-- Text side -->
 
-
-
                 <div class="feature-text">
-
-
 
                     <div class="section-label">💰 Team Wallet</div>
 
-
-
                     <h2>Track your kitty and team expenses.</h2>
-
-
 
                     <p>Go beyond match fee tracking. The Team Wallet (Kitty) tab lets you manage team funds, log shared expenses (like game balls or post-match team cartons), and track player contributions dynamically. Perfect for social teams who split season costs or run a weekly kitty.</p>
 
-
-
                     <ul class="feature-checklist">
-
-
 
                         <li><strong>Flat-Rate Court Costs</strong> - manage flat fees (e.g. $128/game) by building a team buffer</li>
 
-
-
                         <li><strong>Reward Players</strong> - easily credit regular players with free games funded by the kitty</li>
-
-
 
                         <li><strong>Team Expenses</strong> - pay for team jerseys, balls, or cartons straight out of the kitty balance</li>
 
-
-
                         <li>Track individual player contributions and surplus balances automatically</li>
-
-
 
                         <li>Full visibility into season cash flow and outstanding debts</li>
 
-
-
                     </ul>
-
-
 
                 </div>
 
-
-
-
-
-
-
             </div>
-
-
 
         </div>
 
-
-
     </section>
 
-
-
-
-
-
-
     <!-- ══════════════════════════════════════
-
-
 
          5. AI SUMMARIES
 
-
-
     ══════════════════════════════════════ -->
-
-
 
     <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="ai">
 
-
-
         <div class="container">
-
-
 
             <div class="section-header animate-on-scroll">
 
-
-
                 <div class="section-label">🤖 AI Banters &amp; Help - Plus &amp; Pro</div>
-
-
 
                 <h2>Post-game content your group chat actually wants.</h2>
 
-
-
                 <p>Upload a screenshot of your match scoresheet or log the stats in 10 seconds. Let AI generate a match report in the voice of Dave (our local analyst), Rusty (outback expert), Gaz (club veteran), Shazza (suburban mom), a legendary Aussie commentator, or even a mystical green alien. Share it to your group chat and watch the banter take off.</p>
-
-
 
                 <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem;">Need support? Dave also doubles as your <strong>Resident AI Help Assistant</strong>, helping you interrogate your team data and answer support queries. If you run into issues, submit a ticket with a screenshot or quick video attachment directly from the dashboard.</p>
 
-
-
             </div>
-
-
-
-
-
-
 
             <!-- 3 WhatsApp-style AI commentator cards -->
 
-
-
             <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem;">
-
-
-
-
-
-
 
                 <!-- Rusty 🐊 -->
 
-
-
                 <div class="wa-card animate-on-scroll">
 
-
-
                     <div class="wa-header">
-
-
 
                         <div class="wa-avatar" style="background:rgba(16,185,129,0.15);">🐊</div>
 
-
-
                         <div>
-
-
 
                             <div class="wa-name">Rusty</div>
 
-
-
                             <div class="wa-role">The Outbacker</div>
-
-
 
                         </div>
 
-
-
                     </div>
 
-
-
                     <div class="wa-bubble">
-
-
 
                         "The top batter was striking 'em sweeter than a camp oven roast today! I'd give you the full match run-down, but I'm pretty sure I've got a busted radiator... Time to hit the road, legends!"
 
-
-
                     </div>
-
-
 
                     <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0.25rem;">
 
-
-
                         <div style="font-size:0.7rem; color:var(--muted);">Lions won by 47 runs · 3 min ago</div>
-
-
 
                         <button class="wa-share-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
 
-
-
                     </div>
 
-
-
                 </div>
-
-
-
-
-
-
 
                 <!-- Gaz 🌭 -->
 
-
-
                 <div class="wa-card animate-on-scroll">
 
-
-
                     <div class="wa-header">
-
-
 
                         <div class="wa-avatar" style="background:rgba(59,130,246,0.15);">🌭</div>
 
-
-
                         <div>
-
-
 
                             <div class="wa-name">Gaz</div>
 
-
-
                             <div class="wa-role">The Old Timer</div>
-
-
 
                         </div>
 
-
-
                     </div>
 
-
-
                     <div class="wa-bubble">
-
-
 
                         "Back in my day we didn't have fancy stats, but I'll admit the boys played alright. Now if someone could fetch me a snag from the sausage sizzle... me hammies are absolutely gone."
 
-
-
                     </div>
-
-
 
                     <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0.25rem;">
 
-
-
                         <div style="font-size:0.7rem; color:var(--muted);">Lions won by 47 runs · 3 min ago</div>
-
-
 
                         <button class="wa-share-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
 
-
-
                     </div>
 
-
-
                 </div>
-
-
-
-
-
-
 
                 <!-- Shazza 🍷 -->
 
-
-
                 <div class="wa-card animate-on-scroll">
-
-
 
                     <div class="wa-header">
 
-
-
                         <div class="wa-avatar" style="background:rgba(239,68,68,0.15);">🍷</div>
-
-
 
                         <div>
 
-
-
                             <div class="wa-name">Shazza</div>
-
-
 
                             <div class="wa-role">The Patron</div>
 
-
-
                         </div>
 
-
-
                     </div>
-
-
 
                     <div class="wa-bubble">
 
-
-
                         "Well, wasn't that a noice, different, and unusual game? The boys looked very effluent out there in the new activewear. Time to crack open the plonk - a nice glass of Cardonnay! 🥂"
 
-
-
                     </div>
-
-
 
                     <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0.25rem;">
 
-
-
                         <div style="font-size:0.7rem; color:var(--muted);">Lions won by 47 runs · 3 min ago</div>
-
-
 
                         <button class="wa-share-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
 
-
-
                     </div>
-
-
 
                 </div>
 
-
-
-
-
-
-
             </div>
-
-
 
         </div>
 
-
-
     </section>
-
-
-
-
-
-
-
-
-
-
 
     <!-- ══════════════════════════════════════
 
-
-
          6. SPONSORSHIP
-
-
 
     ══════════════════════════════════════ -->
 
-
-
     <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="sponsorship">
-
-
 
         <div class="container">
 
-
-
             <div class="feature-row animate-on-scroll">
-
-
-
-
-
-
 
                 <!-- Left: phone frame portal with sponsor logo -->
 
@@ -2940,19 +1326,11 @@
 
                 </div>
 
-                
-
                 <!-- Text side -->
-
-
 
             <div class="feature-text">
 
-
-
                 <div class="section-label">🤝 Sponsorship - Plus &amp; Pro</div>
-
-
 
                 <h2>Showcase sponsors &amp; track impact.</h2>
                 <p>High-value visibility for local team sponsors. Upload your sponsor's logo, link it directly to their website, and easily manage active campaigns. Let local businesses support your team kitty in exchange for weekly exposure directly in the group chat loop.</p>
@@ -2960,212 +1338,92 @@
                     <li><strong>Real-Time Sponsorship Analytics</strong>: Track impressions, clicks, and Click-Through Rate (CTR) in your Sponsorship Impact dashboard panel.</li>
                     <li><strong>Channel Performance Breakdown</strong>: See whether views are generated on the public **Team Hub** page or from automated **Email updates**.</li>
                     <li><strong>Easy Campaign Management</strong>: Upload custom logos, set target links, and easily archive or reactivate sponsors as seasons change.</li>
-                    <li><strong>Sitewide Visibility</strong>: Showcase logos on player availability portals, checkout checkout screens, and downloaded lineup cards.</li>
+                    <li><strong>Sitewide Visibility</strong>: Showcase logos on player availability portals, checkout screens, and downloaded lineup cards.</li>
                 </ul>
-
-
 
             </div>
 
-
-
-
-
-
-
         </div>
 
-
-
     </section>
-
-
-
-
-
-
-
-
-
-
 
     <!-- CTA -->
 
-
-
     <section class="cta-band">
-
-
 
         <div class="container">
 
-
-
             <div class="animate-on-scroll">
-
-
 
                 <div class="section-label">Get Started</div>
 
-
-
                 <h2>Ready to try it?</h2>
-
-
 
                 <p>Set up your first team in 2 minutes. Free forever for cash tracking.</p>
 
-
-
                 <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
-
-
 
                     <a href="https://app.feesplease.app/auth/register" class="btn-primary" id="features-footer-cta" data-ph-event="features_footer_cta_click">
 
-
-
                         Create Your Team Free →
 
-
-
                     </a>
-
-
 
                     <a href="pricing.html" class="btn-secondary" id="features-pricing-link">
 
-
-
                         View Pricing
-
-
 
                     </a>
 
-
-
                 </div>
-
-
 
             </div>
 
-
-
         </div>
-
-
 
     </section>
 
-
-
-
-
-
-
 </main>
-
-
-
-
-
-
 
 <div id="footer-placeholder"></div>
 
-
-
-
-
-
-
 <script>
-
-
 
 // Highlight active feature nav link on scroll
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
-
-
-    const sections = ['gameday','ledger','payments','portal','playhq','offline','wallet','ai','sponsorship'];
-
-
+    const sections = ['gameday','ledger','payments','portal','playhq','wallet','ai','sponsorship'];
 
     const links = document.querySelectorAll('.feature-nav-link');
 
-
-
-
-
-
-
     window.addEventListener('scroll', () => {
-
-
 
         let current = '';
 
-
-
         sections.forEach(id => {
-
-
 
             const el = document.getElementById(id);
 
-
-
             if (el && window.scrollY >= el.offsetTop - 150) current = id;
 
-
-
         });
-
-
 
         links.forEach(link => {
 
-
-
             link.style.color = link.getAttribute('href') === '#' + current ? 'var(--green)' : 'var(--muted)';
-
-
 
         });
 
-
-
     }, { passive: true });
-
-
 
 });
 
-
-
 </script>
-
-
 
 <script src="js/main.js"></script>
 
-
-
-
-
-
-
 </body>
 
-
-
 </html>
-
-
 
