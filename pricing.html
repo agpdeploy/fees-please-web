@@ -114,8 +114,7 @@
                 Monthly
                 <label style="position:relative; display:inline-block; width:48px; height:26px; cursor:pointer;">
                     <input type="checkbox" id="billing-toggle" style="opacity:0; width:0; height:0;">
-                    <span style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background:var(--surface2); border-radius:13px; border:1px solid var(--border); transition:0.3s;"
-                          onclick="this.previousElementSibling.click()"></span>
+                    <span style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background:var(--surface2); border-radius:13px; border:1px solid var(--border); transition:0.3s;"></span>
                     <span id="toggle-knob" style="position:absolute; height:18px; width:18px; left:3px; bottom:3px; background:var(--green); border-radius:50%; transition:0.3s;"></span>
                 </label>
                 Annual <span style="color:var(--green); font-weight:700; font-size:0.75rem; background:rgba(0,188,125,0.1); padding:0.2rem 0.5rem; border-radius:9999px; margin-left:0.25rem;">Save 17%</span>
@@ -160,9 +159,8 @@
                     <div class="pricing-name">Plus</div>
                     <div class="pricing-desc">Level up with availability invites, team lists with your branding and team wallet to identify and reward who's played the most.</div>
                     <div class="pricing-price">
-                        <span class="amount" data-monthly="$6.99" data-annual="$5.75">$6.99</span>
-                        <span class="period"> / month per team</span>
-                        <span class="annual-note" style="display:none; color:var(--green); font-size:0.8rem; margin-top:0.35rem;">Billed as <strong>$69/year</strong> - save $15</span>
+                        <span class="amount" id="plus-price">$6.99</span>
+                        <span class="period" id="plus-period"> / month per team</span>
                     </div>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
@@ -188,9 +186,8 @@
                     <div class="pricing-name">Pro</div>
                     <div class="pricing-desc">Flat rate covering up to 5 teams with our lowest transaction fees. Allows for players playing across multiple teams.</div>
                     <div class="pricing-price">
-                        <span class="amount" data-monthly="$12.99" data-annual="$10.75">$12.99</span>
-                        <span class="period"> / month flat (up to 5 teams)</span>
-                        <span class="annual-note" style="display:none; color:var(--green); font-size:0.8rem; margin-top:0.35rem;">Billed as <strong>$129/year flat</strong> - save $27</span>
+                        <span class="amount" id="pro-price">$12.99</span>
+                        <span class="period" id="pro-period"> / month flat (up to 5 teams)</span>
                     </div>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
@@ -529,9 +526,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('billing-toggle');
     const knob = document.getElementById('toggle-knob');
+    
+    const plusPrice = document.getElementById('plus-price');
+    const plusPeriod = document.getElementById('plus-period');
+    
+    const proPrice = document.getElementById('pro-price');
+    const proPeriod = document.getElementById('pro-period');
+    
     if (toggle && knob) {
         toggle.addEventListener('change', () => {
             knob.style.left = toggle.checked ? '27px' : '3px';
+            
+            if (toggle.checked) {
+                // Annual billing: display annual price, and monthly breakdown in brackets
+                if (plusPrice) plusPrice.textContent = '$69';
+                if (plusPeriod) plusPeriod.textContent = ' / year per team ($5.75/mo)';
+                
+                if (proPrice) proPrice.textContent = '$129';
+                if (proPeriod) proPeriod.textContent = ' / year flat ($10.75/mo)';
+            } else {
+                // Monthly billing
+                if (plusPrice) plusPrice.textContent = '$6.99';
+                if (plusPeriod) plusPeriod.textContent = ' / month per team';
+                
+                if (proPrice) proPrice.textContent = '$12.99';
+                if (proPeriod) proPeriod.textContent = ' / month flat (up to 5 teams)';
+            }
         });
     }
 });
