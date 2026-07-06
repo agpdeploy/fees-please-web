@@ -649,704 +649,358 @@
     </section>
 
     <!-- Feature Nav / Jump Links -->
-
     <nav style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-dark); position:sticky; top:64px; z-index:40; overflow-x:auto;">
-
-        <div class="container" style="display:flex; gap:2rem; padding:1rem 1.5rem; white-space:nowrap;">
-
-            <a href="#gameday" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">⚡ GameDay</a>
-
-            <a href="#ledger"  style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">👛 Ledger</a>
-
+        <div class="container" style="display:flex; align-items:center; gap:1.5rem; padding:1rem 1.5rem; white-space:nowrap;">
+            <a href="#gameday" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">⚡ Game Day</a>
             <a href="#payments" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">💳 Payments</a>
-
+            <a href="#ledger"  style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">👛 Ledger</a>
             <a href="#portal" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">📲 Team Hub</a>
-
-            <a href="#playhq" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">🔗 PlayHQ Sync</a>
-
+            
+            <a href="#lineups" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">📋 Team List Generator</a>
+            <a href="#history" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">📅 Season History</a>
+            <a href="#sponsors" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">🤝 Sponsors</a>
             <a href="#wallet" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">💰 Team Wallet</a>
-
-            <a href="#ai"    style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">🤖 AI Summaries</a>
-
-            <a href="#sponsorship" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">🍺 Sponsorship</a>
-
+            <a href="#reports" style="font-size:0.85rem; font-weight:600; color:var(--muted);" class="feature-nav-link">📧 Reports &amp; AI</a>
         </div>
-
     </nav>
 
     <!-- ══════════════════════════════════════
-
-         1. GAMEDAY
-
+         FREE FEATURES SECTION
     ══════════════════════════════════════ -->
 
+    <!-- 1. GAMEDAY -->
     <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="gameday">
-
         <div class="container">
-
             <div class="feature-row animate-on-scroll">
-
-                <!-- Phone mockup: GameDay tab active -->
-
                 <div class="feature-visual phone-visual">
-
                     <div class="phone-wrap">
-
                         <div class="phone-frame" style="max-height: 480px;">
-
                             <div class="phone-notch"></div>
-
                             <div class="phone-screen" style="background:#0f0f11;">
-
                                 <img src="assets/screenshot-gameday.png" alt="GameDay Dashboard" style="width:100%; height:100%; object-fit:cover; display:block;">
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
-                <!-- Text side -->
-
                 <div class="feature-text">
-
-                    <div class="section-label">⚡ GameDay</div>
-
+                    <div class="section-label">⚡ Game Day</div>
                     <h2>Your match-day command centre.</h2>
-
-                    <p>Open the app on game day and everything is right there - who's confirmed in, who's maybe, who's out, and who still owes from last week. Tap to record cash on the spot. No faff.</p>
-
+                    <p>Open the app on game day and everything is right there - who's confirmed in, who's maybe, who's out, and who still owes from last week. Preload rosters and schedules effortlessly.</p>
                     <ul class="feature-checklist">
-
-                        <li>Live player availability (In / Maybe / Out) at a glance</li>
-
+                        <li>Live availability tracking (In / Maybe / Out) at a glance</li>
                         <li><strong>Debt &amp; Credit Indicators</strong> - colour-coded red (owes) and green (in credit) badges</li>
-
-                        <li>One-tap cash recording &amp; advance credit logging</li>
-
-                        <li>Preload players with default fee rates or create players on the fly</li>
-
-                        <li>Fee collection progress bar - know you're squared up before the final whistle</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ══════════════════════════════════════
-
-         2. LEDGER
-
-    ══════════════════════════════════════ -->
-
-    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="ledger">
-
-        <div class="container">
-
-            <div class="feature-row reverse animate-on-scroll">
-
-                <!-- Phone mockup: Ledger tab active -->
-
-                <div class="feature-visual phone-visual">
-
-                    <div class="phone-wrap">
-
-                        <div class="phone-frame" style="max-height: 480px;">
-
-                            <div class="phone-notch"></div>
-
-                            <div class="phone-screen" style="background:#0f0f11;">
-
-                                <img src="assets/screenshot-ledger.png" alt="Ledger Dashboard" style="width:100%; height:100%; object-fit:cover; display:block;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Text side -->
-
-                <div class="feature-text">
-
-                    <div class="section-label">👛 Live Ledger</div>
-
-                    <h2>Ditch the spreadsheet. For good.</h2>
-
-                    <p>The real-time ledger is the heart of Fees Please. See who paid cash, who tapped their card, who owes for last week <em>and</em> this week - updated the moment a payment is recorded.</p>
-
-                    <ul class="feature-checklist">
-
-                        <li>Cash, card, and bank transfer tracked side-by-side</li>
-
-                        <li><strong>Flexible Fees</strong> - set different fee rates for regular members and casual fill-ins</li>
-
-                        <li>Per-player running debt and credit balance across the season</li>
-
-                        <li>Identify game-by-game negative positions (when collected fees don't cover court costs)</li>
-
-                        <li>Log manual adjustments to quickly correct historic entries</li>
-
-                        <li><strong>Team Summary Reports</strong> - regular automated email reports detailing availability and financial state</li>
-
-                        <li><strong>Multi-Season History</strong> - track your kitty balance, outstanding debts, and historical season stats (Plus &amp; Pro)</li>
-
-                        <li>Season-end financial summary and insights</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ══════════════════════════════════════
-
-         3. PAYMENTS
-
-    ══════════════════════════════════════ -->
-
-    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="payments">
-
-        <div class="container">
-
-            <div class="feature-row animate-on-scroll">
-
-                <!-- Player-facing payment portal (web, not app) -->
-
-                <div class="feature-visual phone-visual">
-
-                    <div class="phone-wrap">
-
-                        <div class="phone-frame" style="max-height: 480px;">
-
-                            <div class="phone-notch"></div>
-
-                            <div class="phone-screen" style="background:#0f0f11;">
-
-                                <img src="assets/screenshot-payments.png" alt="Match Payments Checkout" style="width:100%; height:100%; object-fit:cover; display:block;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Text side -->
-
-                <div class="feature-text">
-
-                    <div class="section-label">💳 Payments</div>
-
-                    <h2>Card payments, directly into your account.</h2>
-
-                    <p>Connect your existing Square account and start accepting card payments via the player portal. Apple Pay and Google Pay supported out of the box. Money settles directly to your bank - Fees Please never touches it.</p>
-
-                    <ul class="feature-checklist">
-
-                        <li>Apple Pay &amp; Google Pay - one-tap, no card details needed</li>
-
-                        <li>Standard Square processing + 30¢ flat platform clip (Plus tier)</li>
-
-                        <li>Scan to Pay QR code - sideline card checkout via player's phone</li>
-
-                        <li><strong>Individual Onboarding</strong> - connect your Square account as an individual (no registered business entity required)</li>
-
-                        <li>Shareable Team Hub links sent via SMS, Email, or group chat</li>
-
-                        <li>Payments reconcile instantly on your ledger</li>
-
-                        <li>Cash and bank transfer tracking - always 100% free</li>
-
-                    </ul>
-
-                    <div style="margin-top:1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
-
-                        <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.15); border-radius:0.75rem; padding:0.875rem; text-align:center;">
-
-                            <div style="font-size:0.65rem; color:var(--green); font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Settles in</div>
-
-                            <div style="font-size:1.25rem; font-weight:800; color:#fff; margin:0.25rem 0;">1–2 days</div>
-
-                            <div style="font-size:0.7rem; color:var(--muted);">Direct to your account</div>
-
-                        </div>
-
-                        <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.15); border-radius:0.75rem; padding:0.875rem; text-align:center;">
-
-                            <div style="font-size:0.65rem; color:var(--green); font-weight:700; letter-spacing:0.08em; text-transform:uppercase;">Security</div>
-
-                            <div style="font-size:1.25rem; font-weight:800; color:#fff; margin:0.25rem 0;">PCI DSS</div>
-
-                            <div style="font-size:0.7rem; color:var(--muted);">Square certified</div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ══════════════════════════════════════
-
-         4. PLAYER PORTAL
-
-    ══════════════════════════════════════ -->
-
-    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="portal">
-
-        <div class="container">
-
-            <div class="feature-row reverse animate-on-scroll">
-
-                <!-- Phone frame: player's phone viewing the web portal -->
-
-                <div class="feature-visual phone-visual">
-
-                    <div class="phone-wrap">
-
-                        <div class="phone-frame" style="max-height: 480px;">
-
-                            <div class="phone-notch"></div>
-
-                            <div class="phone-screen" style="background:#0f0f11;">
-
-                                <img src="assets/screenshot-portal.png" alt="Player Availability Portal" style="width:100%; height:100%; object-fit:cover; display:block;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Text side -->
-
-                <div class="feature-text">
-
-                    <div class="section-label">📲 Team Hub &amp; Portal</div>
-
-                    <h2>One link. No app. Done in 10 seconds.</h2>
-
-                    <p>Post your Team Hub link in the group chat. Players tap it to update availability and pay fees in any phone browser - no app store installs, no account registration, no typing email addresses. Built for lazy players.</p>
-
-                    <ul class="feature-checklist">
-
-                        <li>No app download - pure web browser</li>
-
-                        <li>One-tap availability: In / Maybe / Out</li>
-
-                        <li>Inline card payment (Apple Pay / Google Pay / Credit card)</li>
-
-                        <li><strong>Branded Team Graphics</strong> - choose team colours, set lineup order, and download custom lineup cards to share on group chats or socials</li>
-
-                        <li><strong>Privacy Controls</strong> - hide surnames by default (e.g. "Ash P.") on public team links</li>
-
-                        <li><strong>Account vs. Team Admins</strong> - separate roles to protect billing data while sharing team management</li>
-
-                        <li><strong>Player Dashboard</strong> - optional email login for players to manage availability and see transaction history</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ══════════════════════════════════════
-
-         PLAYHQ SYNC
-
-    ══════════════════════════════════════ -->
-
-    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="playhq">
-
-        <div class="container">
-
-            <div class="feature-row animate-on-scroll">
-
-                <!-- Mock integration card visual -->
-
-                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
-
-                    <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 2rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-
-                        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;">Integration Connected</div>
-
-                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-
-                            <span style="font-size: 2rem;">🏏</span>
-
-                            <span style="color: var(--green); font-size: 1.5rem;">⚡</span>
-
-                            <span style="font-size: 1.5rem; font-weight: 800; color: #fff; font-family: 'Outfit', sans-serif;">PlayHQ</span>
-
-                        </div>
-
-                        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 1rem; padding: 1rem; text-align: left; margin-bottom: 1rem;">
-
-                            <div style="font-size: 0.65rem; color: var(--green); font-weight: 700; text-transform: uppercase;">Fixture Auto-Sync</div>
-
-                            <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-top: 0.25rem;">Round 4 vs Warriors</div>
-
-                            <div style="font-size: 0.7rem; color: var(--muted); margin-top: 0.1rem;">Sat 10:30am · Oval 1</div>
-
-                        </div>
-
-                        <div style="font-size: 0.75rem; color: var(--muted);">Roster & fixture synced automatically in background.</div>
-
-                    </div>
-
-                </div>
-
-                <!-- Text side -->
-
-                <div class="feature-text">
-
-                    <div class="section-label">🔗 PlayHQ Sync</div>
-
-                    <h2>Automatic fixture &amp; roster syncing.</h2>
-
-                    <p>Stop typing out game times and typing in opponent names. Paste your public PlayHQ link, and Fees Please handles the rest. Your schedule, team list, and match details auto-sync in the background.</p>
-
-                    <ul class="feature-checklist">
-
-                        <li>Sync fixtures, schedules, and game times instantly</li>
-
+                        <li><strong>PlayHQ Import</strong> - paste your league URL to sync schedule and game times instantly</li>
                         <li><strong>Smart Fixture Upload</strong> - drag-and-drop a photo, screenshot, or spreadsheet to populate matches instantly</li>
-
-                        <li>Auto-import and merge new players to your roster</li>
-
-                        <li>Automatic venue details and maps generated</li>
-
-                        <li>Background cron jobs check for time/venue changes</li>
-
-                        <li>Full PlayHQ Organisation Key sync (Pro tier)</li>
-
+                        <li>One-tap cash recording &amp; fee collection progress bars</li>
                     </ul>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- ══════════════════════════════════════
-
-         TEAM WALLET
-
-    ══════════════════════════════════════ -->
-
-    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="wallet">
-
+    <!-- 2. PAYMENTS -->
+    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="payments">
         <div class="container">
-
-            <div class="feature-row animate-on-scroll">
-
-                <!-- Mock Team Wallet card visual -->
-
-                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
-
-                    <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 2rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-
-                        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;">Team Kitty Balance</div>
-
-                        <div style="font-size: 2.25rem; font-weight: 900; color: #fff; font-family: 'Outfit', sans-serif; margin-bottom: 1.5rem;">$385.00</div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
-
-                            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 0.75rem; padding: 0.75rem; text-align: left;">
-
-                                <div style="font-size: 0.65rem; color: var(--green); font-weight: 700; text-transform: uppercase;">Kitty Expenses</div>
-
-                                <div style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-top: 0.25rem;">$120.00</div>
-
-                            </div>
-
-                            <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: 0.75rem; padding: 0.75rem; text-align: left;">
-
-                                <div style="font-size: 0.65rem; color: #ef4444; font-weight: 700; text-transform: uppercase;">Outstanding Debts</div>
-
-                                <div style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-top: 0.25rem;">$45.00</div>
-
-                            </div>
-
-                        </div>
-
-                        <!-- Contributions List -->
-
-                        <div style="text-align: left; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #27272a; padding-top: 1rem;">
-
-                            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #fff;">
-
-                                <span>💰 Davo (Contribution)</span>
-
-                                <span style="color: var(--green); font-weight: 700;">+$45.00</span>
-
-                            </div>
-
-                            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #fff;">
-
-                                <span>🍺 Team Carton (Expense)</span>
-
-                                <span style="color: #ef4444; font-weight: 700;">-$60.00</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Text side -->
-
-                <div class="feature-text">
-
-                    <div class="section-label">💰 Team Wallet</div>
-
-                    <h2>Track your kitty and team expenses.</h2>
-
-                    <p>Go beyond match fee tracking. The Team Wallet (Kitty) tab lets you manage team funds, log shared expenses (like game balls or post-match team cartons), and track player contributions dynamically. Perfect for social teams who split season costs or run a weekly kitty.</p>
-
-                    <ul class="feature-checklist">
-
-                        <li><strong>Flat-Rate Court Costs</strong> - manage flat fees (e.g. $128/game) by building a team buffer</li>
-
-                        <li><strong>Reward Players</strong> - easily credit regular players with free games funded by the kitty</li>
-
-                        <li><strong>Team Expenses</strong> - pay for team jerseys, balls, or cartons straight out of the kitty balance</li>
-
-                        <li>Track individual player contributions and surplus balances automatically</li>
-
-                        <li>Full visibility into season cash flow and outstanding debts</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ══════════════════════════════════════
-
-         5. AI SUMMARIES
-
-    ══════════════════════════════════════ -->
-
-    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="ai">
-
-        <div class="container">
-
-            <div class="section-header animate-on-scroll">
-
-                <div class="section-label">🤖 AI Banters &amp; Help - Plus &amp; Pro</div>
-
-                <h2>Post-game content your group chat actually wants.</h2>
-
-                <p>Upload a screenshot of your match scoresheet or log the stats in 10 seconds. Let AI generate a match report in the voice of Dave (our local analyst), Rusty (outback expert), Gaz (club veteran), Shazza (suburban mom), a legendary Aussie commentator, or even a mystical green alien. Share it to your group chat and watch the banter take off.</p>
-
-                <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem;">Need support? Dave also doubles as your <strong>Resident AI Help Assistant</strong>, helping you interrogate your team data and answer support queries. If you run into issues, submit a ticket with a screenshot or quick video attachment directly from the dashboard.</p>
-
-            </div>
-
-            <!-- 3 WhatsApp-style AI commentator cards -->
-
-            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem;">
-
-                <!-- Rusty 🐊 -->
-
-                <div class="wa-card animate-on-scroll">
-
-                    <div class="wa-header">
-
-                        <div class="wa-avatar" style="background:rgba(16,185,129,0.15);">🐊</div>
-
-                        <div>
-
-                            <div class="wa-name">Rusty</div>
-
-                            <div class="wa-role">The Outbacker</div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="wa-bubble">
-
-                        "The top batter was striking 'em sweeter than a camp oven roast today! I'd give you the full match run-down, but I'm pretty sure I've got a busted radiator... Time to hit the road, legends!"
-
-                    </div>
-
-                    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0.25rem;">
-
-                        <div style="font-size:0.7rem; color:var(--muted);">Lions won by 47 runs · 3 min ago</div>
-
-                        <button class="wa-share-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
-
-                    </div>
-
-                </div>
-
-                <!-- Gaz 🌭 -->
-
-                <div class="wa-card animate-on-scroll">
-
-                    <div class="wa-header">
-
-                        <div class="wa-avatar" style="background:rgba(59,130,246,0.15);">🌭</div>
-
-                        <div>
-
-                            <div class="wa-name">Gaz</div>
-
-                            <div class="wa-role">The Old Timer</div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="wa-bubble">
-
-                        "Back in my day we didn't have fancy stats, but I'll admit the boys played alright. Now if someone could fetch me a snag from the sausage sizzle... me hammies are absolutely gone."
-
-                    </div>
-
-                    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0.25rem;">
-
-                        <div style="font-size:0.7rem; color:var(--muted);">Lions won by 47 runs · 3 min ago</div>
-
-                        <button class="wa-share-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
-
-                    </div>
-
-                </div>
-
-                <!-- Shazza 🍷 -->
-
-                <div class="wa-card animate-on-scroll">
-
-                    <div class="wa-header">
-
-                        <div class="wa-avatar" style="background:rgba(239,68,68,0.15);">🍷</div>
-
-                        <div>
-
-                            <div class="wa-name">Shazza</div>
-
-                            <div class="wa-role">The Patron</div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="wa-bubble">
-
-                        "Well, wasn't that a noice, different, and unusual game? The boys looked very effluent out there in the new activewear. Time to crack open the plonk - a nice glass of Cardonnay! 🥂"
-
-                    </div>
-
-                    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0.25rem;">
-
-                        <div style="font-size:0.7rem; color:var(--muted);">Lions won by 47 runs · 3 min ago</div>
-
-                        <button class="wa-share-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ══════════════════════════════════════
-
-         6. SPONSORSHIP
-
-    ══════════════════════════════════════ -->
-
-    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="sponsorship">
-
-        <div class="container">
-
-            <div class="feature-row animate-on-scroll">
-
-                <!-- Left: phone frame portal with sponsor logo -->
-
+            <div class="feature-row reverse animate-on-scroll">
                 <div class="feature-visual phone-visual">
-
                     <div class="phone-wrap">
-
                         <div class="phone-frame" style="max-height: 480px;">
-
                             <div class="phone-notch"></div>
-
                             <div class="phone-screen" style="background:#0f0f11;">
-
-                                <img src="assets/screenshot-sponsorship.png" alt="Custom Team Sponsorship" style="width:100%; height:100%; object-fit:cover; display:block;">
-
+                                <img src="assets/screenshot-payments.png" alt="Match Payments Checkout" style="width:100%; height:100%; object-fit:cover; display:block;">
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
-                <!-- Text side -->
-
-            <div class="feature-text">
-
-                <div class="section-label">🤝 Sponsorship - Plus &amp; Pro</div>
-
-                <h2>Showcase sponsors &amp; track impact.</h2>
-                <p>High-value visibility for local team sponsors. Upload your sponsor's logo, link it directly to their website, and easily manage active campaigns. Let local businesses support your team kitty in exchange for weekly exposure directly in the group chat loop.</p>
-                <ul class="feature-checklist">
-                    <li><strong>Real-Time Sponsorship Analytics</strong>: Track impressions, clicks, and Click-Through Rate (CTR) in your Sponsorship Impact dashboard panel.</li>
-                    <li><strong>Channel Performance Breakdown</strong>: See whether views are generated on the public **Team Hub** page or from automated **Email updates**.</li>
-                    <li><strong>Easy Campaign Management</strong>: Upload custom logos, set target links, and easily archive or reactivate sponsors as seasons change.</li>
-                    <li><strong>Sitewide Visibility</strong>: Showcase logos on player availability portals, checkout screens, and downloaded lineup cards.</li>
-                </ul>
-
+                <div class="feature-text">
+                    <div class="section-label">💳 Payments</div>
+                    <h2>Card payments, directly into your account.</h2>
+                    <p>Connect your existing Square account as an individual with no registered business required. Apple Pay and Google Pay are supported natively. Money settles directly to your bank - Fees Please never touches it.</p>
+                    <ul class="feature-checklist">
+                        <li>Apple Pay &amp; Google Pay - one-tap, no card details needed</li>
+                        <li>Scan to Pay QR code - sideline card checkout via player's phone</li>
+                        <li>Shareable checkout links sent via SMS, email, or group chat</li>
+                        <li><strong>Individual Onboarding</strong> - connect using a personal bank account and simple identity check</li>
+                        <li>Payments reconcile instantly on your ledger</li>
+                        <li>Cash and bank transfer tracking - always 100% free</li>
+                    </ul>
+                </div>
             </div>
-
         </div>
-
     </section>
 
+    <!-- 3. LEDGER -->
+    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="ledger">
+        <div class="container">
+            <div class="feature-row animate-on-scroll">
+                <div class="feature-visual phone-visual">
+                    <div class="phone-wrap">
+                        <div class="phone-frame" style="max-height: 480px;">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen" style="background:#0f0f11;">
+                                <img src="assets/screenshot-ledger.png" alt="Ledger Dashboard" style="width:100%; height:100%; object-fit:cover; display:block;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">👛 Ledger</div>
+                    <h2>Ditch the spreadsheet. For good.</h2>
+                    <p>The real-time ledger updates automatically when cash is recorded or cards are checked out. See who's paid, who owes, and track your season finances in one clean overview.</p>
+                    <ul class="feature-checklist">
+                        <li>Cash, card, and bank transfer tracked side-by-side</li>
+                        <li><strong>Flexible Fees</strong> - set different fee rates for regular members and casual fill-ins</li>
+                        <li>Per-player running debt and credit balance across the season</li>
+                        <li>Identify game-by-game positions (ledger vs. match court costs)</li>
+                        <li>Log manual adjustments to quickly correct historic entries</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TEAM HUB -->
+    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="portal">
+        <div class="container">
+            <div class="feature-row reverse animate-on-scroll">
+                <div class="feature-visual phone-visual">
+                    <div class="phone-wrap">
+                        <div class="phone-frame" style="max-height: 480px;">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen" style="background:#0f0f11;">
+                                <img src="assets/screenshot-portal.png" alt="Player Availability Portal" style="width:100%; height:100%; object-fit:cover; display:block;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">📲 Team Hub</div>
+                    <h2>One link. No app. Done in 10 seconds.</h2>
+                    <p>Post your Team Hub link in the group chat. Players tap it to update availability and pay fees in any phone browser - no app store installs, account registration, or typing required.</p>
+                    <ul class="feature-checklist">
+                        <li>No player app download - pure web browser availability</li>
+                        <li>Separate roles for billing protection (Account vs. Team Admin)</li>
+                        <li><strong>Privacy Controls</strong> - hide surnames by default (e.g. "Ash P.") on public team links</li>
+                        <li><strong>Player Dashboard</strong> - optional email login for players to inspect balance histories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PLUS FEATURES SECTION
+    ══════════════════════════════════════ -->
+
+    <section style="padding: 4rem 0; background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(0,188,125,0.05) 100%); text-align: center; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 9999px; display: inline-block; margin-bottom: 1rem; background: rgba(242, 183, 5, 0.15); border: 1px solid rgba(242, 183, 5, 0.3); color: #f2b705;">Plus Tiers</span>
+            <h2 style="font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">Level up your team.</h2>
+            <p style="color: var(--muted); max-width: 520px; margin: 0 auto; font-size: 1rem;">Unlock advanced management tools, customization, and analytics.</p>
+        </div>
+    </section>
+
+    <!-- 5. TEAM LIST GENERATOR -->
+    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="lineups">
+        <div class="container">
+            <div class="feature-row animate-on-scroll">
+                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
+                    <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 1.5rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;">Lineup Graphic Preview</div>
+                        <div style="background: #0f172a; border-radius: 1rem; padding: 1.5rem; border: 1px solid #1e293b; position: relative; aspect-ratio: 9/16; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 1rem; font-weight: 900; color: #fff; text-transform: uppercase; font-family: 'Outfit'; letter-spacing: 0.05em;">Lions FC</div>
+                                <div style="font-size: 0.65rem; color: var(--green); font-weight: 600; text-transform: uppercase;">Round 4 Lineup</div>
+                            </div>
+                            <div style="position: relative; flex-grow: 1; margin: 1.5rem 0; border: 1px dashed rgba(255,255,255,0.15); border-radius: 0.5rem; display: flex; flex-direction: column; justify-content: space-around; padding: 1rem 0;">
+                                <div style="display: flex; justify-content: center; gap: 0.5rem;">
+                                    <div style="background: var(--green); color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; box-shadow: 0 0 10px rgba(0,188,125,0.5);">CF</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-around;">
+                                    <div style="background: var(--green); color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800;">LM</div>
+                                    <div style="background: var(--green); color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800;">RM</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-around;">
+                                    <div style="background: var(--green); color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800;">LD</div>
+                                    <div style="background: var(--green); color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800;">RD</div>
+                                </div>
+                                <div style="display: flex; justify-content: center;">
+                                    <div style="background: #e2e8f0; color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800;">GK</div>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em;">Powered by FEES PLEASE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">📋 Team List Generator</div>
+                    <h2>Printable team sheets &amp; lineup graphics.</h2>
+                    <p>Create professional, shareable match rosters. Set positions, select team colours, and instantly export high-definition matchday graphics to post directly to your team chat or social pages.</p>
+                    <ul class="feature-checklist">
+                        <li>Custom lineup graphic builder aligned with team branding</li>
+                        <li>Download lineup cards as PNG/JPEG files for mobile group chats</li>
+                        <li>Export clean, match-ready official team sheets in PDF</li>
+                        <li>Pre-populate player positions and track roster lists</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SEASON HISTORY -->
+    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="history">
+        <div class="container">
+            <div class="feature-row reverse animate-on-scroll">
+                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
+                    <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 2rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem;">Multi-Season History</div>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; text-align: left;">
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.75rem; padding: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">Summer 2025/26</div>
+                                    <div style="font-size: 0.65rem; color: var(--muted);">14 matches · Champion</div>
+                                </div>
+                                <div style="font-size: 0.9rem; font-weight: 800; color: var(--green);">$128.50 surplus</div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.75rem; padding: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">Winter 2025</div>
+                                    <div style="font-size: 0.65rem; color: var(--muted);">12 matches · 3rd Place</div>
+                                </div>
+                                <div style="font-size: 0.9rem; font-weight: 800; color: var(--green);">$0.00 balanced</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">📅 Season History</div>
+                    <h2>Track history across multiple seasons.</h2>
+                    <p>Keep your team records and budgets together. Plus and Pro tiers retain full financial logs, attendance statistics, and ledger balances across seasons, making it easy to rollover kitty balances.</p>
+                    <ul class="feature-checklist">
+                        <li>Rollover kitty balances and player debts from season to season</li>
+                        <li>Track player appearances and matches played statistics</li>
+                        <li>Historical ledger access for complete auditing and reporting</li>
+                        <li>Compare seasonal performance and budget outlines side-by-side</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SPONSORS -->
+    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="sponsors">
+        <div class="container">
+            <div class="feature-row animate-on-scroll">
+                <div class="feature-visual phone-visual">
+                    <div class="phone-wrap">
+                        <div class="phone-frame" style="max-height: 480px;">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen" style="background:#0f0f11;">
+                                <img src="assets/screenshot-sponsorship.png" alt="Custom Team Sponsorship" style="width:100%; height:100%; object-fit:cover; display:block;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">🤝 Sponsors</div>
+                    <h2>Showcase sponsors &amp; track impact.</h2>
+                    <p>High-value visibility for local team sponsors. Upload your sponsor's logo, link it directly to their website, and easily manage active campaigns. Let local businesses support your team kitty in exchange for weekly exposure directly in the group chat loop.</p>
+                    <ul class="feature-checklist">
+                        <li><strong>Real-Time Sponsorship Analytics</strong> - track impressions, clicks, and click-through rates (CTR)</li>
+                        <li><strong>Channel Breakdown</strong> - see whether impressions are generated on public portals or email updates</li>
+                        <li><strong>Logo Placements</strong> - showcase sponsor logos on player portals, checkout screens, and lineup graphics</li>
+                        <li><strong>Campaign Controls</strong> - upload logos, links, and reactivate/archive campaigns easily</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TEAM WALLET -->
+    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="wallet">
+        <div class="container">
+            <div class="feature-row reverse animate-on-scroll">
+                <div class="feature-visual" style="display: flex; align-items: center; justify-content: center;">
+                    <div style="background: #18181b; border: 1px solid #27272a; border-radius: 1.5rem; padding: 2rem; width: 100%; max-width: 320px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;">Team Kitty Balance</div>
+                        <div style="font-size: 2.25rem; font-weight: 900; color: #fff; font-family: 'Outfit', sans-serif; margin-bottom: 1.5rem;">$385.00</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+                            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 0.75rem; padding: 0.75rem; text-align: left;">
+                                <div style="font-size: 0.65rem; color: var(--green); font-weight: 700; text-transform: uppercase;">Kitty Expenses</div>
+                                <div style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-top: 0.25rem;">$120.00</div>
+                            </div>
+                            <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: 0.75rem; padding: 0.75rem; text-align: left;">
+                                <div style="font-size: 0.65rem; color: #ef4444; font-weight: 700; text-transform: uppercase;">Outstanding Debts</div>
+                                <div style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-top: 0.25rem;">$45.00</div>
+                            </div>
+                        </div>
+                        <div style="text-align: left; display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #27272a; padding-top: 1rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #fff;">
+                                <span>💰 Davo (Contribution)</span>
+                                <span style="color: var(--green); font-weight: 700;">+$45.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #fff;">
+                                <span>🍺 Team Carton (Expense)</span>
+                                <span style="color: #ef4444; font-weight: 700;">-$60.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">💰 Team Wallet</div>
+                    <h2>Track your kitty and reward players.</h2>
+                    <p>Go beyond match fee tracking. The Team Wallet lets you manage team funds, log shared expenses, and track player contributions dynamically. Perfect for social teams who split season costs or run a weekly kitty.</p>
+                    <ul class="feature-checklist">
+                        <li><strong>Flat-Rate Court Costs</strong> - manage flat fees by building a team buffer</li>
+                        <li><strong>Reward Players</strong> - credit regular players with free games funded by the kitty</li>
+                        <li><strong>Team Expenses</strong> - pay for jersey orders or game equipment straight out of the kitty balance</li>
+                        <li>Track player credits and surplus balances automatically</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. REPORTS & AI -->
+    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="reports">
+        <div class="container">
+            <div class="feature-row animate-on-scroll">
+                <div class="feature-visual" style="display: grid; grid-template-columns: 1fr; gap: 1rem; width: 100%; max-width: 340px;">
+                    <div class="wa-card">
+                        <div class="wa-header">
+                            <div class="wa-avatar" style="background:rgba(16,185,129,0.15);">🐊</div>
+                            <div>
+                                <div class="wa-name">Rusty</div>
+                                <div class="wa-role">The Outbacker</div>
+                            </div>
+                        </div>
+                        <div class="wa-bubble">"The top batter was striking 'em sweeter than a camp oven roast today! I'd give you the full match run-down, but I'm pretty sure I've got a busted radiator..."</div>
+                    </div>
+                    <div class="wa-card">
+                        <div class="wa-header">
+                            <div class="wa-avatar" style="background:rgba(239,68,68,0.15);">🍷</div>
+                            <div>
+                                <div class="wa-name">Shazza</div>
+                                <div class="wa-role">The Patron</div>
+                            </div>
+                        </div>
+                        <div class="wa-bubble">"Well, wasn't that a noice, different, and unusual game? The boys looked very effluent out there in the new activewear. Time to crack open the plonk! 🥂"</div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">📧 Reports &amp; AI</div>
+                    <h2>Email updates &amp; AI Match Summaries.</h2>
+                    <p>Organisers and managers receive periodic email summary reports detailing upcoming availability lists and financial ledger status. Plus, let AI generate fun commentator reports (Dave, Rusty, Gaz, Shazza) to post straight to WhatsApp or Messenger.</p>
+                    <ul class="feature-checklist">
+                        <li><strong>Automated Team Summary Emails</strong> sent directly to team managers</li>
+                        <li><strong>Post-Match Email Reminders</strong> with integrated card checkout links</li>
+                        <li><strong>AI Match Summaries</strong> in various fun commentator personas</li>
+                        <li><strong>Resident AI Help Assistant</strong> - Dave helps you query ledger data dynamically</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- CTA -->
 
     <section class="cta-band">
@@ -1393,7 +1047,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const sections = ['gameday','ledger','payments','portal','playhq','wallet','ai','sponsorship'];
+    const sections = ['gameday','payments','ledger','portal','lineups','history','sponsors','wallet','reports'];
 
     const links = document.querySelectorAll('.feature-nav-link');
 
