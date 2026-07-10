@@ -572,8 +572,12 @@
 
         }
 
-        /* Hide scrollbar for features sub-navigation while keeping swipe active */
+        /* Hide scrollbar and apply gradient fade mask overlay for scroll affordance */
         .feature-subnav {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 24px, rgba(0,0,0,1) calc(100% - 24px), rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 24px, rgba(0,0,0,1) calc(100% - 24px), rgba(0,0,0,0) 100%);
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
         }
@@ -656,16 +660,18 @@
     </section>
 
     <!-- Feature Nav / Jump Links -->
-    <nav class="feature-subnav" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-dark); position:sticky; top:64px; z-index:40; overflow-x:auto;">
-        <div class="container" style="display:flex; align-items:center; gap:1.5rem; padding:1rem 1.5rem; white-space:nowrap;">
-            <a href="#gameday" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-stopwatch"></i> Game Day</a>
-            <a href="#payments" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-credit-card"></i> Payments</a>
-            <a href="#ledger"  style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-wallet"></i> Ledger</a>
-            <a href="#portal" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-mobile-screen-button"></i> Availability Hub</a>
-            <a href="#wallet" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-coins"></i> Team Wallet</a>
-            <a href="#lineups" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-clipboard-list"></i> Team List Generator</a>
-            <a href="#emails" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-paper-plane"></i> Email Invites</a>
-            <a href="#reports" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-envelope"></i> Reports &amp; AI</a>
+    <nav style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-dark); position:sticky; top:64px; z-index:40;">
+        <div class="feature-subnav">
+            <div class="container" style="display:flex; align-items:center; gap:1.5rem; padding:1rem 1.5rem; white-space:nowrap;">
+                <a href="#gameday" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-stopwatch"></i> Game Day</a>
+                <a href="#payments" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-credit-card"></i> Payments</a>
+                <a href="#ledger"  style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-wallet"></i> Ledger</a>
+                <a href="#portal" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-mobile-screen-button"></i> Availability Hub</a>
+                <a href="#wallet" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-coins"></i> Team Wallet</a>
+                <a href="#lineups" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-clipboard-list"></i> Team List Generator</a>
+                <a href="#emails" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-paper-plane"></i> Email Invites</a>
+                <a href="#reports" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-envelope"></i> Reports &amp; AI</a>
+            </div>
         </div>
     </nav>
 
