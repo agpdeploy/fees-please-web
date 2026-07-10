@@ -82,6 +82,7 @@ function buildNav() {
     const navLinks = [
         { href: 'features', label: 'Features' },
         { href: 'pricing', label: 'Pricing' },
+        { href: 'about', label: 'About' },
     ];
 
     const linksHTML = navLinks.map(l => {
@@ -143,6 +144,7 @@ function buildFooter() {
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" rel="noopener" style="font-size:0.875rem; color:#71717a;" class="footer-link">Help Centre</a>
                         <a href="contact" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
+                        <a href="about" style="font-size:0.875rem; color:#71717a;" class="footer-link">About Us</a>
                     </div>
                 </div>
                 <div>
