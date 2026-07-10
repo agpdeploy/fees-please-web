@@ -851,10 +851,10 @@
     <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="emails">
         <div class="container">
             <div class="feature-row reverse animate-on-scroll">
-                <div class="feature-visual" style="display:flex; gap:1.5rem; align-items:flex-end; justify-content:center; flex-wrap:wrap;">
+                <div class="feature-visual" style="position: relative; width: 340px; height: 550px; margin: 0 auto;">
                     <!-- Manager App Video Phone -->
-                    <div class="phone-wrap">
-                        <div class="phone-frame" style="max-height: 485px; width: 240px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                    <div class="phone-wrap" style="position: absolute; left: 0; bottom: 10px; z-index: 1;">
+                        <div class="phone-frame" style="height: 540px; width: 280px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
                             <div class="phone-notch"></div>
                             <div class="phone-screen" style="background:#0f0f11; overflow:hidden;">
                                 <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
@@ -864,14 +864,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Player Email Output Phone -->
-                    <div class="phone-wrap" style="transform: translateY(-15px);">
+                    <!-- Player Email Output Phone (50% smaller overlapping bottom right) -->
+                    <div class="phone-wrap" style="position: absolute; right: -25px; bottom: 0; z-index: 2;">
                         <a href="assets/email-output.png" target="_blank" style="display:block; cursor:pointer;" title="Click to view full email output in a new window">
-                            <div class="phone-frame" style="max-height: 405px; width: 200px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 6px solid #27272a;">
-                                <div class="phone-notch" style="width:50px; height:5px; margin: 5px auto 0;"></div>
+                            <div class="phone-frame" style="height: 270px; width: 140px; border-radius: 24px; border: 4px solid #27272a; box-shadow: 0 15px 35px rgba(0,0,0,0.7);">
+                                <div class="phone-notch" style="width:40px; height:4px; margin: 4px auto 0;"></div>
                                 <div class="phone-screen" style="background:#fff; overflow:hidden; position:relative;">
                                     <img src="assets/email-output.png" alt="Email Output View" style="width:100%; height:100%; object-fit:cover; display:block;">
-                                    <div style="position:absolute; bottom:0.5rem; left:0; right:0; text-align:center; background:rgba(0,0,0,0.7); color:#fff; font-size:0.5rem; padding:0.25rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; border-radius:0.25rem; margin:0 0.75rem; border: 1px solid rgba(255,255,255,0.15);">
+                                    <div style="position:absolute; bottom:0.35rem; left:0; right:0; text-align:center; background:rgba(0,0,0,0.8); color:#fff; font-size:0.4rem; padding:0.15rem 0.25rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; border-radius:0.15rem; margin:0 0.5rem; border: 1px solid rgba(255,255,255,0.15);">
                                         🔍 Open Email
                                     </div>
                                 </div>
