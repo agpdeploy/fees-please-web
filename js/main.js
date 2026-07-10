@@ -306,7 +306,7 @@ function initCalculator() {
             // Free is cheaper
             const difference = plusCost - freeCost;
             calcVerdictText.textContent = `📋 Free tier is cost-effective, but Plus is only $${difference} more/yr.`;
-            calcVerdictSub.textContent = `Plus unlocks Team Wallet tracking, custom team sponsors (e.g. your local pub), and availability & selected lineup email invitations.`;
+            calcVerdictSub.textContent = `Plus unlocks Team Wallet tracking, printable team sheets, and availability & selected lineup email invitations.`;
             calcVerdict.style.background = 'rgba(255, 255, 255, 0.03)';
             calcVerdict.style.borderColor = 'var(--border)';
             calcVerdictText.style.color = '#fff';
