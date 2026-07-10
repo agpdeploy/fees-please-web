@@ -572,6 +572,15 @@
 
         }
 
+        /* Hide scrollbar for features sub-navigation while keeping swipe active */
+        .feature-subnav {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .feature-subnav::-webkit-scrollbar {
+            display: none;             /* Chrome, Safari, Opera */
+        }
+
     </style>
 
     <!-- JSON-LD Schema Markup for AI Search Crawlers -->
@@ -647,16 +656,16 @@
     </section>
 
     <!-- Feature Nav / Jump Links -->
-    <nav style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-dark); position:sticky; top:64px; z-index:40; overflow-x:auto;">
+    <nav class="feature-subnav" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-dark); position:sticky; top:64px; z-index:40; overflow-x:auto;">
         <div class="container" style="display:flex; align-items:center; gap:1.5rem; padding:1rem 1.5rem; white-space:nowrap;">
             <a href="#gameday" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-stopwatch"></i> Game Day</a>
             <a href="#payments" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-credit-card"></i> Payments</a>
             <a href="#ledger"  style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-wallet"></i> Ledger</a>
             <a href="#portal" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-mobile-screen-button"></i> Availability Hub</a>
+            <a href="#wallet" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-coins"></i> Team Wallet</a>
             <a href="#lineups" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-clipboard-list"></i> Team List Generator</a>
             <a href="#emails" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-paper-plane"></i> Email Invites</a>
             <a href="#reports" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-envelope"></i> Reports &amp; AI</a>
-            <a href="#wallet" style="font-size:0.85rem; font-weight:600; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem;" class="feature-nav-link"><i class="fa-solid fa-coins"></i> Team Wallet</a>
         </div>
     </nav>
 
@@ -808,10 +817,42 @@
         </div>
     </section>
 
-    <!-- 5. TEAM LIST GENERATOR -->
-    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="lineups">
+    <!-- 5. TEAM WALLET -->
+    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="wallet">
         <div class="container">
             <div class="feature-row animate-on-scroll">
+                <div class="feature-visual">
+                    <div class="phone-wrap">
+                        <div class="phone-frame" style="max-height: 540px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen" style="background:#0f0f11; overflow:hidden;">
+                                <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
+                                    <source src="assets/team%20wallet.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <div class="section-label" style="display:inline-flex; align-items:center; gap:0.4rem;"><i class="fa-solid fa-coins"></i> Team Wallet</div>
+                    <h2>Track your kitty and reward players.</h2>
+                    <p>Go beyond match fee tracking. The Team Wallet lets you manage team funds, log shared expenses, and track player contributions dynamically. Perfect for social teams who split season costs or run a weekly kitty.</p>
+                    <ul class="feature-checklist">
+                        <li><strong>Flat-Rate Court Costs</strong> - manage flat fees by building a team buffer</li>
+                        <li><strong>Reward Players</strong> - credit regular players with free games funded by the kitty</li>
+                        <li><strong>Team Expenses</strong> - pay for jersey orders or game equipment straight out of the kitty balance</li>
+                        <li>Track player credits and surplus balances automatically</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TEAM LIST GENERATOR -->
+    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="lineups">
+        <div class="container">
+            <div class="feature-row reverse animate-on-scroll">
                 <div class="feature-visual" style="position: relative; width: 340px; height: 550px; margin: 0 auto;">
                     <!-- Manager App Video Phone -->
                     <div class="phone-wrap" style="position: absolute; left: 0; bottom: 10px; z-index: 1;">
@@ -850,11 +891,10 @@
         </div>
     </section>
 
-    <!-- 6. SEASON HISTORY -->
-    <!-- 6. EMAIL INVITES -->
-    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="emails">
+    <!-- 7. EMAIL INVITES -->
+    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="emails">
         <div class="container">
-            <div class="feature-row reverse animate-on-scroll">
+            <div class="feature-row animate-on-scroll">
                 <div class="feature-visual" style="position: relative; width: 340px; height: 550px; margin: 0 auto;">
                     <!-- Manager App Video Phone -->
                     <div class="phone-wrap" style="position: absolute; left: 0; bottom: 10px; z-index: 1;">
@@ -898,10 +938,10 @@
         </div>
     </section>
 
-    <!-- 7. REPORTS & AI -->
-    <section style="padding:5rem 0; border-bottom:1px solid var(--border);" id="reports">
+    <!-- 8. REPORTS & AI -->
+    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="reports">
         <div class="container">
-            <div class="feature-row animate-on-scroll">
+            <div class="feature-row reverse animate-on-scroll">
                 <div class="feature-visual">
                     <div class="phone-wrap">
                         <div class="phone-frame" style="max-height: 540px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
@@ -930,37 +970,6 @@
         </div>
     </section>
 
-    <!-- 8. TEAM WALLET -->
-    <section style="padding:5rem 0; background:var(--bg-dark); border-bottom:1px solid var(--border);" id="wallet">
-        <div class="container">
-            <div class="feature-row reverse animate-on-scroll">
-                <div class="feature-visual">
-                    <div class="phone-wrap">
-                        <div class="phone-frame" style="max-height: 540px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                            <div class="phone-notch"></div>
-                            <div class="phone-screen" style="background:#0f0f11; overflow:hidden;">
-                                <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
-                                    <source src="assets/team%20wallet.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-text">
-                    <div class="section-label" style="display:inline-flex; align-items:center; gap:0.4rem;"><i class="fa-solid fa-coins"></i> Team Wallet</div>
-                    <h2>Track your kitty and reward players.</h2>
-                    <p>Go beyond match fee tracking. The Team Wallet lets you manage team funds, log shared expenses, and track player contributions dynamically. Perfect for social teams who split season costs or run a weekly kitty.</p>
-                    <ul class="feature-checklist">
-                        <li><strong>Flat-Rate Court Costs</strong> - manage flat fees by building a team buffer</li>
-                        <li><strong>Reward Players</strong> - credit regular players with free games funded by the kitty</li>
-                        <li><strong>Team Expenses</strong> - pay for jersey orders or game equipment straight out of the kitty balance</li>
-                        <li>Track player credits and surplus balances automatically</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- CTA -->
 
     <section class="cta-band">
@@ -1007,7 +1016,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const sections = ['gameday','payments','ledger','portal','lineups','emails','reports','wallet'];
+    const sections = ['gameday','payments','ledger','portal','wallet','lineups','emails','reports'];
 
     const links = document.querySelectorAll('.feature-nav-link');
 
