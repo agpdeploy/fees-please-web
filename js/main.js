@@ -50,7 +50,7 @@ function showConsentBanner() {
     banner.className = 'consent-banner';
     banner.id = 'consent-banner';
     banner.innerHTML = `
-        <p>We use cookies and analytics to improve your experience. <a href="privacy.html">Privacy Policy</a></p>
+        <p>We use cookies and analytics to improve your experience. <a href="privacy">Privacy Policy</a></p>
         <button class="consent-btn decline" id="consent-decline">Decline</button>
         <button class="consent-btn accept" id="consent-accept">Accept</button>
     `;
@@ -72,11 +72,16 @@ function showConsentBanner() {
 
 // ── Navigation HTML ───────────────────────────────────────
 function buildNav() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    let currentPage = window.location.pathname.split('/').pop();
+    if (!currentPage || currentPage === 'index.html' || currentPage === 'index') {
+        currentPage = 'index';
+    } else {
+        currentPage = currentPage.replace('.html', '');
+    }
 
     const navLinks = [
-        { href: 'features.html', label: 'Features' },
-        { href: 'pricing.html', label: 'Pricing' },
+        { href: 'features', label: 'Features' },
+        { href: 'pricing', label: 'Pricing' },
     ];
 
     const linksHTML = navLinks.map(l => {
@@ -87,7 +92,7 @@ function buildNav() {
     return `
     <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300" style="background: rgba(15,15,17,0); backdrop-filter: blur(0px);">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" id="nav-logo-link">
+            <a href="./" id="nav-logo-link">
                 <img src="assets/logo-green.png" alt="Fees Please" class="h-10 w-auto" id="nav-logo">
             </a>
             <div class="hidden md:flex space-x-8 items-center">
@@ -129,22 +134,22 @@ function buildFooter() {
                 <div>
                     <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#52525b; margin-bottom:1rem;">Product</p>
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
-                        <a href="features.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Features</a>
-                        <a href="pricing.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Pricing</a>
+                        <a href="features" style="font-size:0.875rem; color:#71717a;" class="footer-link">Features</a>
+                        <a href="pricing" style="font-size:0.875rem; color:#71717a;" class="footer-link">Pricing</a>
                     </div>
                 </div>
                 <div>
                     <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#52525b; margin-bottom:1rem;">Resources</p>
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" rel="noopener" style="font-size:0.875rem; color:#71717a;" class="footer-link">Help Centre</a>
-                        <a href="contact.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
+                        <a href="contact" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
                     </div>
                 </div>
                 <div>
                     <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#52525b; margin-bottom:1rem;">Legal</p>
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
-                        <a href="privacy.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Privacy Policy</a>
-                        <a href="terms.html" style="font-size:0.875rem; color:#71717a;" class="footer-link">Terms of Service</a>
+                        <a href="privacy" style="font-size:0.875rem; color:#71717a;" class="footer-link">Privacy Policy</a>
+                        <a href="terms" style="font-size:0.875rem; color:#71717a;" class="footer-link">Terms of Service</a>
                     </div>
                 </div>
             </div>

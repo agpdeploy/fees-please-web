@@ -7,37 +7,37 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://feesplease.app/features.html</loc>
+        <loc>https://feesplease.app/features</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://feesplease.app/pricing.html</loc>
+        <loc>https://feesplease.app/pricing</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://feesplease.app/contact.html</loc>
+        <loc>https://feesplease.app/contact</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://feesplease.app/square.html</loc>
+        <loc>https://feesplease.app/square</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://feesplease.app/privacy.html</loc>
+        <loc>https://feesplease.app/privacy</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://feesplease.app/terms.html</loc>
+        <loc>https://feesplease.app/terms</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
