@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Support | Fees Please</title>
-    <meta name="description" content="Get support for Fees Please. Submit a support ticket securely to our Jira Service Desk (FPC space) or use our spam-protected contact methods.">
+    <meta name="description" content="Get support for Fees Please. Submit a support ticket securely or use our spam-protected contact methods.">
     <link rel="canonical" href="https://feesplease.app/contact.html">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -20,11 +20,11 @@
             <div style="margin-bottom: 2rem; text-align: center;">
                 <span style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 9999px; display: inline-block; margin-bottom: 0.75rem; background: rgba(0, 188, 125, 0.15); border: 1px solid rgba(0, 188, 125, 0.3); color: var(--green);">Secure Support</span>
                 <h1 class="text-3xl font-bold mb-2 text-white" style="font-family: 'Outfit', sans-serif;">Contact Us</h1>
-                <p class="text-zinc-400 mt-2 text-sm">Submit your enquiry directly to our Jira Service Desk support queue.</p>
+                <p class="text-zinc-400 mt-2 text-sm">Submit your enquiry directly to our secure customer support queue.</p>
             </div>
 
             <!-- Form -->
-            <form id="jsm-contact-form" class="space-y-6">
+            <form id="support-contact-form" class="space-y-6">
                 <!-- Dropdown -->
                 <div>
                     <label for="enquiry-type" class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Type of Enquiry</label>
@@ -34,7 +34,7 @@
                         <option value="Becoming a sponsor">Becoming a sponsor</option>
                         <option value="Billing or Subscription issue">Billing or Subscription issue</option>
                         <option value="Feature Request">Feature Request</option>
-                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="General Enquiry">General Enquiry</option>
                     </select>
                 </div>
 
@@ -67,7 +67,7 @@
                 <!-- Anti-Spam / Secure Info Note -->
                 <p class="text-[11px] text-zinc-500 text-center leading-relaxed mt-4">
                     <i class="fa-solid fa-shield-halved" style="margin-right: 4px; color: var(--green);"></i> 
-                    We protect your privacy. Submitting this form sends your details directly to our secure Atlassian support queue.
+                    We protect your privacy. Submitting this form sends your details directly to our secure customer support queue.
                 </p>
             </form>
         </div>
@@ -76,7 +76,7 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        document.getElementById('jsm-contact-form').addEventListener('submit', function(e) {
+        document.getElementById('support-contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submit-btn');
@@ -115,17 +115,19 @@
                 }
                 
                 // Show Success Screen
-                const form = document.getElementById('jsm-contact-form');
+                const form = document.getElementById('support-contact-form');
+                const displayRef = data.issueKey ? ('#' + data.issueKey.split('-')[1]) : 'Logged';
+                
                 form.innerHTML = `
                     <div class="text-center py-8">
                         <div style="font-size: 3rem; margin-bottom: 1.5rem;">✅</div>
                         <h3 class="text-white font-extrabold text-2xl mb-3" style="font-family: 'Outfit', sans-serif;">Enquiry Received!</h3>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">
                             Thank you for reaching out. We have logged your request directly in our support system. 
-                            Your ticket reference is <strong class="text-[#00bc7d]">${data.issueKey || 'Logged'}</strong>.
+                            Your reference is <strong class="text-[#00bc7d]">${displayRef}</strong>.
                         </p>
                         <p class="text-zinc-500 text-xs leading-relaxed">
-                            Our team will review your ticket and follow up with you via email shortly.
+                            Our team will review your request and follow up with you via email shortly.
                         </p>
                     </div>
                 `;
@@ -135,12 +137,12 @@
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Enquiry';
                 
-                // Fallback details if JSM API fails
+                // Fallback details if API fails
                 errorDiv.classList.remove('hidden');
                 errorDiv.innerHTML = `
                     <p class="font-bold mb-1">Submission failed</p>
                     <p class="text-[11px] mb-2">${error.message || 'Unable to reach the support server.'}</p>
-                    <p class="text-[11px] text-zinc-400">Please try again or submit your ticket directly via our <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/34/group/34/create/34" target="_blank" rel="noopener" class="underline text-[#00bc7d]">Jira Customer Portal</a>.</p>
+                    <p class="text-[11px] text-zinc-400">Please try again or submit your ticket directly via our <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/34/group/34/create/34" target="_blank" rel="noopener" class="underline text-[#00bc7d]">Customer Support Portal</a>.</p>
                 `;
             });
         });
