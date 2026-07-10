@@ -118,7 +118,7 @@ function buildFooter() {
     return `
     <footer>
         <div class="container">
-            <div style="display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06);" class="footer-grid">
+            <div class="footer-grid">
                 <div>
                     <img src="assets/logo-green.png" alt="Fees Please" class="h-10 w-auto mb-4">
                     <p style="font-size:0.875rem; color:#71717a; line-height:1.7; max-width: 280px;">
