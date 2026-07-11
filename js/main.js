@@ -150,6 +150,7 @@ function buildFooter() {
                         <a href="contact" style="font-size:0.875rem; color:#71717a;" class="footer-link">Contact</a>
                         <a href="about" style="font-size:0.875rem; color:#71717a;" class="footer-link">About Us</a>
                         <a href="affiliates" style="font-size:0.875rem; color:#71717a;" class="footer-link">Affiliate Program</a>
+                        <a href="sponsorships" style="font-size:0.875rem; color:#71717a;" class="footer-link">Sponsorships</a>
                     </div>
                 </div>
                 <div>

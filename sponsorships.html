@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorships | Fees Please</title>
+    <meta name="description" content="Fees Please is proud to sponsor local grassroots sports like Ferny Districts CC & Bowl Movements. Learn how to display your own team sponsors inside the app.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sponsorships | Fees Please">
+    <meta property="og:description" content="Fees Please is proud to sponsor local grassroots sports like Ferny Districts CC & Bowl Movements. Learn how to display your own team sponsors inside the app.">
+    <meta property="og:url" content="https://feesplease.app/sponsorships">
+    <meta property="og:image" content="https://feesplease.app/assets/icon.png">
+    
+    <link rel="canonical" href="https://feesplease.app/sponsorships">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Vector Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            align-items: stretch;
+        }
+        
+        .sponsor-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sponsor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green), #10b981);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 188, 125, 0.3);
+        }
+
+        .sponsor-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-split {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sponsor-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 900px) {
+            .sponsor-grid, .feature-split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main style="padding-top: 6rem;">
+
+    <!-- Hero -->
+    <section style="padding: 5rem 0 3rem; text-align: center; position: relative; overflow: hidden;">
+        <div style="position:absolute; inset:0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,188,125,0.08) 0%, transparent 70%); pointer-events:none;"></div>
+        <div class="container" style="position:relative;">
+            <div class="section-label">Community &amp; Growth</div>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight:900; color:#fff; margin-bottom:1rem; line-height:1.1; font-family: 'Outfit', sans-serif;">
+                Sponsoring Grassroots<br>Social Sports.
+            </h1>
+            <p style="color:var(--muted); max-width:600px; margin: 0 auto; font-size:1.1rem; line-height:1.7;">
+                Fees Please is proud to back local teams. Discover who we sponsor for the '26–'28 seasons, and how your team can showcase its own local sponsors inside the app.
+            </p>
+        </div>
+    </section>
+
+    <!-- We Sponsor Section -->
+    <section style="padding: 5rem 0; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align: center; margin-bottom: 4.5rem;">
+                <div class="section-label">Grassroots Partners</div>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
+                    Teams we proudly support.
+                </h2>
+                <p style="color: var(--muted); max-width: 600px; margin: 0 auto; font-size: 1.05rem;">
+                    Amateur sports are the heartbeat of local communities. Fees Please is backing local squads with sponsorship packages to help cover match day expenses and team gear.
+                </p>
+            </div>
+
+            <div class="sponsor-grid animate-on-scroll">
+                
+                <!-- Bowl Movements -->
+                <div class="sponsor-card">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="sponsor-badge" style="background: rgba(0, 188, 125, 0.1); border: 1px solid rgba(0, 188, 125, 0.2); color: var(--green);">
+                                <i class="fa-solid fa-trophy"></i> Sponsored Team
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--muted2); font-weight: 600;">2026 – 2028 Seasons</span>
+                        </div>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
+                            Bowl Movements
+                        </h3>
+                        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            A legendary local social team competing weekly in indoor sports. We sponsor their court fees and match kits, helping them focus on what they do best: maintaining their stellar C-grade average and providing top-tier post-game banter.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/80">
+                        <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-white font-bold" style="background: radial-gradient(circle, var(--green) 0%, #10b981 100%);">
+                            BM
+                        </div>
+                        <div>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">Bowl Movements</div>
+                            <div style="font-size: 0.75rem; color: var(--muted);">Indoor Cricket &amp; Social Sports</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ferny Districts CC -->
+                <div class="sponsor-card">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="sponsor-badge" style="background: rgba(242, 183, 5, 0.1); border: 1px solid rgba(242, 183, 5, 0.2); color: #f2b705;">
+                                <i class="fa-solid fa-cricket-bat-ball"></i> Sponsored Club
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--muted2); font-weight: 600;">2026 – 2028 Seasons</span>
+                        </div>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
+                            Ferny Districts Cricket Club
+                        </h3>
+                        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            A pillars of community cricket. Fees Please is backing their senior social squads, easing the administration burden on team managers so their players can enjoy Saturday afternoon cricket without the stress of unpaid team sheets.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/80">
+                        <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-white font-bold" style="background: radial-gradient(circle, #f2b705 0%, #d97706 100%);">
+                            FD
+                        </div>
+                        <div>
+                            <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">Ferny Districts CC</div>
+                            <div style="font-size: 0.75rem; color: var(--muted);">District Turf &amp; Social Cricket</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- In-App Sponsorships Section -->
+    <section style="padding: 6rem 0; background: var(--bg-dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="feature-split animate-on-scroll">
+                <div class="feature-text">
+                    <div class="section-label">
+                        <i class="fa-solid fa-rectangle-ad"></i> In-App Feature
+                    </div>
+                    <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 1.5rem;">
+                        Showcase Your Own Local Sponsors
+                    </h2>
+                    <p>
+                        We know that social sports clubs run on the backing of local businesses—like the neighbourhood pub, sports store, or butcher. Yet, traditional sponsorship spots like boundary signs or jersey prints are hard to track and only get seen during match time.
+                    </p>
+                    <p>
+                        Fees Please introduces **Digital Sponsorships** directly inside the app, letting you feature your sponsors where players look every week:
+                    </p>
+                    
+                    <ul class="feature-checklist gold" style="margin-top: 1.5rem;">
+                        <li><strong>Sideline Checkout Exposure:</strong> Display sponsor logos on the payment screen when players scan the QR code to settle match fees.</li>
+                        <li><strong>Weekly Availability Banners:</strong> Put local partners front-and-centre on the Availability Hub screens which 100% of your squad views weekly.</li>
+                        <li><strong>Digital Receipt Footers:</strong> Link players directly to your sponsor's website or discount offer on every automated email receipt.</li>
+                    </ul>
+                </div>
+                
+                <!-- Phone Mockup showing sponsor placement -->
+                <div class="phone-wrap" style="margin: 0 auto; max-width: 280px;">
+                    <div class="phone-frame" style="max-height: 540px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background:#0f0f11; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding: 1.25rem 1rem;">
+                            
+                            <!-- Mock App UI -->
+                            <div>
+                                <div class="flex justify-between items-center mb-4">
+                                    <div style="font-size:0.75rem; color:var(--muted2);"><i class="fa-solid fa-arrow-left"></i> Back</div>
+                                    <div style="font-size:0.75rem; font-weight:700; color:var(--green);">BOWL MOVEMENTS</div>
+                                </div>
+                                
+                                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-3 mb-3 text-center">
+                                    <div style="font-size:0.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em;">YOUR SHARE OF MATCH FEES</div>
+                                    <div style="font-size:1.75rem; font-weight:800; color:#fff; margin:0.25rem 0;">$20.00</div>
+                                    <div style="font-size:0.7rem; color:var(--muted2);">vs Ferny Districts CC</div>
+                                </div>
+
+                                <button style="width:100%; background:#fff; color:#000; border-radius:0.75rem; padding:0.6rem; font-weight:700; font-size:0.8rem; margin-bottom:0.5rem;" disabled>
+                                    Pay with Apple Pay
+                                </button>
+                                <button style="width:100%; background:rgba(255,255,255,0.05); color:#fff; border:1px solid rgba(255,255,255,0.1); border-radius:0.75rem; padding:0.6rem; font-weight:700; font-size:0.8rem;" disabled>
+                                    Pay with Card
+                                </button>
+                            </div>
+
+                            <!-- Sponsor Slot (Fees Please Colours backing) -->
+                            <div style="background: linear-gradient(135deg, rgba(0, 188, 125, 0.15), rgba(16, 185, 129, 0.05)); border: 1px dashed rgba(0, 188, 125, 0.4); border-radius: 0.75rem; padding: 0.75rem; text-align: center;">
+                                <div style="font-size:0.6rem; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;">Match Day Sponsor</div>
+                                <div class="bg-white rounded p-1 mb-1 max-w-[100px] mx-auto flex items-center justify-center h-6">
+                                    <span style="font-family:'Outfit', sans-serif; font-size:0.65rem; font-weight:900; color:#000;">THE LOCAL PUB</span>
+                                </div>
+                                <div style="font-size:0.55rem; color:var(--muted);">Show your receipt for a free drink post-match!</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Application / CTA -->
+    <section class="cta-band" style="padding: 6rem 0;">
+        <div class="container">
+            <div class="animate-on-scroll" style="text-align: center; max-width: 650px; margin: 0 auto;">
+                <div class="section-label">Partnerships</div>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
+                    Let's grow together.
+                </h2>
+                <p style="color: var(--muted); margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.6;">
+                    Whether you want to configure local sponsors inside your team's Fees Please portal, or you're a local club looking to apply for our grassroots sponsorship program, we want to hear from you.
+                </p>
+                <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+                    <a href="contact?reason=sponsorship" class="btn-primary" id="sponsorship-contact-cta">
+                        Get in Touch
+                    </a>
+                    <a href="https://app.feesplease.app/auth/register" class="btn-secondary" id="sponsorship-register-link">
+                        Create Your Team Free
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
