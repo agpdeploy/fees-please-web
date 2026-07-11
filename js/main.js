@@ -114,11 +114,10 @@ function buildNav() {
         <!-- Mobile Menu -->
         <div class="hidden md:hidden border-t border-white/5 px-6 py-4 space-y-4" id="mobile-menu" style="background: rgba(15,15,17,0.95);">
             ${navLinks.map(l => `<a href="${l.href}" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours py-1">${l.label}</a>`).join('')}
-            <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.75rem; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.75rem;">
-                <a href="contact" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours">Contact</a>
-                <a href="affiliates" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours">Affiliate Program</a>
-                <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" rel="noopener" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours">Help Centre</a>
-            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); margin: 0.5rem 0;"></div>
+            <a href="contact" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours py-1">Contact</a>
+            <a href="affiliates" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours py-1">Affiliate Program</a>
+            <a href="https://feespleaseapp.atlassian.net/servicedesk/customer/portal/1" target="_blank" rel="noopener" class="block text-sm font-medium text-zinc-400 hover:text-white transition-colours py-1">Help Centre</a>
             <a href="https://app.feesplease.app" class="btn-primary text-sm py-2.5 w-full justify-center mt-4">Get Started Free →</a>
         </div>
     </nav>`;
