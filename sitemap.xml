@@ -37,6 +37,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://feesplease.app/affiliates</loc>
+        <lastmod>2026-07-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>https://feesplease.app/privacy</loc>
         <lastmod>2026-07-10</lastmod>
         <changefreq>yearly</changefreq>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Program | Fees Please</title>
+    <meta name="description" content="Join the Fees Please affiliate program. Share the love, refer team organizers, and earn rewards when they upgrade to Plus.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Affiliate Program | Fees Please">
+    <meta property="og:description" content="Join the Fees Please affiliate program. Share the love, refer team organizers, and earn rewards when they upgrade to Plus.">
+    <meta property="og:url" content="https://feesplease.app/affiliates">
+    <meta property="og:image" content="https://feesplease.app/assets/icon.png">
+    
+    <link rel="canonical" href="https://feesplease.app/affiliates">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Vector Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Tailwind and main stylesheet -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Mock Affiliates Dashboard UI inside Phone */
+        .mock-aff-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mock-aff-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .mock-aff-content {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            height: calc(100% - 45px);
+            overflow-y: auto;
+        }
+
+        .mock-link-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mock-link-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .mock-link-input-wrap {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.6rem;
+            border-radius: 0.5rem;
+        }
+
+        .mock-link-text {
+            font-size: 0.7rem;
+            color: #fff;
+            font-family: monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        .mock-copy-btn {
+            font-size: 0.65rem;
+            font-weight: 700;
+            background: var(--green);
+            color: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .mock-stats-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .mock-stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .mock-stat-val {
+            font-size: 1.25rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            margin-bottom: 0.15rem;
+        }
+
+        .mock-stat-lbl {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+        }
+
+        .mock-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mock-list-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--green);
+            margin-bottom: 0.25rem;
+        }
+
+        .mock-list-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 0.7rem;
+        }
+
+        .mock-list-team {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .mock-list-status {
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        /* FAQs */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .faq-item h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .faq-item h3 i {
+            color: var(--green);
+            margin-top: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            padding-left: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .affiliate-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main style="padding-top: 6rem;">
+
+    <!-- Hero -->
+    <section style="padding: 5rem 0 3rem; text-align: center; position: relative; overflow: hidden;">
+        <div style="position:absolute; inset:0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(242,183,5,0.06) 0%, transparent 70%); pointer-events:none;"></div>
+        <div class="container" style="position:relative;">
+            <div class="section-label" style="background: rgba(242, 183, 5, 0.1); border: 1px solid rgba(242, 183, 5, 0.2); color: #f2b705;">
+                <i class="fa-solid fa-gift"></i> Refer &amp; Earn
+            </div>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight:900; color:#fff; margin-bottom:1rem; line-height:1.1; font-family: 'Outfit', sans-serif;">
+                Share the love.<br>
+                <span class="text-gradient-gold">Earn rewards.</span>
+            </h1>
+            <p style="color:var(--muted); max-width:600px; margin: 0 auto; font-size:1.1rem; line-height:1.7;">
+                Help other organisers take the pain out of social sports admin. Refer teams to Fees Please and get rewarded when they level up.
+            </p>
+        </div>
+    </section>
+
+    <!-- Content & Mockup Grid -->
+    <section style="padding: 5rem 0; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="affiliate-grid animate-on-scroll">
+                
+                <!-- Left: Info -->
+                <div class="feature-text">
+                    <div class="section-label" style="background: rgba(242, 183, 5, 0.1); border: 1px solid rgba(242, 183, 5, 0.2); color: #f2b705;">
+                        <i class="fa-solid fa-rocket"></i> Early Access Beta
+                    </div>
+                    <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 1.5rem;">
+                        Refer and earn in 3 easy steps.
+                    </h2>
+                    <p>
+                        The Fees Please Affiliates Program is open to everyone—whether you manage a team, play in a league, or just want to tell local sports clubs about a better way to collect match fees. 
+                    </p>
+                    <p style="margin-bottom: 2rem;">
+                        Even though we are in our early beta days, you can register and start sharing your link immediately to lock in your referrals before we launch our full rewards catalog.
+                    </p>
+                    
+                    <ul class="feature-checklist gold">
+                        <li>
+                            <strong>1. Grab Your Link</strong> - Register your account (it's free) and navigate to the Affiliates tab in your dashboard to generate your unique lifetime referral link.
+                        </li>
+                        <li>
+                            <strong>2. Spread the Word</strong> - Share your link on social media, WhatsApp groups, league newsletters, or directly with captains and club coordinators.
+                        </li>
+                        <li>
+                            <strong>3. Earn Referral Credits</strong> - Once a referred organiser registers and upgrades a team to the <strong>Plus</strong> tier, your referral bonus is credited to your balance.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: Dashboard Phone Mockup -->
+                <div class="feature-visual">
+                    <div class="phone-wrap">
+                        <div class="phone-frame" style="height: 540px; max-height: 540px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                            <div class="phone-status-bar"></div>
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen" style="background:#0f0f11; overflow:hidden;">
+                                
+                                <!-- Mock Header -->
+                                <div class="mock-aff-header">
+                                    <div class="mock-aff-title">
+                                        <img src="assets/favicon-32x32.png" alt="" style="width:16px; height:16px;">
+                                        FEES PLEASE
+                                    </div>
+                                    <div style="font-size:0.65rem; color:var(--muted); font-weight:600; background:rgba(255,255,255,0.05); padding:0.15rem 0.4rem; border-radius:9999px;">
+                                        Affiliates
+                                    </div>
+                                </div>
+                                
+                                <!-- Mock Content -->
+                                <div class="mock-aff-content">
+                                    
+                                    <!-- Referral Link -->
+                                    <div class="mock-link-card">
+                                        <div class="mock-link-label">Your Referral Link</div>
+                                        <div class="mock-link-input-wrap">
+                                            <div class="mock-link-text">feesplease.app/ref/ashpitt</div>
+                                            <div class="mock-copy-btn">Copy</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stats Grid -->
+                                    <div class="mock-stats-row">
+                                        <div class="mock-stat-box">
+                                            <div class="mock-stat-val text-emerald-400">284</div>
+                                            <div class="mock-stat-lbl">Clicks</div>
+                                        </div>
+                                        <div class="mock-stat-box">
+                                            <div class="mock-stat-val text-emerald-400">34</div>
+                                            <div class="mock-stat-lbl">Registers</div>
+                                        </div>
+                                        <div class="mock-stat-box">
+                                            <div class="mock-stat-val text-[#f2b705]">8</div>
+                                            <div class="mock-stat-lbl">Plus Upgrades</div>
+                                        </div>
+                                        <div class="mock-stat-box">
+                                            <div class="mock-stat-val text-[#f2b705]">$55.92</div>
+                                            <div class="mock-stat-lbl">Earnings</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Recent Referrals -->
+                                    <div class="mock-list">
+                                        <div class="mock-list-title">Recent Activity</div>
+                                        
+                                        <div class="mock-list-row">
+                                            <div>
+                                                <div class="mock-list-team">Bowl Movements</div>
+                                                <div style="font-size:0.55rem; color:var(--muted);">Registered 3d ago</div>
+                                            </div>
+                                            <div class="mock-list-status text-[#f2b705]">+$6.99 (Plus)</div>
+                                        </div>
+
+                                        <div class="mock-list-row">
+                                            <div>
+                                                <div class="mock-list-team">FC Pint</div>
+                                                <div style="font-size:0.55rem; color:var(--muted);">Registered 5d ago</div>
+                                            </div>
+                                            <div class="mock-list-status text-[#f2b705]">+$6.99 (Plus)</div>
+                                        </div>
+
+                                        <div class="mock-list-row">
+                                            <div>
+                                                <div class="mock-list-team">Netballers</div>
+                                                <div style="font-size:0.55rem; color:var(--muted);">Registered 1w ago</div>
+                                            </div>
+                                            <div class="mock-list-status text-zinc-500">Pending</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 6rem 0; background: var(--bg-dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align: center; margin-bottom: 3.5rem;">
+                <div class="section-label">FAQ</div>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 1rem;">
+                    Affiliate Program FAQs
+                </h2>
+                <p style="color: var(--muted); max-width: 600px; margin: 0 auto; font-size: 1.05rem;">
+                    Answers to common questions about referring teams and tracking upgrades.
+                </p>
+            </div>
+
+            <div class="faq-grid animate-on-scroll">
+                
+                <div class="faq-item">
+                    <h3><i class="fa-solid fa-circle-question"></i> Is it free to join the affiliate program?</h3>
+                    <p>
+                        Yes, completely free. You do not need an active paid subscription or even manage a team yourself to register as an affiliate and start sharing your link.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fa-solid fa-circle-question"></i> What if I am a player or become one later?</h3>
+                    <p>
+                        Your affiliate status is permanent. If you are already a player (or subsequently join a team as an organiser/player), your affiliate profile and historical referrals remain fully intact and linked directly to your single account.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fa-solid fa-circle-question"></i> Can I refer my own team?</h3>
+                    <p>
+                        To prevent abuse, self-referrals are blocked. You cannot use your own affiliate link to sign up your own team. However, you will earn rewards for any other teams, clubs, or captains you refer.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fa-solid fa-circle-question"></i> How are upgrades and earnings tracked?</h3>
+                    <p>
+                        When a captain signs up through your link, they are marked as your referral. Once they upgrade a team to the <strong>Plus</strong> tier, the referral bonus is credited to your balance, visible in real-time on your affiliates dashboard.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <div class="section-label">Get Started</div>
+                <h2>Start referring teams today.</h2>
+                <p>Register your free account and grab your referral link in minutes.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+                    <a href="https://app.feesplease.app/auth/register" class="btn-primary" id="affiliates-footer-cta" data-ph-event="affiliates_footer_cta_click">
+                        Create Your Account Free →
+                    </a>
+                    <a href="features" class="btn-secondary" id="affiliates-features-link">
+                        See Features
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
