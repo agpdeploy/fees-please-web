@@ -295,7 +295,7 @@
                             <input type="checkbox" id="feat-rates" style="width: 1.2rem; height: 1.2rem; accent-color: var(--green); margin-top: 0.15rem; cursor: pointer;">
                             <div>
                                 <div style="font-weight: 700; font-size: 0.95rem;">Save on digital transaction fees</div>
-                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Lower Square platform percentage fees to a flat 30¢ or 15¢ clip.</div>
+                                <div style="font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem;">Drop the platform transaction clip to 0%.</div>
                             </div>
                         </label>
 
@@ -368,7 +368,7 @@
                                 <li>✓ Ledger for the current season</li>
                                 <li>✓ Player availability hub via link</li>
                             </ul>
-                            <div style="font-size: 0.72rem; color: var(--muted); margin-top: 1.25rem; line-height: 1.45;" id="rec-footnote">*Requires connecting a free Square account. Standard Square fee + 2.5% platform clip.</div>
+                            <div style="font-size: 0.72rem; color: var(--muted); margin-top: 1.25rem; line-height: 1.45;" id="rec-footnote">*Requires connecting a free Square account. 5% total fee (2.2% Square + 2.8% clip).</div>
                         </div>
                         
                         <div>
@@ -436,9 +436,9 @@
                         label.style.color = 'var(--green)';
                         name.textContent = 'Pro Plan';
                         price.innerHTML = '$12.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month flat (or $10.75/mo billed annually)</span>';
-                        desc.textContent = 'Designed for power-organisers and multi-team captains. Covers up to 5 teams flat-rate and offers the lowest flat transaction fees.';
-                        features.innerHTML = '<li>✓ Up to 5 teams included flat-rate</li><li>✓ Lowest 15¢ flat Square platform clip</li><li>✓ Includes all Plus features</li>';
-                        footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 15¢ flat platform clip.';
+                        desc.textContent = 'Designed for power-organisers and multi-team captains. Covers up to 5 teams flat-rate and offers 0% platform fees.';
+                        features.innerHTML = '<li>✓ Up to 5 teams included flat-rate</li><li>✓ 0% Platform Clip (2.2% Square fee only)</li><li>✓ Includes all Plus features</li>';
+                        footnote.innerHTML = '*Requires connecting a free Square account. 2.2% total fee (Square fee only, 0% platform clip).';
                         btn.textContent = 'Get Started Free';
                         btn.href = 'https://app.feesplease.app/auth/register?plan=pro';
 
@@ -454,16 +454,16 @@
                         card.style.borderColor = 'var(--green)';
                         label.style.color = 'var(--green)';
                         name.textContent = 'Plus Plan';
-                        price.innerHTML = '$6.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month per team (or $5.75/mo billed annually)</span>';
-                        desc.textContent = 'Best value for active organisers. Unlocks automated lineup emails, Team Wallet tracking, multi-season history, and slashes Square platform clip to 30¢ flat.';
-                        features.innerHTML = '<li>✓ Selected lineups & automated email invites</li><li>✓ Downloadable branded lineup graphics & team sheets</li><li>✓ Team Wallet (track individual player contributions)</li><li>✓ Custom team sponsors & multi-season statistics</li><li>✓ 30¢ flat platform clip (saves 2.2% per transaction)</li>';
-                        footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 30¢ flat platform clip.';
+                        price.innerHTML = '$4.99 <span style="font-size: 0.85rem; font-weight: 500; color: var(--muted);">/ month per team (or $3.75/mo billed annually)</span>';
+                        desc.textContent = 'Best value for active organisers. Unlocks automated lineup emails, Team Wallet tracking, multi-season history, and drops platform clip to 0%.';
+                        features.innerHTML = '<li>✓ Selected lineups & automated email invites</li><li>✓ Downloadable branded lineup graphics & team sheets</li><li>✓ Team Wallet (track individual player contributions)</li><li>✓ Custom team sponsors & multi-season statistics</li><li>✓ 0% platform clip (2.2% Square fee only)</li>';
+                        footnote.innerHTML = '*Requires connecting a free Square account. 2.2% total fee (Square fee only, 0% platform clip).';
                         btn.textContent = 'Get Started Free';
                         btn.href = 'https://app.feesplease.app/auth/register?plan=plus';
 
                         if (mName) {
                             mName.textContent = 'Plus Plan';
-                            mPrice.innerHTML = '$6.99 <span style="font-size: 0.72rem; color: var(--muted); font-weight: normal;">(or $5.75/mo annually)</span>';
+                            mPrice.innerHTML = '$4.99 <span style="font-size: 0.72rem; color: var(--muted); font-weight: normal;">(or $3.75/mo annually)</span>';
                             mBtn.textContent = 'Get Started Free';
                             mBtn.href = 'https://app.feesplease.app/auth/register?plan=plus';
                             mLabel.style.color = 'var(--green)';
@@ -476,7 +476,7 @@
                         price.innerHTML = '$0';
                         desc.textContent = 'Perfect for 1 team tracking payments and do not need to email players';
                         features.innerHTML = '<li>✓ Track digital* and cash/bank transfer payments</li><li>✓ Ledger for the current season</li><li>✓ Player availability hub via link</li>';
-                        footnote.innerHTML = '*Requires connecting a free Square account. Standard Square fee + 2.5% platform clip.';
+                        footnote.innerHTML = '*Requires connecting a free Square account. 5% total fee (2.2% Square + 2.8% clip).';
                         btn.textContent = 'Get Started Free';
                         btn.href = 'https://app.feesplease.app/auth/register';
 
@@ -676,7 +676,7 @@
                     <tbody>
                         <tr>
                             <td>Platform Transaction Clip</td>
-                            <td class="highlight"><span class="win">2.5% (Free) / 30¢ flat (Plus)</span></td>
+                            <td class="highlight"><span class="win">2.8% (Free) / 0% (Plus)</span></td>
                             <td><span class="loss">3% – 5%</span></td>
                             <td><span class="loss">~2.9% + $0.30</span></td>
                         </tr>
